@@ -1,0 +1,129 @@
+I think the work-around for this is to publish different ports for the two services (like 8001 and 8002) and then use a load balancer bound to each IP address to proxy to each port.
+You need to update your registry version.
+To run the current version of the registry, you can use the official image; https://github.com/docker/docker.github.io/blob/master/registry/deploying.md
+An alternative approach (that I don't know whether works in your scenario) is to pre-load base layers to whatever server or OS image that you use when setting up new machines. 
+Alright, here's what you can do as a workaround:
+Also, you may want to try 1.12.2-rc3 once it's out (today or tomorrow), if it is what I think, it should fix your issue.
+please update to 1.12.2
+You can check via systemd --version
+Maybe one solution would be a per-node option to specify which interface/IPs ingress should listen on 
+The easy solution is to stick each service on a different IP, ser1 would be on 1.1.1.1:80 & ser2 would be on 1.1.1.10:80.
+Adding it via sudo brctl addif docker0 veth47fc599 fixes the issue.
+When I change it to open a saved tar file instead of /dev/zero, it works.
+To run the current version of the registry, you can use the official image; https://github.com/docker/docker.github.io/blob/master/registry/deploying.md
+Just any copy operation with a UID that should be preserved will work.
+This should handle your use case as well as handling mapping in a more refined way than the blunt "chown to (possibly remapped) root"
+A simpler solution then using @ibuildthecloud's systemd-docker is to start a docker container in the background in ExecStartPre via run -d container or start container and then using ExecStart=/usr/bin/docker logs -f container. 
+I hit this as well, restarting the daemon fixed things...
+We downgraded to 1.11 for the moment to work around this issue, because it kept breaking our builds.
+That should help address the issue of the above (e.g., remove UDP vs TCP inadvertently.)
+An alternative and more Unix-like solution would be to add an option for modifying number format so that the standard Unix sorting facility works.
+For this field, there is a solution: --format has .CreatedSince and the sortable variant .CreatedAt.
+So another solution for the sorting problem on image size could be to add another placeholder with the raw image size in bytes.
+I added a PR #29000 as an attempt to address this issue. 
+Looks like the only way is to use the entrypoint to set some env var, something like this: ES_BIND_HOST=$(ip addr show eth0 | grep -Po 'inet \K[\d.]+' | head -n 1)
+I found a solution for my problem.
+I fixed with two things: destroy the containers & create them again; restart of docker engine.
+We've been seeing this issue where the daemon fails to start due to the conflict @dansanders pasted, our fix is to rm /var/lib/docker/network/files/* and restart the daemon.
+find . -name '*.sock' -execdir rm {} \; worked for me.
+A workaround would be to delete and recreate the swarm-develop network only.
+Try manually forwarding the port through the firewall and see if it works.
+I enabled --iptables for the docker engine, rebooted, and the connectivity works.
+One way around this is to create the network in swarm mode, then you can enable containers to attach to it by setting --attachable on network create.
+As a temporary work-around, since it looks like you are running some secondary backup job in the container anyway, you could try a docker exec ... command which writes the backup file(s) to standard output. 
+If that's the case, Docker 0.7 should solve the problem, since it will use ext4 (and block-level snapshots) instead of AUFS.
+To solve this problem, below are two proposals. 
+The only workaround right now is to do the installation manually, using run -privileged, and creating a new 'fuse base image'. 
+My workaround involves base64 encoding a file and using docker exec to decode/write to the container. 
+So, another proposal to address this would be to simply allow a plugin developer to specify that the plugin can "manage block devices", and request that permission from the user at plugin install time.
+Here is my workaround, its useful when working with docker-compose.
+While we could "fix" the issue by doing some ID->Name comparisons with registered drivers and cached volumes, I feel this is a hacky solution.
+Specifying the ip with -p ip:port:port -does- work.
+As a work around this limitation, we've been playing around with the idea of downloading the private keys (from a local HTTP server), running a command that requires the keys and them deleting the keys afterwards.
+There's an alternative solution: If you're not running on cloud (so no external load balancer), you could make your own quite easily by deploying an haproxy (or nginx) to a node or set of nodes and using host ports rather than ingress (to actually bind port 80 on the local machine rather than ingress).
+The ideal solution is to have the client forward the key agent socket just like ssh can.
+To anyone looking for a temporary solution, I've got a fix that I use which brute forces things in:
+My workaround, was to generate a new RSA keypair, setup the pub key on github (add the fingerprint), and add the private key to the Docker image:
+If so, one solution might be to start a container that served the keys, then curl to it during build.
+I have also solved this problem in a similar way to @aidanhs - by pulling the required secret over the local docker subnet, and then removing it before the filesystem snapshot occurs. 
+As a workaround @apeace, you could try to add them as git submodule(s) to your git repo. 
+For people searching for a (hacky) solution, I have created a script that takes the responsibility of searching for a free port and then passes host IP and port to the container:
+One way to solve this if you have control of starting the container is to iterate over a range of static ports.
+For now, we have a solution that works but is just icky. 
+We came up with 2 more workaround for our specific needs:
+Mesosphere already has a solution for injecting the port mappings into your containers.
+As far as docker run, docker-ssh-agent-forward seems to provide an elegant solution and works across Docker for Mac/Linux.
+I implemented the complete solution for node/npm and it can be found here with detailed documentation and examples: 
+We work around this by having a 2-step build process. 
+For those highly desiring this behavior, I do offer the following workaround.
+Another pretty good solution is to use a tcp tunnel:
+In my case, the workaround will be to set a--gateway that is a free IP on the subnet and specify the real external gateway with the --aux-address .
+But for now, and using @aboch explanations, we have a workaround :
+The fairly simple workaround in our case involved adding this line to /etc/resolv.conf: nameserver 172.17.254.254
+We could try a workaround where we gratuitously keep a ref on a recently created device (unless you're trying to delete it) for say 1 second.
+I've been able to solve this issue for myself by increasing the docker-machine VM's memory from 1024 to 2048 MB and assigning 2 CPUs instead of 1.
+For people who are having issues with this, here's how to resolve the issue on Ubuntu 14.04 using the -proposed kernel.
+Inspired by @marsinvasion, I got a successful workaround by giving my docker-machine 2 CPUs and 4096Mb RAM.
+For those like me still struggling to get this sorted I'd like to point you out to TINI as a nice workaround :
+If anyone needs an immediate solution to this and is willing to manually modify the com.docker.hyperkit binary, I have a small patch that increases the VTSOCK_REPLYRINGSZ constant from 512 to 1024.
+You should be able to fix it by running docker-runc delete a0033db8ff204a3fb2b550cc74890c65a58824f21bc88e46241b8f4761bb8945 or cleaning out the directories yourself under:
+The fix is to update to docker >=1.12.0
+The solution I found that doesn't seem to have any ill effects is to:
+My work-around in the meantime is to have a bash script that builds each Dockerfile then exports to tar and reimports into the same image tag, before beginning the next build.
+For now the only solution I have is to reboot the node which is not good. Rebooting docker daemon also not good.
+For me what works is to stop docker daemon, remove everything from /var/lib/docker/* and start docker again.
+This workaround for docker/compose#3277 (comment) also fix this issue...
+And I was also able to work around my upgrade problems on the bare-metal host, by removing docker-engine via apt-get and reinstalling it.
+you can unmount and start the container again it should work
+Seems like stopping all containers before the docker daemon fix the issue.
+Upon discussing this issue with @crosbymichael, letting users specify the bridge to use as part of docker run will help solve this issue - "docker run --net bridge:docker0; docker run --net bridge:mystack1"
+I've added this pre-stop block to my upstart job as a workaround:
+As a workaround, you can inspect the container, copy the Config, and paste the config into the -run parameter of docker commit, but this isn't really user-friendly either.
+You can do this via having your source code locally and docker a docker build in the directory.
+I've worked around it by automatically unmounting any old mounts when the docker daemon comes back.
+While we work on the official solution for handling it, there are work arounds you can apply yourself. 
+So the following work-around is a slightly more permanent work-around for my use case.
+The only workaround is to stop, and wait for a couple of seconds before trying again. 
+As a workaround, you can rm /etc/puppet/* instead of rm /etc/puppet, and that will do the trick.
+I got rid of the error by rebuilding the docker image with --no-cache and everything worked fine.
+Here's a workaround I use in a postgres dockerfile
+Workaround: using VOLUME and (run -v) removed the paradox, so I'm guessing this is related.
+PR #10390 will allow using the dirperm1 option to AUFS to fix the problem
+proposing #3505 as a fix
+The only workaround I found was to mount more shm in privileged mode.
+As a workaround I'm currently generating cache busters in the script I use to run docker build and adding them in the dockerfile to force a cache bust
+A workaround that I ended up using was to add a dummy container with a process that just sleeps for ever and then use --net=container:dummy with the original container. 
+I don't know about the others, but for me (ABBYY OCR inside a docker container) just having this size configurable (without having to run the container privileged) would be a perfect solution.
+As a workaround currently I write the container IP to a file on a host volume whenever the container starts. 
+If there would be a privileged mode for docker build I could also work around this issue
+However, there is a solution for that: for reading files, Docker can use the owner:group of the symlink. 
+Just want to provide that there is a very easy workaround for this, feed a tarball into docker. 
+For me upgrading to kernel 3.19.0-25-generic appears to have solved the problem.
+Try with 1.9.0, the problem should be solved. 
+We reverted the kernel to 3.13.0-71.114, which seems to have fixed the problem for us.
+#10347 has been proposed as a fix to this problem. 
+Downgrading to the 3.13.xx seems to fix the problem.
+The workaround for me was to stop docker, kill the ghost containers manually, remove /var/lib/docker/containers/[container-id] and start docker again.
+However, using the 1.9.0 release boot2docker.iso has solved this problem for me.
+I made it working by using the --insecure-registry option. 
+The only way to fix it that I know of is to reboot the machine.
+Just doing a simple go program with a unix socket listener works for me.
+I fixed my problem with the quickstart terminal by doing the following, so now it works OK for me:
+the fix is here #11635 (comment) please try
+This issue is resolved in recent kernels; if possible, upgrade your kernel to a version that includes this fix, or contact your OS vendor to make sure they carry the fix that resolves this. 
+I can confirm this is fixed by #12382 and #11945.
+thanks, appending the intermediate ca certs to the ssl certificate solved the issue for me!
+I found a very convenient workaround at http://superuser.com/questions/842642 by using mount instead of ln -s
+Currently, fiddling with the bridges using the likes of pipework or manually running ip link / brctl commands on the host seems to be the best workaround.
+My workaround for this was to downgrade to 0.6.7 and rename /var/lib/docker (due to other weird aufs errors) + reboot the machine. 
+I tried to just listen on socket on overlayfs and it seems work for me :/
+EDIT: yup, it works here is patch if someone brave enough: 
+But to solve your immediate problem, don't bind right on the EBS mount point but bind to a directory inside.
+FWIW, I "solved" the supervisord issue above by changing the sock to /dev/shm/supervisor.sock.
+My workaround: since I can no longer rely on the output of docker ps (or the API, which is the same) to know the image of a container, I currently use docker inspect --format '{{ .Image }}' ${container} which works even if quite costly.
+For me the only workaround is to use labels to keep track of the container's image name and tag.
+Since I'm seeing a lot of other people trying to deal with this issue the easiest workaround I have found has been to ssh into the VM with boot2docker ssh then run your docker command. 
+If you need resolution to these hosts, I'd suggest setting up a DNS server to handle these requests transparently.
+I found a way to run docker -ti from bash in windows : start a cmd.exe (it works with ConEMU for better GUI, copy/paste etc ...)
+I wrote a simple workaround / quick fix to allow using Docker Toolbox from Babun, it may help some of you:
+As a workaround, you can today do docker run $runoptions builder-image | docker build - assuming builder-image will output a tar context.

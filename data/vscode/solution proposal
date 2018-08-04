@@ -1,0 +1,59 @@
+I found some steps to follow and then it worked well.
+I know it works in the insiders builds.
+as a tip, if you're not on a 16:9 monitor, you can toggle the side bar with Ctrl+B
+this feature was out in v1.7, you can toggle it via command palette or alt+shift+1.
+To start your app in debug mode you can use "npm dev" from the command line.
+please try using just this vscode.DocumentFilter = { pattern: '**/dockerfile*' }
+If a user can provide multiple document filters for the same kind, the solution is to just provide as many glob patterns as needed to catch the casing too.
+Here are the 1.2.1 as a temporary workaround:
+You can achieve this in the Developer tools, clicking Ctrl-O and typing extensionsWorkbenchService to find the file.
+If you are affected by this problem please add the following property to your launch configuration: "trace": "all"
+Using node2 seems to have fixed it! 
+If you can use node >= v6.3 then please try our new experimental debugger by setting the type attribute in your launch config to "node2".
+if node2 cannot attach to a target you could add a hint to the timeout error: "Make sure that node was started with the '--inspect' flag".
+Opening vscode on the command line ($ code-insiders) makes the problem go away.
+Fwiw I used the new command line arguments setting to add -l and that made it work for me.
+our code @joaomoreno executes fine for me and it has proper PATH variable
+If I manually add fonts to .monaco-shell using the dev tool then yes, it works.
+We set up our proxy to ignore the certificate for now, now it works for us, but maybe someone should look into this.
+Using 1.6 it works perfectly.
+heir workaround was to blow away the npm cache and remove .electron and .atom: link
+FWIW, updating to 1.8 solved it for me.
+It works fine when I use sudo to run it
+Let me present what I call the Global Extensions Viewlet solution.
+IMO this can be solved by displaying this sidebar in a different style: render it with a different background color for example. 
+The long term solution would be a bar button similar to the "Show Desktop button on a Windows taskbar" on the far left of blue status bar in the editor next to the extensions icon or a workspace settings you can force in the settings.json file ("window.activitybar" : false)?
+There is a workaround by using ESLint.
+Not a fix, but here is a workaround for using VS Code with JSX:
+the other work around you can try is to disable the built in JS validation. 
+When calling into writeConfiguration you can use the contributed targets as well as the built in ones (USER, WORKSPACE).
+I pushed a change so that you can actually replace the entire contents when you use the tasks or launch key. 
+Using the terminal inside vscode or any random cmd I can push, pull and it works - asks for password. 
+It's not enough to just start ssh-agent, you need to also add the environment variables SSH_AGENT_PID and SSH_AUTH_SOCK so that Git knows where to look.
+You'll then need to either store this somewhere, so that it can be used between restarts of VSCode, or you'll need to restart ssh-agent every time you restart VS Code.
+If so then you could ask for the password the first time it's called.
+Looking at it, putting a hook into Git.ts would be the way to go, inside around any functions which would mean connecting to the server.
+I pushed a fix for this that should fix the size when the panel is minimized or the terminal instance is in the background (provided the panel has been created). 
+After removing HookyQR.beautify-0.1.8 the problem seems not to occur anymore.
+Okay, I found a work-around after reading #10735 which seems related to this problem.
+I updated to 6.10.2 and then found it still happening. I set "smartStep" to false and that seemed to fix it. 
+The workaround is to make sure any tsconfig.json or jsconfig.json has an include or files configuration 
+The better fix is to keep the list of paths in memory once you ran the search once and reuse that information.
+temporarily solved by adding this config(when using powershell or cmd as integrated terminal):
+for Asian users,set system language to en_US or use WSL bash(select en_US when installing) instead probably can solve this problem,as far as i know,most Asian words (Chinese,Japanese,Korean included) will cause this mess
+I set the git.enabled to false to solve the problem.
+We can only solve this by updating Electron to a newer version but currently are blocked because of a native node crash.
+Here's a simple comparison of the still-reproing Insiders build with a regular build that uses the "--disable-gpu" workaround suggested by @artsjedi.
+Adding both flags madispe suggested also seem solve problems with the latest stable version. 
+Currently, --enable-use-zoom-for-dsf launch argument with "window.zoomLevel": -0.001 setting seems to remove all issues for me.
+Adding --enable-use-zoom-for-dsf to my shortcut fixed the blurriness.
+If you're using an agent: As a workaround (a configuration change affecting not just vscode) it's possible to add no-tty to your gpg.conf. 
+I found a workaround - use ln -s.
+Another workaround that I have used is to open the root app folder in one instance and a subfolder in another instance.
+The best solution is to have ONE master window and multiple undocked tabs.
+A workaround is modifying file C:\Users---UserName---\AppData\Roaming\Microsoft\Spelling\en-US\default.dic and reload.
+The second way to solve this problem is running a standalone interactive script, which talks to system API, compiled in different architecture/platform. 
+Changing the type from node2 to node worked for me.
+I changed my from node to node2 and it works again
+your problem seems to be unrelated to this issue because you needed the opposite workaround to make it work again.
+But just downgraded to 1.8.1 and everything is working again.

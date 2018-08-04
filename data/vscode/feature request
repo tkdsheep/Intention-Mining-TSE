@@ -1,0 +1,88 @@
+It would be great if vscode has integrated terminal feature refer vim or atom https://atom.io/packages/term3
+A terminal would be great as an extension.
+it would be also nice to have ouput of docker containers onput related to current opened project code inside the editor, I think with terminal extension it could be achievable.
+Would love to see an integrated prompt as an extension, would save ALT+TAB :)
+It would be nice if the integrated terminal could be configured, e.g. to ZSH
+Guys please implement this feature this is the only reason why I'm not even consider using VS Code on a regular basis. 
+I really need this feature before I switch to VS code.
+It would be great if we can just restart for an update, and have it exactly where we left off.
++1 I've been using Sublime Text for a while and I really miss this feature in Code.
++1 this is someting i miss in this editor it would be a huge help if the editor also reopened previous files without having to open a folder.
+But it will be good to add some language-id attribute to the tree-view element. 
+And also It will be nice to add possibility to add/modify directly CSS from extension.
+I'd like to be able to just Alt+Click/Drag to select an area of text for editing like Sublime.
++1 for using Alt+Drag to select a rectangular area.
+I think ALT and click dragging should be implemented in the same way as VS.
+Key binding schemes would be great as extensions. 
+To add to what others above are saying, I would also love to see functionality that starts the column selection from the point where you clicked (alt + left click drag, rebindable to middle click drag?) make it in to vscode.
+Imo it would also be nice to completely undock windows to put them on external monitors.
+Horizontal split would be nice for people who use portrait monitors.
+I like to be able to split both vertically and horizontally and this is really missing here :(
+Extensions should be able to create a new panel/document and open it in the editor, much like how markdown preview does.
+One potential requirement for this feature is that the content provider should be able to get notifications to refresh itself. 
+Feature request: API support for making a virtual document preview-only.
+Ideally, vscode would provide me an API to write my own interface extensions. 
+It would be nice if this was more easily supported.
+I can add a flag to glob to ignore casing, since its just a RegEx in the end it should be easy.
+We own the docker extension for VS Code (https://github.com/microsoft/vscode-docker) and as I mentioned earlier, we would like to provide support for files that match the pattern dockerfile* (e.g. Dockerfile.dev, Dockerfile-blah, etc.).
+I would appreciate if people could tell the font-family to use for Japanese as well.
+My suggection - to add this feature, that allow easily cconfigure how to run app and not just by parameter "node" and entry point to the site.
+I would appreciate for input on which families to use on Windows, Mac and Linux for which of the three languages.
++1 for having a UI that is not interfering with my coding workflow. 
+Rather, I would suggest simply adding an additional action button, and making that action button take us to a view that takes the whole window as I've described earlier.
+I really hope that the Visual Studio team would realize one day that there should be one way to install extensions, install packages, install anything and it's the Package Manager Console! 
+I noticed this is missing in the pre-1.2 release and would be quite good to have. 
+I'd like to be able to hide the workspace button bar on the left side of the window to gain some more screen real estate and have a more text-focused experience. 
+Implementation suggestion: Now that there's an option under the View menu to Toggle Status Bar, add another option for Toggle Activity Bar or similar to match.
+Maybe it could be also configurable via settings:
+To add to this: I think it would also be nice to be able to right-click on the bar to see the option to hide it (with the hotkey listed so you can remember how to quickly bring it back).
++1 option to hide this would be super...
+I hope there is an option to allow to hide the view bar.
+I need more space for my code, so I hope this feature can be implemented ASAP
+P.S. Also will be good if add an hotkey to that.
+While in extensions, sometimes we may want to know whether users set options explicitly instead of using the default one but currently we don't support this kind of API.
+My plan is to add an inspect method to the WorkspaceConfiguration object (along with update). 
+I think it would be great if an extension could get at the real values -- something like:
+JSX and other variants of JS should still be able to support all the same functionality as the basic JS syntax if those features are available and there should be the ability for VS Code dialects to act as extenders as oppose to completely separate languages if that makes any sense...
+Personally I would be more in favor of a feature that allows a global setting that makes all .js files be able to default to reactjs JSX syntax. 
+Here's my +1 to a quick and full native JSX support in Code.
++1 IntelliSense is great, having it for JSX files would be cruc
+I would like to be able to write a snippet to a file/open editor/doc and for the user to then be able to press tab where I have placeholders $1 etc
+It would be great if I could do something like this:
+It would be lovely if we could format the launch.json / tasks.json / settings.json after editing it. 
+So, we might have to add a git.sshkey setting too, like Tortoise.
+It would be lovely if it could share this with Posh-Git (the Powershell Git module), which stores the values in ([System.IO.Path]::GetTempPath()) ".ssh\$key.env" - but possibly worth talking to that team to make sure that that location is something they're happy to be locked to.
+It would also be a viable option if vscode would honor an already existing SSH_AUTH_SOCK.
+But we also need connection to remote GIT to be secure. 
+We're gonna have to re-introduce the allowLargeRepository feature.
+It would be great if I could hook into an event which occurs when the user moves a file or folder in the explorer. 
+If you guys could include this Encoding in VSC i would be able to do all my stuff (c#, java, JavaScript and that "oldscool Thing") in one and the same editor.
+We also need to support regular expression searches.
+FWIW this would be the killer feature that would most certainly get me to switch to VS Code.
+If fuzzy search can be brought to parity with other editors it would make VS Code the hands-down choice for me. 
+we should compute all colors from the theme or invent new theme keys and not have any default left overs when switching to a theme.
+on computing colors as a default, but we should also allow theme creators to specify these values explicitly for the theme if they so desire.
+Sensible defaults + the ability to customize via config would be sweet!
+It would be nice if it worked like Visual Studio where you could drag a tab to another monitor. 
+Keep in mind when implementing this that we want to support background color in tmThemes #3429
+VS Code should optionally be able to sign git commits with a given GPG key, as it is a good practice for authorization nowadays.
+Basically, I would like built-in functionality for appending the -S command line argument to git commit, as shown here.
+Guys guys guys, sometimes putting stuff in one window just isn't enough, please provide a way of doing so :/
+Just being able to move the tabs outside of the current VS Code window would be the most useful.
+i like keeping my tests and code on two different monitors and would love to be able to just drag off a tab like I can with most of my other apps.
+If the Explorer is a "workspace-specific feature" then I'd vote for that to remain part of the "child window" but other than that specific feature, just having a new window that I can doc tabs on and see an Explorer file tree is what I'm looking for.
+Please support mulitple monitor development like visual studio does.
+chromeos support, yes please
+I would like to have some UI APIs that could help me create popup panels for css value tuning.
+please make our vs to allow drag the tab outside current window. 
+I have a similar feature request too: how to custom sort order of sidebar files?
+It would be good if VS Code Supports Raspberry Pi 2/3 or provide arm binaries alongside the x86 and x86-64 binaries for linux
+One thing: As I mentioned in #21938 it would be really really cool if the activity bar could be themed light. 
+I think it would be a fair compromise to add some kind of "experimental" option that allows you to load a custom stylesheet. 
++1 Please add sidebar coloring theme
+It would be useful if the .runsettings file functionality could be included.
+I'd like to see something similar to debug case where we have dropdown to select different debugging configurations - different configs specified in launch.json (in case of debuggers, we could have similar file for test adapters)
+For me fully featured XML editor (IntelliSense, validation, formatting, go to definition) is most important missing feature in Code.
+absolutely and extension with XML support would be highly welcome.
+I guess I would like to see following set of feature:
+I would love to be able to modify the document tree a little bit so as to filter out some files that are junking up my view but I have to keep.

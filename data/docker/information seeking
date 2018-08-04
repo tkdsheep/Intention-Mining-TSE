@@ -1,0 +1,263 @@
+Hi. Was you able to open JFrog Artifactory ticket?
+I'd like to know ticket ID and link.
+Could you share details (steps, what needs to be done, what logs need to be collected) with me (refer to email in my GitHub profile), please?
+did you build that image yourself or pull it from Docker hub?
+What happens if you simply run the official image from Docker Hub?
+why can't I reference it to the downloaded image , since not all servers would have access to internet.
+How exactly do you mean "why do I need to get onto internet every time if I have to download the Windows container image"? 
+out of curiosity, are you pushing to a private docker/distribution registry that you're running? 
+Is it a known bug in 1.12?
+Can you please share the ticket id for exec issue.
+are you still able to reproduce after updating? (I.e. Running on 1.12.2 or 1.12.3)
+could you please help if there is configuration I missed?
+Does Live-restore work well?
+what version of systemd do you have install?
+Can you provide the daemon logs for the crash?
+Can you confirm if it is indeed journald crashing?
+But how can I let systemd-journald crash?
+Does it happen every time you docker cp? 
+Can you provide exact repro steps with this?
+Does that answer your question?
+When you are doing this, what are you expecting exactly? 
+Are you expecting for the service to be scheduled on a machine that has that IP address available?
+Wouldn't this better addressed by using an external load balancer (e.g. ELB if you run on AWS)?
+Is this a case of wrong docs?
+Did I do something wrong here? 
+Can you try with a real file?
+shouldn't it still yield an archive error?
+what version of the client are you running?
+can you try the client on latest master? 
+does it still work there with 1.12.3?
+Can we discuss on irc?
+Do you guys think it could be a good idea to have in the API an endpoint which allows to get the stats of all the running containers at once?
+any thoughts on implications for Swarm?
+Does anyone mind if I attack this? 
+Is there someone working on it now?
+Can I get pointed in the right direction? 
+are you able to help?
+What's the exact name of the image you're using?
+Is it also related to mknod operations?
+what should we do when no UID exists on the system for these tar files? 
+Should we just write the UID/GID as tar typically works, or would you like me to do something else?
+Can you try it out? 
+is this ready to submit?
+can you clarify?
+EDIT: Also, can you include the execdriver you are using (just paste the output of docker info)?
+How difficult would adding width/height to container creation be?
+Can we update the docs to reflect not needing to restart to resize? 
+do you think this still actual and worth to do? 
+Does that make sense ?
+So then what about save/load? 
+What are the steps needed to have such a feature implemented (maybe docker exec attach :exec_id)?
+Does that count as pushing?
+Is there a way to walkaround this issue?
+What's the purpose of go cmd.Wait()?
+do you have any idea why that check is there (you were the last one who modified this code)?
+Is this the best solution?
+Is this just plain stupid or already been thought of and shot down?
+Any new thoughts/movement on this?
+Should we start the deprecation process in this release?
+Is this because of loop devices?
+If that's not possible, is there a workaround to build a docker image that will contain all those environment variables when run?
+Any thoughts on adding this feature ?
+Do others have a need for this?
+Do we have some way to set "SHELL none"?
+What would the syntax be for specifying a command without using a shell?
+Isn't this exactly where the multiple compose files / override files are implemented for?
+Can you retry with master build? 
+Does anyone have any problems with the proposed format?
+How is it inconsistent?
+Was this fixed in the CLI refactor?
+does Cobra support that?
+Is there a way to compute a combined list and use that in completion?
+What are the guidelines in terms of short syntax ("porcelain") versus long syntax ("plumbing")?
+How many flags should be exposed: one for porcelain and one for plumbing, or a single one with two possible syntaxes?
+I wonder what is the meaning of the suffix of the name, like “1e1ce7a98c58”？
+Where those flags overlap, do they use the same naming scheme for long syntax option names?
+Is this planned for docker build as well?
+Whats the actual usecase for this?
+Question is will that break anything?
+Can I take this issue up? 
+Can I give it a try to fix it?
+Can someone please review? 
+Any updates on this?
+Why can I not sort in docker volume ls?
+How about watch docker service ls?
+Could you please explain the meaning behind it?
+would it be possible to use that ID? 
+Could you please tell me where to set the peers's name field?
+How can I modify the unique ID to be the node's own id?
+Would using the RedHat repo over the official Docker repo be against standard deployment? 
+Can you use the official Docker repo instead?
+How can I solve this problem ?
+Could you try running the check-config.sh script to see if anything is missing?
+Can you use strace (on the daemon side) to determine which syscall returning ENOPKG?
+Can you run it for the daemon (dockerd), rather than docker client?
+Why does dockerd listen on exposed ports when --userland-proxy=false is set?
+What sort of communication can be done with dockerd through these ports?
+Why would one want to prevent another service binding to this port?
+Why are you publishing the ports if you don't want them exposed? 
+Does it help if you explicitly publish the ports to an ipv4 address, ie docker run -p 192.168.1.34:80:80 say, replace with an actual external IPv4 address? 
+Why can't we just get rid of any dockerd or docker-proxy stuff listening on any of these ports when --userland-proxy=false is set?
+Do you know if this has been addressed in RC2 ?
+is this related to docker/libnetwork#968, and #20569 ?
+Should this be added to 1.13?Did you also build and update RunC, compile, and install the userland proxy, and compile and install, the correct version of containerd? 
+Is there a reason you're trying to compile yourself, instead of installing the official packages?
+Is there any some resource recycle issues?
+I was wondering what is the usage of these file.
+What does docker network ls show?
+Is there anything in your logs?
+Is the number increasing? 
+Do you have the beginning of the logs still or now? 
+I was wondering what time will generate a socket file like this, then maybe we can find more details there.
+How to convert IP address to consul k/v hash?
+do I need to manual assign Mac?
+Did you connect/disconnect the container in the overlay network hdfs_hadoop to any other bridge network ?
+Can you provide the routing table (route -n) from inside the container in the overlay network ?
+Can you provide more information about the environment i.e how the docker swarm was initalized like what were the exact command line options used in docker swarm init and docker swarm join? Also can you attach daemon logs from both the nodes?
+Any update on this?
+Also, what does your filter table look like ?
+Can you take a look? 
+what is the correct behaviour? 
+Can you take a look at this one?
+what's the status on this one?
+Is this something that is known internally and being worked on ?
+Can you please let me know if this is happening on Windows Server 2016 or on Windows client?
+What is your motivation to use another raft backend?
+can you just run your own instance of etcd in the swarm and use that?
+what's the status here, what are your current thoughts?
+How did you get this docker client?
+Do you have the rest of the daemon logs for that particular instance?
+What do you think about the portions of the docker logs containing the following?
+Could you try to reproduce the issue while having the daemon in debug mode?
+Can you provide all the Docker info/version stuff, hard to say anything otherwise...
+could it be your "moby" VM is out of disk space?
+could you tell us which image are you trying to push?
+Can you open an issue on https://github.com/docker/for-mac/issues?
+Is the plugin used in step 1 a v1plugin?
+Can you please comment on the above example and assertions and help me where there is any misunderstanding?
+Should this have a flag (e.g. --image, --repo) in case there are other options that would be added later? 
+is this an existing setup, or a "fresh" install of that registry? 
+Did it work before? 
+How is authentication set up? Did the registry work without authentication set up? 
+Do the logs of the registry show anything useful?
+Is there any other material when hash computation was operated except the content layer?
+But are they the same?
+Is the dir on the host mounted from elsewhere?
+How are you starting Docker?
+If systemd, what does your unit file look like?
+Can you show your systemd unit file (and possible override files) as well?
+Could I give this a try?
+Do we know about such scenarios?
+Can you share how you got the loop filesystem working inside your container?
+Can you share how you get that working? 
+Also, are there currently any open proposals that address this issue?
+Where can I find out how to submit a proposal? 
+Is there a specific guideline or should I just open an issue?
+Is anyone actually against this?
+Is there anything new on this front in the last year?
+Why should I trust Docker Registry with my SSL private key?
+Is there a way to do this?
+Is there really no docker way?
+Was it done that way for performance reasons?
+I am wondering if there are any technical challenges that prevent the usage of --net=host?
+How do you use --add-host in your environment? 
+Any updates on this? 
+Could you explain to me the difference between pods and nested/ sub containers?
+Are they the same thing but with a different name?
+Do you use it to route to external services or internal services?
+Is there an auth plugin effort planned for docker in general?
+How can we prevent non-admin users, with valid kerberos ticket, from managing containers?
+Does docker services support multiples ports exposed/published for a service?
+Have you written any tests yet?
+Is there any progress on this ?
+can you give a little more detail on these large repos?
+How about splitting up the work?
+What about a containers external IP? 
+But how can we use a pool of physical machines to run our containers if one of them takes the vlan gateway defined on an external router ?
+Or Is there something i did not understand regarding that new feature ?
+what do you think about it?
+What is the status of this in the new Docker for Windows?s
+Any news on this?
+I wonder who can do design decision.
+Are there some public use cases or files from the community of how pods are currently being used? 
+Are people actually using them as intended or are you seeing many people running a pod with only one container?
+Did you figure anything out?
+can you try the debug build?
+could you provide information about the aufs version installed on your system? 
+can you give us the output of apparmor_status ?
+how did you clean those containers ?
+Is there any way to clean up out-of sync nameIndexes?
+Are you sure your docker-py instance is talking to the same daemon as the CLI?
+can you please take a look ?
+do you know an easy way to clean up the system once this goes wrong?
+Is There a work around for this issue?
+What's the status of this issue?
+What are my others options ?
+Is there a fix docker side coming out ?
+Is it impacting all operating system ?
+Any updates for the intended use cases?
+Any updates on this?
+What actual options would do this?
+Can you share your scripts ? 
+Is there any workaround?
+Can anyone show me : How to check if Docker 1.3 also keeps the network info?
+Is it impacting all kernels ?
+Could you give me the steps to reproduce the problem?
+Any plans to change this behaviour in any way?
+can you take a look at this one?
+Are there news about the IP changes after docker restart?
+What should I be using? 
+Is there a particular reason why the stable networking was reverted?
+Are there plans to get that back?
+Can you explain at a high-level how this will work when it's in place?
+Any progress on this? 
+Any updates on what could be done?
+What is the next major release? 
+Can you check your init script and see what Mount options are set?
+Does anyone have a patch for aufs that can toggle this behavior?
+Did you mean 1.0?
+do you see the container linking stuff going away eventually too?
+can you describe how you hit that issue with your MySQL setup? 
+What release is this likely to be fixed in?
+Why do you really want to ssh into the VM? 
+Could you tell us more about the way this happened for you?
+Have you tried just overwriting it with -lxc-conf?
+I wonder what boot2docker has if it is happening there too
+is there any way to try and see if my situation matches what you guys are describing?
+Is it when dropping databases or tables, or something else? 
+Can someone provide a way to trigger this?
+So I wonder if the CPU and MEM% has some delay or it's supposed to be instant value?
+What does db.service do to start the container?
+Can you please post a link to the updated patch in this issue?
+Can you provide the output of docker version, docker -D info, and uname -a please?
+Is there a clean way to blow away the local docker aufs data?
+Is there any documentation to which extent this holds etc.?
+Can you help me out and give me an example?
+Do you think it's possible to do now? 
+can you copy your docker daemon logs? (preferably in debug mode)
+I wonder if this is an issue with the code being run before the /proc is mounted?
+Why was this removed from 1.7.0?
+Why is your usecase for switching drivers on the same host?
+are you still seeing this on the latest version?
+could you provide the output of uname -a, docker version and docker -D info?
+Do you think anything can be done on docker side and worth it?
+But there's another question in my use case: how can I conveniently list all the image layers on a host?
+do you know if there is a way to just get the metadata for a pull on a "dry run"?
+Could you elaborate on the reasons behind the decision?
+Is this still a problem for anyone when using the latest Docker version?
+could you expand on the security risks of linking just based on container name? 
+If you're using AUFS, can you try with another driver to confirm that your issue is AUFS-related?
+Also, where is the documentation on AUFS vs DeviceMapper vs whatever else?
+Do you have a simpler way of testing this?
+Also, are you sure that this isn't caused by plushu?
+Can you please summarize what this bug is?
+Can you give an example showing the output that you would like to see in that case, to better understand the feature?
+How did you start the containers?
+Can you provide the output of docker info and docker version?
+Can you please let us know if this is still happening on recent Docker version?
+is there an easy way of installing 1.7.0rc1 on ubuntu? 
+is there an unstable ppa or something?
+Any news on this?
+Are you talking about Docker or Kubernetes?
+do you think this needs to be part of docker's core functionality?

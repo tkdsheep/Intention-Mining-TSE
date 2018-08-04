@@ -1,0 +1,213 @@
+I think having GPU support for Mac would really help in not just the performance front, but allows us to debug and check any GPU specific issues when running some script locally, and be able to fix them quickly, before sending them to a EC2 or some remote GPU server.
+Since the PR is closed (hopefully temporarily) I thought a little reminder that a lot of us want this, would be helpful.
+So part of what's needed is permitting compilation with 7.5.
+But in any event, using the Mac as a development environment (including GPU support) should be supported.
+Fixing cuDNN is a must have though.
+I may extend this by adding a bool flag like "right_aligned" to the rnn call, which assumes that calculation starts at len(inputs) - max(sequence_length), and copies the initial state through appropriately.
+Currently we only support Python 2.7, but we should support Python 3.
+Python 3 is a must have. 
+I'd really like you support from 3.3 up to the latest release of Python (currently 3.5; then 4.0 in the future). 
+Please support CUDA 7.5
++1 for java!
+Please support cuda 7.5 and cudnn v3
+desperately need a java interface to use tensorflow in enterprise web server
+The desired behavior would be that tf.Print(input, data) works even if data contains a mix of IndexedSlices objects and things that can be converted to tensors, and the desired outcome would be output that looks something like 
+For example, it would be nice to complement existing tutorials, e.g. mnist, and show additional (final) step to get prediction out of the trained model.
+Such a feature would be very useful so that we don't have to adjust the placeholder manually when changing the RNN cell.
+Automatically creating nested placeholders would be useful.
+It would be nice to be able to interchange the cell without changing the placeholder/feed logic.
+There is no conv1d method and it would be very welcome.
+It might even be a good idea to implement an arbitrary convxd function, there are instances where high dimensional inputs have spatial relevance.
+If someone was willing to write a kernel (CPU and GPU) and benchmarks for this, we'd be happy to accept it. 
+Same with convxd. #150 for a similar request, but for 3D, which we'd also love contributions for.
+Fractional striding on 1d convolutions would be helpful to downsample 1d signals.
+Contributions to add this to tf.contrib.layers would also be welcome, should be pretty easy.
+It would really help if matmul() and element-wise mul() were broadcastable, like in Numpy. 
+Would also like to see this.
+I just wonder could an option be added to plot more than two scalars in the same plot?
+Yeah, we definitely want to make comparing different charts easier.
+Some documentation detailing this would be good.
+Really hope tensorflow will use github for all the cooperation workflow.
+btw, if you guys need any help, please fire up related issues, add "help-needed" and area label, and I think all the guys here are eager to fix them :)
+I would love if @jimfleming's libtensorflow.so rule were included in the TensorFlow repo. 
+It would be useful to have a softmax operation that can sum over arbitrary dimensions in the same way that the reduce_* operations do.
+does exist, if someone wants to plumb that call through, I think we'd have LRN support for GPU :)
+If the intent is for TensorFlow to be a general purpose computational tool for machine learning there should be more support for special functions (i.e. the functions in scipy.special).
+I really need lgamma soon, can't wait ;)
+Why not also implement tgamma from the same section of "cmath" header, just so that all four functions from "Error and gamma functions" section would be available? 
+Looking forward for them to become available as TensorFlow operations!
+it is worthwhile to add trigamma or polygamma from cephes. 
+One nifty feature to have in the codebase would be allowing recursive copying of Operation/Tensor/Variable instances from one graph to another.
+It would be great if the examples worked on GPUs.
+Agreed, scatter on GPUs would be useful.
++1 for Java/Scala
+I will be great for NLP tasks like machine translation to work and re-train embeddings matrix on GPU. 
+I agree, this functionality would be great to have.
+It would be really neat if the tensorboard could additionally show the predicted and/or given label for an image in the 'images' tab.
+Once we have plugin support in TensorBoard, this will be a good candidate for a plugin.
+Feature request: Support for dtype=tf.int32/int64 in tf.random_uniform.
+It would be really nice to have a gradient operation for tf.cholesky similar to Theano's CholeskyGrad.
+However for the log determinant, I agree that a Cholesky gradient would be nice to have.
+We still need to add support for batch_cholesky, so I'm leaving the bug open for now.
+To enable sampled decoding, we would need a tf.choice function to replace tf.argmax in 
+If labels come from a separate file and need to be joined with the proper images in tensor flow, then having a good and easy visualization would do wonders for being confident that the correct labels are matched with each image.
+You're right, we should have an op like choice. 
+I'd like to request support for bidirectional RNNs, as these are rather canonical architectures. 
+I realize it's possible to do using the existing rnn API, but given all the intricacies of padding and such (especially in the reverse direction), it would be nice if this had builtin support.
+An example like this: will surely help a lot in understanding.
+A function that would take two tensors of 3D vectors and return the cross products of the 3D vectors would be nice.
+I also want an operator that makes a vector v into the matrix V for which Vw = v x w. 
+Yes, and we should have the star operator that converts a vector to that matrix as well, but we should still have the normal cross product operator for efficiency.
+If you have an approach that doesn't involve breaking up the weights into 4 smaller tensors, we should consider it for merging.
+I think I've made that mistake too, so it would be good to get a more sensible error message.
+I'd like to use TensorFlow to write an application that would need complex128 as a dtype.
+This would be a great addition to tensorflow, and is conspicuously missing.
+It is not currently in the works, and it would be a great addition to TensorFlow. 
+On the other hand, it would be really nice to have a real native TF implementation, possibly using a nested while loop.
+We should fix this and add a unit test.
+Specifically, we'd need to make IndexedSlices accept multiple index arguments so that the gradient of tf.gather could build one IndexedSlices and then build a deeper one for the next tf.gather call.
+It would be great if further comments were limited to technical discussions about Python 3 support.
+I was just thinking of implementing some Bayesian learning on TensorFlow and realised that I would need the Gamma and also in particular LogGamma (this is just the log of the Gamma function computed directly). 
+I think it would be great to have a bit more details in the docs, and maybe even have a bazel rule for building custom ops, similar to tf_kernel_library().
+I think just exposing the source code documentation would be very helpful to people. 
+In general though SequenceExample could use better documentation as it's a very useful feature.
+OK, but maybe update the source code docs to point out that debug_name must have a value (or fix it so that it doesn't fail if it doesn't.) May save the adventurous among us a few hours of debugging :)
+That would require some deeper changes to Eigen so that it knew it was in a worker thread and could adjust its behaviour accordingly.
+Would be greatly appreciated if you could do this, I need to test a project which uses TensorFlow on Travis CI and don't want to have to build TensorFlow for each Python version every time I test.
+It is probably enough to add a warning about the test issue to the dev environment setup instructions?
+(it would be helpful if that was the error message instead)
+Perhaps this is desired behavior, but I would have much appreciated a more descriptive warning at least, which would have saved much debugging.
+We probably want to add a test case to guard this when we fix it.
+We need to clean up the examples.
+This should be converted to use a custom Estimator until we add a new DNNAutoencoder.
+It would be nice to have such functions transparent with the built-in CPU implementations.
+I think that more general support for computation of complex numbers on the GPU will be valuable to the community.
+Unfortunately nvcc doesn't yet support c++14, but we can ask nvidia to start adding partial support for it starting with complex numbers.
+would be much better to give e.g. a simple derivative of a polynomial or something.
+I think configure need an option to decide target environment.
+(would be good to see the document update, though)
+I would really appreciate, if you guys can port this stuff to tensorflow.
+Please, support 3D convnets.
+It would be helpful to throw a Python error and document this limitation, as ops produced by similar functions (eg conv2d) handle the scenario just fine.
+If this can be implemented in tensorflow tf.multinomial it would be much, much appreciated.
+So having a solution that specifically handles tensorflow's tensor would be amazing!
+It would be great to see one point corresponding to the value instead. 
+If we did that, we'd be able to add your automatic conversion, which would be great.
+It would be nice to a corresponding int_input_producer for producing a queue cycles through labels, for instance.
+Therefore, it would be nice if AdaDelta could be added to the set of available optimizers.
+Yes, that would work, but it would great it can be done without losing sparsity.
+someting that would clearly define gpu compatibility would be great.
+If the documentation had it, that would be even better.
+On the docs, we could just assume all ops are gpu compatible, but if they are marked as "CPU only", it would help!!!
+This is not a big deal, but you may want to add an identity_like function that theano has here:
+It would be useful for orthogonality with RNN's.
+I think it would be useful to add functionality to check the calculated shape (if available) of the Tensors in the graph visualization.
+It would be awesome if the code had only one logging mechanism, controllable via python.
+Since it would be nice if the new functionality allowed Tensor and IndexedSlices to be mixed in the same call to Print, the best way to implement it might be to add an optional list of extra strings to Print, perhaps as a "extras: list(string) = []" attr. 
+The one possibility I could see would be if we add some sort of map facility to register how to add extra ranks to ops, then compute gradients with respect to extra rank by computing lower rank and calling the registered map transformations.
+I'd like the way to take the derivative of ys wrt xs where both are vectors and have a Jacobian matrix returned. 
+By extension, I'd like to take the derivative of a vector wrt a matrix and get back a 3-tensor.
+Regardless, it would be good to have a way to call derivatives of vectors and receive gradients of the expected shape.
+It would be very helpful if the documents and turoirals can be obtained from other places other than google server.
+So maybe the GraphKeys don't need to be serialized but I would like to make this process easier.
+there's likely a lot more holes in float64 support, I ran into the following ops being float32-only in 10 minutes of porting: image_summary, max_pool and Square 
+SGTM, and going for a keyword arg would allow for easy deprecation once/if the Zeros class gets implemented.
+One thing I could imagine is adding a return_none flag instead of a return_zeros flag, with a default value of True. 
+It would be great if something like tf.clear_all_variables() were implemented, such that I could have a cell with contents: that I could run over and over again.
+Even just a clearer error message in this situation would be a big help.
+An error would be nice, it could save other beginners a headache.
+@jli05: https://docs.python.org/3/whatsnew/3.4.html makes it look like supporting 3.3 won't be any harder than 3.4, so we should be good to go.
+I'd like to request support for basic trigonometric ops. 
+gRPC and tensorflow's distributed support would be more helpful for large networks. 
+It would still be nice to have dedicated (and parallel?) ops for this, though.
+Ideally I'd like to extend this with thread-based and a CUDA implementations using an approach like in the article that @chemelnucfin quoted above.
+Failing that, I think that adding TensorFlow ops that use the naive implementation would still be useful.
+This seems to work, but it would be nice to have this built in.
+We would need to update the kernels and then the shape function, but it seems possible.
+There is no conv1d method and it would be very welcome.
+We don't have this at the moment, but it would be good to add.
++1, for all the reasons mentioned above
+It might even be a good idea to implement an arbitrary convxd function, there are instances where high dimensional inputs have spatial relevance.
+Fractional striding on 1d convolutions would be helpful to downsample 1d signals.
+I believe conv2d now supports unequal strides in the h and w dimensions. separable/depthwise don't yet, but for most people's purposes, that should be addressed.
+I do agree that it would be great to support gradient on tf.diag.
+It would be great to add matrix trace operator as well! 
+It would be great to catch the out of range error in python, so things could be logged and shut down properly, instead of just break.
+If I got something report like it, I would notice I could have error to catch(it seems a little unreasonble to ask user to read what errors one may get before coding, since python is a lot about interaction).
+This is a feature request for Multidimensional LSTM.
+Fancier variants of LSTMs would be great to have, the only question is whether they should go in core tensorflow, the contrib directory, or the models repo.
+That said, it would be really nice to implement GridLSTM (also by Alex Graves, and according to their paper showing a lot of promise with fewer parameters).
+Tensorflow should make this operation too.
+Is not particularly informative and it would be nice to see if there is a node preventing the gradient calculation (ie Gradient Cannot be calculated for Cast or ResizeBilinear operation) or if there is simply no connection (the variable is not connected to the loss function in any way.)
+Both of the following issues dealt with this and debugging would be easier if the error message was more explicit.
+This issue is a feature request to add support to tensorflow to implement networks with stochastic depth 
+To generate dense feature maps (e.g. semantic segmentation) the convolution and the maxpooling operators should have the option to define "holes" in the kernel.
+We'd like these ops to work on SparseTensor.
+It's clear that we need more GPU ops, but we'd love to understand which ones people are actually running into.
++1 for having it return reduce_prod(sparse_tensor.shape)
+For study and debug purposes it could be very useful to view computation network graph in tensor flow, without having to dump any histogram/learning data.
+But we should also support the same in the usual flow with something like tf.export_graph() , which should export the pbtxt file in the loddir, and then tensor board --logdir=<> works as usual, if there is nothing else to show, it shows only the graph.
+It could be interesting to have CPU and GPU dockefiles ready for distributed than can run in a scalable way on Mesos (with Marathon and Kubernetes)
+It would be a great addition if I can also use it to customize other parameters in my custom model.
+It would be nice if one could use symbolic links to organize groups of training files. 
++1 for this.
+I find that SSE2 vectorization is a feature of eigen, so adding addtional code to tensorflow may be a good choice.
+It would be great if we could verify a jpeg is our target image size before decoding so TF doesn't shutdown completely.
+What would be really awesome is some sort of feature that allows the training scripts to pass Data to the TensorBoard logs. 
+With the wonderful addition of #664, installation installation instructions for OS X with GPU support would be very helpful.
+It seems nice for us to implement functions that checks a validity of given network, if we've not done yet.
+To help reduce the size of apps, there should also be a lite version of the libraries, possibly based on the Bazel android_tensorflow_lib_lite target.
+Therefore, IMHO, it would be beneficial to have the framework automatically merge identical ops.
+Feature request: Would it be possible to provide a conv3d_transpose, analogous to conv2d_transpose?
+More control would be particularly helpful for implementing ReLU RNN's (http://arxiv.org/abs/1504.00941), where the hidden-to-hidden weight matrix should be initialized to the identity matrix.
+It would be nice to have a second API to such subroutines that work also without an assumption of a minibatch dimension in the input tensor.
+If so, adding mention of this option on the documentation might be valuable.
+But @zplizzi does have a point, it might be valuable to add that to the documentation. 
+i'm working with bidirectional rnn and it would be nice that it had an option to have two different initial states for different data to be trained.
+Rather, I know it doesn't implement all of the File API yet, but tell() and seek() and read(n) were pretty important, and we can add more functionality as users need them.
+We would appreciate if you could create a "Books" section under Resources to feature books written on TensorFlow.
+I think it would be useful if "tensorflow/core/kernels/bounds_check.h" was included in the python package, so that FastBoundsCheck() can be used in a custom Op when building against the binary package.
+Further explanation are needed to document the behavior in this case.
+Feature request: Allow specifying Session.run() parameters options and run_metadata when calling Estimator.fit().
+MR/Spark are commonly used for ETL and feature generation, it's better to support close integration with such systems. 
+It would be great if we can do similar things in tensorflow with easy.
+It would be great to be able to recompile tensorflow without having to call configure after changing branches. 
+It would be better to follow the "matmul style" style broadcasting semantics of Python's @ operation and NumPy's matmul.
+So it would be nice to change this for XLA before we lock in this behavior.
+Hope the dynamic_rnn could return intermediate states so that we can implement a attention machine with dynamic network.
+Can support for tf.transpose please be added for tensors above rank 11?
+In either case, it would be good to add the optimization that flattens dimensions that transpose together so as to use lower rank code if possible.
+I know it's not a priority and will be a long way to get there; but making TF compatible with PyPy woud be super cool.
+If I understand correctly (per a short tutorial from @rsepassi) you currently cant delete nodes from the graph without regenerating it, however regenerating the graph takes seconds, so it would be nice to allow creation of nodes and edges via the GUI (like Cafe).
+It would greatly lower the barrier to entry if new users & data scientists who are more comfortable with GUIs could modify graph parameters directly from Tensorboard.
+Even if there wasn't a GUI for this, having some utility functions for making modified copies of graphs would be useful.
+I think you should consider adding a warning.
++1 for this request.
+We'll need to add a few FFT ops to get this done -- probably using cufft or fbfft for GPU.
+Anyways, I would expect that all ops defined in Tensorflow would be available for both CPU and GPU (and any future device).
+I would also very much like to see fft support, not for the training of dnn models, but for the feature extraction in a speech recognition pipeline.
+It would be great to also have real-valued FFT operations like batch_rfft2d() and batch_rifft2d() (which use half as many operations as the complex version).
+It would be really nice to have all of them in the CPU version as well. 
+Getting the angle of a complex number is another mathematical operation that would be useful / basic to have, along the lines of np.angle.
+It would be nice if you add decay based on changes in a loss, as it was common, if loss doesn't change for a threshold of a step and amount, then decay it.
+The other feature may be useful is to increase the decay steps as it goes further, for example decay it each 200 steps for the first 2,000 steps and then decay it for each 1,000 steps to the rest or another decay level which can be decay it only each 5,000 after step 100,000.
+It would be very convenient to also have GPU implementations. 
+We have unsorted_segment_sum and segment_max , so it seems natural to also provide unsorted_segment_max, which I happen to need.
+I think the user experience would be better if we could have a search box in tensor API webpage.
+It's better to include libcurl as bazel build library instead of using the system one.
+I would love to integrate libcurl into the bazel build.
+I agree with @sunils27 and @maxcuda that we need a more stable set of instructions for specific components..
+A Swift frontend, especially for simply running graphs for inference on mobile would be great.
+I'd really like to see a C#/.net wrapper.
++1 for this feature.
+It will be good if yo have pure implementations in other languages like JVM and .NET without having to use SWIG.
+A prettier API on top of the generated interfaces would be nice though.
+Perhaps we should improve our documentation and add an example on building .sos.
+Second, it would be helpful to find the minimum version of libc that TensorFlow needs and build against that.
+At the very least, the Eigen library would have to support OpenCL.
+So I think that an Opencl/Sycl support to Eigen is needed. 
+It would help us to make a quick repro if we knew the shapes of the operands to these ops...
+For it to be really useful it would need to be embedded in a broader gui-based execution system for TensorFlow, which also sounds very challenging to get right.
+It would definitely make it easier for others trying to get TF working on a TX1.
+Since a Java version would likely be slower, one useful bit would be a pure inference layer that evaluates graphs but isn't necessarily able to build them; this would allow graphs built in Python and trained in Python / C++ on GPUs to be run from Java servers.
++1 for Java.

@@ -1,0 +1,184 @@
+I don't know if there's exemption from this, but I don't think there are.
+I don't think this is really possible. 
+I think the best would be to keep the architecture of the network, ingress and overlay network as it is now. 
+I don't believe the body is considered at all without examining the post parameters first.
+I think it makes sense
+However, even if I wanted to do that right now, this archive implementation is too coarse I think. 
+I don't think that'll work for a tarball with varying uid/gid information.
+I'm not sure which parts of the CLI use this endpoint (should look), so for those, adding a flag would probably be best.
+Awesome, this is very useful context/instruction. 
+My understanding was that resize SIGWINCHed on its own. 
+Looking at the code for the terminal resizing (called from the execdriver which I assumed was native), I don't think you're right about that. 
+But I think that restarting the container shouldn't be necessary for the TTY resize to be applied (I reckon restarting the container is to ensure that all processes in a container have their TTYs resized)...
+Upon further investigation, it seems that you were right.
+I don't think we have a way of knowing if something is pushed or not as this is data that docker does not know about. 
+We could have a simple bool field to know if it was pushed by our engine but I don't see that being very robust.
+But I'm assuming that it would push (docker engine) all the images that it creates. 
+I mean, I don't think that it is common to see people pushing with a different engine.
+I think that both images could be considered as pushed, so the answer would be 'Yes'.
+I believe strongly that this is an important feature, since you can create demonized execs, in order to attach and manipulate them on a later stage.
+But it seems a lot better than what we have today and it solves a current pain point.
+I think that was option C, and not everyone was sure about that. 
+While I agree that push should be faster, expecting >300 MB/s is very optimistic. 
+This data helps out a lot with the analysis.
+I think we can eliminate the hypothesis that your "disks are slow".
+yea, I'm sure there are probably work-arounds based on your image, but I'm not sure why we wouldn't support an env file via build when we already support it via run. 
+I agree with keeping them consistent.
+I think that's what's needed in this case (IIUC)
+if we can find the right syntax for this, it sounds good to me.
+I'm not sure there is a good solution to this, at least not without mounting volumes at each build step instead of only on RUN.
+I think we need something like this, and the example looks very similar to what I had envisioned for this format.
+It might be by design, but it feels a little inconsistent to have docker deploy and docker stack deploy (first one is an alias for the 2nd).
+I don't think this would be overly complicated to solve for someone who understands zsh autocompletion.
+I'm still not sure how to do that properly.
+I think in the end very few people actually want to type out the CLI flags by hand. 
+I thought so too, but now I'm actually liking it, especially in the context of compose. 
+I don't like it for the Compose file either. 
+I don't think that reflects the use case of using docker in "production"; for that you should think about every option to set; determin the correct values for your use case.
+I'm not completely sure what the reason was, but I believe it had something to do with some legacy software they were running in containers that depended on setting the domainname.
+Yes, I think this should be idempotent. 
+Sounds useful; "sort image by size" has been something that I looked for in the past.
+I think that once we resolve image digests before passing the image reference to swarm workers, we may want docker swarm update with no arguments to repeat the digest resolution and update the digest if it has changed. 
+For consistency with other commands, I think we should show usage, but agree we can revisit in a future version.
+Yes, perhaps it's worth considering, not sure if that'll make it in 1.12
+But I also think this is a bit of annoying.
+very bad idea for production application and services.
+my understanding that transparent network is connect to my physical nic directly thus I am believe that container could be access through any windows ports; the docker container has been installed IIS server also nginx. 
+I'm sooo dissapointed about Docker on Windows server 2016.
+At this point it seems to be a better idea to just run a debian VM in Hyperv and run docker there :)
+I'm not even sure how to modify commandline arguments for docker4mac, so would appreciate any guidance so I can play around with that.
+I think this is not reasonable.
+I think it's because of the way the CLI/API encodes stuff into the SwarmKit API
+Yeah, I think what cli did via a default is definitely good for users.
+My understanding is that you cannot have both external KV store and Swarm Mode co-existing at same time.
+I guess we are left hanging without a solution and will just have to continue to use the old standalone Swarm with external KV store backing. 
+Given UTS is separate from network namespace, I think this is agreeable. 
+It sounds like you are saying "with Windows on the physical hosts it is not possible to create a mutli-physical-host cluster".
+Looking at /var/lib/boot2docker/profile it seems some sort of certificates have been set up, but I'm unsure what docker-machine is trying to do by default so I'm unsure how to proceed further. 
+I feel like a shared read lock would be more appropriate in this case but I'm not sure what the consequences would be of making such a change.
+Hmm, sounds like this is from the autoremove handling.
+I don't think we should go that path, a user does not have to exist in /etc/passwd (USER 123:456). 
+I personally would like to avoid such a scenario.
+I do agree that we need such a mechanism for volume plugins to be able to handle dynamic devices, yes :)
+I agree having a device whitelist is required -- coupled with a docker reserved set of devices that are always denied. 	  
+So, to me it sounds like we are missing a case here.	 	   
+Thanks, sounds like a good idea we should think about!
+Specifically I don't like introducing dependencies on "privileged" all over the place, because it designates a set of capabilities that is a) very large and b) not clearly spec-ed or defined. 
+I think this covers a lot of cases, since in a production environment you'd probably be a little less cavalier about having dynamic configurations, or have more networking abstraction.
+It should be considered that Docker itself might be running in a limited set of capabilities whereby these privileges may not be available for Docker to delegate to its containers.
+I strongly disagree with that assumption.
+I highly suggest taking a look at the alternatives which are honestly better than docker, such as rocket, raw lxc, qemu (not the same but still better) just to name a few.
+I don't much like the idea of needing to have something on the host (outside the container) register the service that's in the container. 
+And I do not think there are any open proposals for this.
+I'm guessing that it would be possible to feed the real port into the container via the environment. 
+I like the idea of #6697 (secret store/vault), and that might work for this once it's merged in.
+I guess I could just build the project on the host machine and ADD the result to the new Docker image, but I'd like to build it in the sandbox that is Docker.
+I think this is necessary for people who want to run Docker containers that act/look more like a real machine.
+I think a combination of both is the safest way.
+​Generally I don't like anything that introduces different possible builds of the same input. 
+If we go for this, I'm more in favor of the RUNP option, instead of having all container running in -privileged mode.
+I like the idea, we should take "rollback" into account when doing so (i.e. at what point do we consider the old image no longer needed); #26421
+As I understand this is wrong way. 
+I think it is very important because there are a lot of scenarios in which your containers need to have hostname like example.com because the certificates. 
+I don't think a path to a file apply to this, the note is about letting plain visible password / token in your console log.
+Kinda surprising, given the practicality of real life use cases for this. 
+It's obviously annoying to a huge number of people, it's actively blocking my work right now.
+That use case is definitely real but I think it makes a bad default. 
+My personal opinion is that these package managers should up their game, they are terrible to use in corporate environments due to ssl resigning, whereas things such as apt-get work perfectly fine and are already cacheable with iptables+squid for docker.
+I also strongly disagree with Docker's attachment to the public registry -- I would very much prefer to forbid access to the public registry, and only allow our internal one to be used. 
+I also think that any idea which requires copying of the huge file is less than ideal. 
+It sounds like you want --entrypoint similar to what is in docker run.
+I strongly prefer the first option; override entrypoint/cmd by the service command.
+But I think the entrypoint / command is convenient, once you understand it.
+It's nice at first but I personally have stopped using this.
+I much prefer having things explicitly visible in docker-compose or in command line scripts.
+Awesome write-up. I think this idea would be great for the ecosystem overall.
+I don't think pods are really an obvious concept to users. 
+It seems to me that the root thing that Google wants to address with pods is really about being able to effectively manage resources between containers. 
+I don't understand your concern about subgroups + systemd. 
+Both serve use cases which I believe are largely orthogonal (indeed, I suspect they appeal to largely disjunct sets of users), so my hope is that they can coexist, as long as we design both of them right.
+I'm not sure if the context needs to be implicitly added/bound in the inner image fs (this could maybe be introduced later and separately from this proposal).
+My major concern is that the concept is advanced in nature and seems confusing. 
+If we were to actually include pods in Docker, I do like the idea of making them an implicit construct for users that don't care about them.
+By combining shared volumes + netns + resource containers = pods doesn't make sense to me.
+Maybe this should be discussed on IRC; I just find it hard to analyze one proposal without seeing the bigger picture.
+I think that the idea of grouping for applications is being conflated with grouping for resource allocation and placement. 
+So I don't disagree with what you want to accomplish, I just think it needs to be presented in a different way.
+I don't think its super obvious and straight forward to users that the volumes and network namespace are shared in a Pod. 
+I think if the user has to explicitly indicate they want that, it would be easier to digest.
+I personally don't need or want the publish multiple images from one build but I do see the utility of it.
+this is a good direction to consider, I'd be interested in more elaboration on the technical design behind this.
+In my opinion, we should differentiate between Kerberos authentication support and access control, and concentrate first on Kerberos authentication only.
+i don't think this needs to be implemented by actually coping the contents of the inner build to the outer layer.
+I really like the idea of two commands (one for just doing a shear and one for shear with multiple images).
+I would agree with @phemmer about returning simple strings with no structure makes it easy to utilize.
+I also don't like mounting cgroups into containers. 
+To me, AF_UNIX seems like the best option.
+I like the idea of creating a special volume driver for this and agree that my current proposal is a rather jarring change to the current way volumes work.
+However, I'm not really sure this is something we should add, I guess it depends on how much code is needed for this (once implemented, it also has to be maintained).
+Not sure how I feel about a new instruction but I think the sync behavior shouldn't be the default for COPY if it comes with a performance regression.
+I'm not totally convinced that this is a good thing. 
+It seems like a natural option given -f, since -f makes it much harder to use .dockerignore effectively. 
+That's not perfect, I think some effort like lxcfs is worth to do.
+On the long term I think that something on kernel level exposing the cgroup information is the best way, but we need something in the meanwhile. 
+It is often difficult to use named dockerfiles because the build context becomes too large.
+Dereferencing symlinks seems much more elegant.
+Dockerfile is awesome for straight builds, but it lacks support for important deploy options such as environment-related diffs...
+I would agree with other colleagues that .dockerignore would be really optional if docker generates context out of COPY and ADD commands from Dockerfile, ignoring all the files that are not there.
+But I like your idea to change the tag to it's ID, it's less drastic then some of my "common speak" proposals but still allows easy access to the old images. 
+IMO this is a good indication that tags should be immutable -- especially once caching mirrors start to come into play, the behavior of changing tags becomes incredibly complex and hard to manage.
+I think this is not a feature, it's a bug. 
+I would rather not do this if possible. 
+I agree that this is not a duplicate. 
+I like this as well, but this also would require either versioning of image names, or some notion of incrementing the image name (perhaps in addition to the date of the image build).
+I think this is serious, especially for docker-machine and those trying docker for the first time.
+I think it would be difficult.
+I don't think there is anything that the docker engine can do differently but I agree we should absolutely keep this tracking bug issue.
+I don't think they are very problematic so far, but I can imagine that the number of "alternative paths" will increase over time.
+And I don't think that this is very big issue, because it's hard to imagine docker installation with many event listeners but without events at all.
+I don't think making ADD set file ownership to whatever user the USER instruction has set above is a good idea.  
+your solution seems very elegant and efficient to me.
+I would prefer multiple -t flags rather than a comma-separated list in the argument. 
+I agree with @crosbymichael here; I'm not sure we want to add the extra complexity in the daemon for this.
+I would rather have it stay explicit but I am up for suggestions.
+A generic option like --pull, --pull-always, --pull-if-missing, etc. would be much simpler than trying to do the above in every project.
+This would be particularly useful because docker the routing is kernel level and thus many tools for looking at userspace cannot be used to figure out what a container is listening to. 
+I know I just said this was a design decision, but based on a reading of the commit documentation I do not think it makes sense for the running container's ImageID to be changed after a commit.
+I'm suspecting this has something to do with stdout being line buffered on a terminal.
+but i think socks5 proxy are more popular and convenient, cause everyone could simply use ssh user@host -D 9999 to launch a simple proxy server at once
+I'm not a fan of adding more server dependencies for cloning source code in the dockerfiles.
+I was under the impression that this is possible, imo this is necessary for proper automating rollout and rollback seriously 
+I agree making it configurable would help a lot.
+I tend to prefer and use shell format, but I agree that JSON alone is an improvement over supporting both (it's confusing). 
+--link seems to be the best practice for communicating across containers.
+In my opinion, links should basically act as 'patch-cables' between containers. 
+Currently the ADD command is IMO far too magical.
+p.s. I think your suggestion is really nice, but this should not be the default.
+IMO, end-users shouldn't be surprised by default behavior. 
+The need to copy a bunch of files to several directories violates the DRY principle and seems quite counter-intuitive and ineffective.
+I don't think frontend should be connected to apps by docker linking. 
+Doesn't sound worth it to me.
+I don't like CACHE ON/OFF because I think lines should be "self contained" and adding blocks to Dockerfiles would introduce a lot of "trouble" (like having to check "is this line covered by cache?" when merging...).
+I think the ALWAYS keyword is a good approach, especially as it has simple clear semantics.
+I understand there might be security considerations but I think the usefulness of linking containers diminishes greatly if it doesn't handle the rebuilding scenario.
+If the term docker run was free, I would prefer it better than docker exec.
+Also docker commit seems to me a bit confusing, docker save or docker snapshot could have been more appropriate.
+That looks to me like you'd run into the AUFS 42 layer limit pretty quickly.
+After all, I don't think anyone would like to have their production server shutdown when they ^c during a ssh session (just for the analogy)
+Logging was a very important topic for us and this is definitely something we can improve on.
+Frankly, I believe that I should be allowed to shoot myself in the foot with the aufs thing. 
+Speaking about terminology, I think that docker run is not a good choice, and maybe a bit confusing. 
+I agree with you Currently the ADD command is IMO far too magical
+I fully agree with @dashohoxha about docker run being not the best name for the job. 
+Something like http://www.serfdom.io/ is probably more appropriate.
+I do not like to rewrite all our buildscripts.
+I feel that if you can do something using existing API without a lot of complication, there is no point in adding a new command to do those in a couple of steps for you.
+I think that the format of the image and the tool which was used to build it should be as separate as possible. 
+If we would "handle upgrades and crashes the same way" (as I would prefer), the focus should be on crash recovery rather than planned upgrade. 
+I share @jlhawn s opinion here, this idea should be taken in a wider scope; images (and containers) should get more meta-data to be self-describing.
+Perhaps ideas from those proposals/requests should be collected to design a meta-data system that can facilitate these.
+I agree that it won't be useful in all cases (otoh, if a proper metadata mechanism is in place would it hurt?). 
+In general I agree that more data is probably a good thing, but you need to be careful with opening a can of worms.
+This feels like we're asking for people to include their Makefile, or even source, within their exe - feels odd.
+I think this is a great idea. 
+I also agree it should be optional (but perhaps the default).

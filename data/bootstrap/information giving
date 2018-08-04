@@ -1,0 +1,305 @@
+But I often have to implement an autocomplete that is fetching data from a remote source.
+I've created a very simple proof-of-concept using a single checkbox. 
+Here's a few versions that I've been working on. 
+This version requires minimal HTML and uses the data-api to create the necessary child spans that make it all happen. 
+It also uses JavaScript to perform the switching by toggling the active class, instead of using the label and checkbox with the :checked pseudo-selector. 
+The defaults are ON and OFF and apply to any missing attributes.
+I have also added a checkbox option (or data-checkbox attribute) which specifies whether or not you'd like a hidden checkbox included too. 
+they're the same size as Apple's ones on iOS.
+Both IE 7 and 8 don't support the :checked CSS3 selector, which basically means that using an actual checkbox to track the state isn't possible and therefore JavaScript is required.
+Also you use the :not CSS3 selector, which is also not supported in these browsers. 
+The only place I still use :before and :after is in the text labels which is why they don't show up on IE7.
+There's lots of room of innovation in this space and the way we are currently approaching development allows us to cut a lot of corners that just isn't possible for the jquery-ui team.
+Jquery's tab widget is about 2500 lines of code, where our's is about 50 lines. 
+I plan to write a new datepicker plugin to clean up the markup and match the bootstrap structure of configuring UI elements with data attributes.
+He doesn't have the code hosted anywhere but as a zipfile on his site, but I needed a datepicker and his was the nicest one I'd seen, so I manually forked it and made some necessary improvements.
+I set up a fiddle based on your example in the css tests:
+Sometimes I use multiple monitors, but currently my laptop is not attached to any other device.
+I just tested it on Ubuntu 16.01 LTS
+I've compiled bootstrap-master with the latest SimpLESS and it outputs a valid CSS file of about 117 KiB, which tests OK on my web application with the 2.2.2 JS. 
+I'll check my other CSS and/or test a fresh install.
+I have not tested it, but I will probably get the chance within the next hour, if you don't test it by then :P.
+I noticed it a couple of times in IE11, but never when the modal is open.
+There's only three classes: one to handle months, one to handle calendars and another for date editors. 
+Chrome canary got support for datalists recently.
+If the height of the modal changes after its initial creation, it always pushes out of the background (.modal-backdrop) depending on screen size.
+I have enchanced it to support mask on the input (for faster typing) time picking.
+I also applied some css fixes to the original code for it to work properly on IE7.
+I can already see the Bootstrap name for it, Gwitter :D
+The reason for JS is on TOP of CSS.
+I tested it 12 times (I refreshed the page after 3 times) with Chrome 20.0.1132.47 on Mac OS X Lion.
+Note that I could never reproduce the bug on Safari (5.1.3) nor on Firefox (12.0)
+In Firefox, the animations act as listed in my comment above.
+The reason I use that over the built in remote functionality is I need to rip out the header and footer elements from the result and place them in the header, or wire up new buttons in the footer (to preserve form functionality).
+I am using a form with dynamic form validation within the modal.
+Note this is a quick draft I did, if you see a better way of doing that, let me know!
+I didn't test in FireFox, but I will now and let you know what happens with mine.
+I have to rewrite the complete handling of modals to ensure that with every action inside the modal the backdrop is updated
+I've just seen google using growl notifications...and facebook does it as well...
+Notifications are not just that, you have to take into account a situation with several notifications.
+Yes, i was think about a div with a fixed position and insert alerts inside it, so when an alert fade out others it should get adjusted automatically
+Some of the growl plugins out there just take up to much screen space for my liking.
+because a lot of the growl notifications you see these days are dark and semi transparent.
+I know this has been brought up many times but Bootstrap can currently be installed via a GitHub download/clone, CDN, Bower, npm, Composer and Meteor.
+None of us on the core team are really on Windows machines, so it hasn't come up for us.
+VS 2015 is using bower, so it should be already ready for that.
+the VS 2015 vnext web application project will be using bower, but every other web application project will still use nuget in VS 2015. 
+for a preview and technical details see the article "The media object saves hundreds of lines of code" 
+The media object was originally conceived for the Facebook timeline; where you have lots of different types of content all sharing the same structure: a "media object" (image, video, flash, audio etc.) on a side and mainly textual content on the other one.
+The HTML and CSS used by pea.rs is also completely different.
+Bower receives 1st class support in the IDE at that point, and Microsoft's own client-side assets will be delivered from Bower. 
+Here's some reading related to what I've stated above: 
+I've sent them a message on the NuGet package site and also a quick note on Twitter. 
+That being said, there are lots of users of NuGet still and it's not going away.
+They started open sourcing on github instead of codeplex, better support for git instead of just TFS (or VSS, yuck) and now bower support so developers can take advantage of all that is out there already. 
+There almost 200K downloads of the latest (out of date) version via NuGet. 
+NuGet is for compiled .NET binaries.
+Nuget is going to stop delivering front end packages like this to all new .Net 5+ projects (MVC 6, Webforms, etc). 
+All .Net developers are going to have to use bower to add front-end packages in the future.
+Outdated bootstrap packages was one of the reasons I switched to bower from NuGet.
+Our subnav in the docs is a bit of a hack right now and for us to add to the repo would require a bit of reworking to make it the best it can be. 
+We'll revisit after we push out 2.0 for a 2.x release.
+I just spent an hour figuring this out so here's how I did it.
+The file that I'm using the subnav in is in the root of my site hence the path.
+Make sure that the link to the docs.css file is in the <head> of your document like this.
+The element itself has been added in 2.1.0-wip, but the javascript is not yet there.
+the hover color for buttons is a bit different from the original theme. 
+Hi folks, check out Bootstrap 3.0. latest stable version custom themes(skins) here 
+I'm trying to make a rather large modal in terms of width, like around 950px.
+Left value must be calculated dynamically during opening of modal window, depending on the width.
+we're trying to not set any styles in css unless absolutely necessary.
+Here is the example I am working on:
+this is now supported in the dev branch and will be released with v1.4.0
+The reason is that some content on the website I am building needs different column settings for medium and large devices.
+We won't be adding a mobile grid system at this time.
+I've subverted a 'pager' for this purpose with some custom styles.
+You can find it over here : http://socialpublish.io/
+I have written my own bootstrap design compatible wizard / progress tracker with css only (no images needed):
+I am just starting out on the client but will def contribute more as time goes on.
+I've forked the JSFiddle provided above and cleared out the badges and replaced them with icons (empty stars for incomplete steps, stars for completed steps).
+I just looked more closely at your plugin and kudos for making the markup an ordered list.
+In my fork I've implemented different color and pointer for disabled state (as all steps after current are usually disabled by design).
+Notice that the event does not return false.
+By The Way, @xopher, if you use an un-ordered list, it will simply leave the numbering off until the responsive kicks in.
+I created a simple wizard with Twitter Bootstrap.
+I used LESS to re-create what we have above in this thread originally by wotaewer and made it compatible with the .nav-justified class.
+Here is the code for anyone interested:
+I created a github repository with a bower component (for easy installation).
+I am using Safari Version 7.0.5 (9537.77.4) on OSX Version 10.9.4 build 13E28.
+Here is a link to a JS Bin with the appropriate code in it. 
+Here is the log of the last shown object that did not appear.
+I haven't seen someone pointed out that you can't scroll pass the modal footer buttons, it's impossible to click it because bounces back when you scroll.
+I saw it on the Docs live demo.
+Every ipad has the same device width of 768px and it stays 768px even if you are landscape. 
+There's two other attributes called availWidth and availHeight that change when rotating, but the device-width stays constant.
+After much simplification of the testcase, I've been able to repro this in Chrome and Safari 9.0.
+Our support policy for Firefox is that we only support the latest Extended Support Release (ESR) version and the latest stable version, since Firefox is a modern evergreen self-updating browser. 
+Mozilla themselves no longer support Firefox 28; it doesn't get security patches or bug fixes.
+To clarify, there's no immediate need to update to v4, for yourself or your users. 
+v3 will be maintained moving forward so if you need those specific browsers supported, we've got you covered there.
+EDIT: Just want to clarify also, that it is the ZIP archive file I am not receiving; the custom URLs I'm getting.
+I have seen that a gist URL is generated; that means createGist working correctly.
+Yeah, I can't reproduce this anymore on Ubuntu, whereas I could consistently before. 
+This started happening recently when I updated Chrome for Mac to v50.
+I've been able to replicate this bug on two more machines.
+Your video is private so I can't see it.
+Since the plugin does a lot of looking at the $.fn.tooltip, I had to change the noConflict method to specify the new name so the plugin code would know where to look and what to load.
+I confirm this was fixed in 3.2.0 after updating from 3.1.1.
+I did not see any side effects with that code. 
+I'm running Mountain Lion, Bootstrap 2.3, JQuery 1.10.1 on Chrome 27.0 and somehow I don't need this fix anymore. 
+Chrome only does a garbage collection in certain circumstances, and until then it will appear that memory usage is ever increasing.
+If I use it in the most basic example and just a small piece of the code in a fiddle it does not happen but unfortunately in more complex scenarios it does seem to happen (more libraries, more controls, more 'things' happening).
+I'm working to isolate it but I am at a conference which is why I could only supply a quick screen capture to illustrate what I and other users are observing.
+We cannot assist you unless you post a live example of the problem, as previously requested.
+The "/components" page is constantly re-compositing layers because of the animated progress bar, and that takes some memory and CPU. 
+If the window and the tab are in the foreground, your OS is going to give it the memory it wants and won't reclaim it until another process needs it.
+In my 3 Gb example, closing the tab release 3 Gb and I saw in Windows' task manager that RAM went from 6 Gb down to 3 Gb.
+Note that the libs css file has font-awesome stuff as well, but I've tested it by removing font-awesome and it makes no difference.
+I'm going to try to include parts of the bootstrap less build and see it I can find the perpetrator.
+I see the same behaviour on drivetexas.org with Chrome 35.0.1916.114 on Windows, but I don't see it on getbootstrap.com.
+In the case above, the width of the button is a decimal value (IE: 102.4343px) because it is an inline-block element and the width is calculated based on the width of the text and the cell width is a whole pixel size (IE: 103px;).
+On vanilla Windows 10, IE11 has auto-hiding scrollbars, so this isn't really an issue there.
+I've added the comments regarding this discussion though for the team to take into consideration when triaging. 
+The screenshot attached is what happens to the menu when you tap it.
+I tested this in Chrome 23 beta and it is fixed.
+Only a little while to wait until Google rolls that out to all the Chrome users.
+I provided a watered down page without much of anything other than the top menu and a footer.
+Actually, the docs also cover the need to set an explicit width, so then this is just a matter of needing to use the correct markup; see jsFiddle for working example.
+The gist is that an element with display: table; that's placed within a parent that has display: inline-block; occupies 100% of the available space when no pixel-width is set.
+This use-case comes up a lot in my projects.
+I needed something like this for a project I was working on and modified the existing offset mixin to create an inset mixin.
+I checked this by the 'Inspect element' option in Chrome and looked at the color markings.
+Here's a PDF printout (US Letter page size) of the Bootstrap docs in Chrome 31 (latest stable) on OS X, with some specifically-sized divs added:
+Notice how the right edge of the 768px-wide box goes beyond the page margin implied by the <table> and <pre> borders (also roughly indicated by the red box I added in Preview.app to aid comparison).
+A printed page is an inherently different size and format than a small viewport.
+I'll try to explore it myself as well, but the Bootstrap Customizer wasn't working for me this morning.
+I have written this little plugin for the same. 
+While no one really know what voodoo Google uses to weight keywords on a page, I'm fairly certain that those words that appear near the top of the source gets higher weight than those at the bottom.
+one of the main ideas of Bootstrap is that you create basic pages...
+but actually, I haven't found an easy way to do this.
+Making a column not be collapsed is just one of the possible uses.
+I achieved this recently by putting my modal mark-up in my HTML:
+Note: Only "modal-body" is replaced by another page content.
+Now imagine that effecting many places all throughout a large volume of code and spanning across multiple files.
+The docs explicitly mention that those classes use display: block. 
+Such a wide variety of autocomplete scripts are already available[1].
+I'm not talking about javascript part, just about styling/positionning the elements in the right place.
+Yeah, mark and i have talked about this a few times.
+this is what we have planned for 2.0: 
+Zurb Foundation is a good example of another framework that has this option for layouts - 
+Consider the following images (taken from an iPhone emulator), the form has class="form-inline" so that form elements are "all-in-a-row" in a desktop environment: in the first, elements are collapsed; in the second spaced elements seem more elegant to me
+We found we only need to adjust our grid gutters on mobile (desktop and tabletish viewports share the same gutters) so we only needed two sets of prefixed surgical classes. .m-spacer and .spacer. 
+This isn't just about backwards compatibility, it's about bad design choices and essentially breaking some very simple and essential functionality in JavaScript. 
+We'll leave the !important in for now.
+The h5bp folks seem to recommend not mixing jQuery-based and CSS-class-based showing/hiding in the first place: 
+It is interesting to note that html5-boilerplate's .hidden also uses !important.
+My approach has been minimal options, offload as much to css as possible (don't set styles in js), keep it lightweight, less is more.
+FYI, http://harvesthq.github.com/chosen/ integrates well with bootstrap styles, and match 
+Chosen's default style differs from Bootstrap's just a little bit. 
+We have a an element that is displayed as a right sidebar on large screens, but which should appear on top of our main content area for smaller screens (i.e. mobile).
+I'm going to open up new tickets for each interactive js component. 
+We already have MooTools and there's been a lot of demand for us to ship with jQuery since most of the extension developers and site builders use that.
+This many modifiers for grid layouts is kind of ridiculous and unless someone can come up with a solid case for supporting them, we have no intention of doing that right now.
+We've accomplished this by copying the initialization from the bootstrap core, this also goes inside $(document).ready():
+here's a recently released FULL RTL copy of bootstrap including JS/glyphicons
+Lot of things was improved in 3.0 take a look at this merged pull request #9137
+However if we are going to do that it will need to be accessible since we have no intention of taking a step backwards in accessibility. 
+And several components should be reviewed. 
+Since modals are initialized by default, but won't match the default selector anymore, we need to initialize them ourselves.
+For example, a button group with data-toggle is 'button-radios', if user accesses with text browser (lynx for example), it should display a list of radio box rather than buttons.
+The example pages are now in Arabic too so you can test them out.
+I will redo the test again after updating the files.
+padding: 0 3px 2px; is technically padding: 0 3px 2px 3px -- which when reversed is the same thing
+I would be happy to test (and educate about specific accessibility issues, if you want), and as I get more comfortable with bootstrap I'd also be happy to help with the limitation.
+We're using the great MooTools, but also on our way to replace it with the more popular jQuery, and just starting to mess around with Bootstrap for one of the future releases of Entando.
+It is certain that "bootstrap" has some lacks for accessibility.
+i just confirmed this and there's no bug in R2 with this.
+See comment below for an explanation on why the selector is [data-toggle!="modal"][data-toggle~="modal"]
+We are looking at using bootstrap in Joomla for the new release. 
+I noticed that some of the JS doesn't have a good fallback for when JS is disabled.
+Also, it wasn't a real-time always-on service, so there was the inconvenience of having to run it manually on a periodic basis.
+The current classes don't have much value since their effect pretty much the same as reordering the content itself. 
+When using the grid 960 system, and then moving to bootstrap's system, I've found it very handy to have a set of .css classes to draw from for adjusting the vertical spacing between elements and/or filling empty grid elements. 
+I have combined Bootstrap and Chosen on this page http://driversworld.us/app/adddrivers/ , and as you can see, it looks OK.
+All jquery css element classes start with prefix 'ui-', so there are no conflicts.
+Very happy to say work has started on this for Bootstrap 2.0 and the early version is now in 2.0-wip. 
+I've made some modifications to the html generated by marcopolo to add boostrap styles.
+This is overwriting any customization of table row color.
+That's why I'm currently staying with the Zurb Foundation framework instead of switching to Bootstrap.
+I copied the table definitions from .table to .table-no-hover and I use that for now.
+That doesn't remove the effect, only makes it behave as if it wasn't there (i.e. transparent).
+It uses table-nohover in the class, and it turns the hover off for that table.
+As far as I can tell, there's no pure CSS way to do this with bootstrap. 
+But let's see if the structure mentioned in the comments here suffice for all day needs since they at least allow for different orderings on phones and larger screens.
+Rather than adding a bunch of new classes (col-push-lg-, col-push-sm-...) I've submitted a pull request which simple will only apply the pull/push at the proper size. 
+E.g. here are accessible implementations by Hans Hillen of most of the principal widgets: http://hanshillen.github.com/jqtest/ with details of what changes were made to the original widgets.
+I'm willing to try.
+I just opened a pull request on your bootstrapr project allowing building a package pulling the latest plugins right from GitHub instead of just using the static files included.
+P.S. Please note that I run a heavily modified fork of Bootstrap 2.0.
+I was looking for a silimar option only I was trying do the following.
+And now for the live demo to ensure that the production deploy was successful...
+One of the things being discussed here is that offset and push do the same thing (in a different ways, but it's the same result), it's just duplication.
+The other thing is that you have control over the grid in different viewports but not over the offset/push.
+I wrote some responsive insets for a site I'm working on, just incase anyone needs the same:
+So in my HTML I have something like this (simplified for the example) where my right-hand sidebar is source-ordered at the top but shows up on the right:
+And as a side note, I was stunned by the appearant disregard of continuing Bootstrap's (re)usability, not the fact that they do something for only one person. 
+Well the effect added here changes the interaction with the user, specifically when hovering over a table row. 
+feel free to try to get a pull request in shape because I dont have a lot of time at the moment :/
+I see that nav-tabs and nav-pills both can have a "second level" nested list (the dropdown), but there's no such similar thing in nav-list; here's my very little contribute for such second level (put "nav nav-list" on the nested UL, too), but it surely can be improved: any contribute will be appreciated
+The lack of support for nested and subnav is the only thing that keeps me away from using Bootstrap at the moment.
+You surely can nest the .nav.navlist, but the rendering doesn't meet most of the users' expectations. 
+They don't want only the whole ul to be indented by 15px from the left and right, but they want the links to have a left- and right-margin of -30px and a padding of 30px on the left side (on the 2nd level), etc.
+The transition holds some internal state about the HTML node, and seems to have no semantics to "execute without animating", or for clearing it's internal state so that one can show/hide the thing and re-apply the transition to the node afterwards.
+To be extra clear, let me explain the use case which led me to filing this.
+Right now, translations are hidden way down on the Getting started page. 
+It's on my list to build a service which builds the files together (this is pretty necessary for the 2.0 plugins). 
+Many other carousel widgets use pills to display this information.
+As for the time being, this has to be hardcoded for every level (as far as I can see):
+As I see it, there are four options on the table:
+The typeahead from Bootstrap v2 was removed.
+In that case you are correct but the underlying idea is the same. 
+But this double animation is clunky, also note that it is impossible to trigger both animations at once, because one needs to know the $(element).offset() of the already visible element inside the list in order to properly animate scrollTop to the correct position.
+The idea is to detect a visitor's preferred language, check if we have a suiting unofficial translation available and display a short message and link somewhere on the page.
+I did use a different structure though, something like the following so it allows for iteration with Object.keys.
+Most recently, I remember www.teslamotors.com having such functionality.
+A quick Google search shows that this has already been done for jQuery.
+I didn't find how to update data-source with typeahead.
+But I note that the only uses of uppercase and lowercase in Bootstrap itself are in .initialism and the casing utility classes .text-lowercase & .text-uppercase.
+For help using the suggested replacement, Twitter's Typeahead, ask on that project's GitHub.
+For v3, we won't be adding anything to address this.
+Let me know if you'd like me to do a pull-request.
+In my experience, the values of .spanN, .offsetN etc. get updated when you set custom values.
+I have a working CSS-only implementation of a class table-fixedheader that can be applied to a Bootstrap 3 table.
+I realized that and deleted my comment after I read through everything again my bad
+Hmm I can update this gist for 3.1 if its needed. 
+I'm working on a project where we're using Typeahead as auto-suggest, not the only options. 
+I just finished writing some code that will let me use remote data querying on the Typeahead module. 
+I am trying to use bootstrap to implement a mobile app interface using HTML5/CSS/JavaScript and have worked through some basic tutorials and explanations of the bootstrap system and its components.
+I have customized bootstrap subnav code for table to make the header static.
+I downloaded the bootstrap files from the bootstrap site from the custom link: 
+I then created an index page with the following things:
+Depends on your definition of "new"; the Galaxy S4 was released in April
+I have just discovered after buying an s4 and testing my designs on it and other low pixel density phones.
+I don't know about Iphones/safari for mobile as I don't know anyone with an Iphone3 or greater.
+I have discovered it is very variable depending on the version of android I believe.
+i customize bootstrap3 and make it's direction dynamically by adding a $dir var in variables file then on each files check if $dir == 'rtl' then float:right else float left.
+we have this requirement also in the [GlobaLeaks[(https://github.com/globaleaks/GlobaLeaks) project;
+In some project, I have to switch to foundation because they support RTL out of the box. 
+it's mine code that wrote for bootstrap 3:
+by the way, the reason for two separate files is specificity hell if your using top elements styles
+There are addons for handling that in v3. 
+This has been added to v3.
+The current Bootstrap implementation requires me to subvert the grid system for a semantic three column display.
+We didn't have too much time to put into it ourselves, so we never got around to making it official.
+This would allow you to apply uppercase or lowercase to multiple items throughout the site and make one simple change in _variables.scss
+Uppercase and lowercase are core elements in typography.
+Here are a couple super quick examples;
+There are some cases where I have theme modules that depend on other theme modules (trying to create an extensible structure for different themes/components)
+We have a gist reproduction here and a live example of said gist in raw git.
+For tooltips+popovers, the "auto" placement option is now available.
+Well for our particular situation we're using uppercase in our branding for labels and buttons and we use lowercase on our headings. 
+I have designed a brand in the past utilizing uppercase for almost everything. and similarly done this with lowercase.
+Having said all that, I will leave that final decision up to you. 
+This would allow to use button groups in forms.
+we actually moved this code into the enforceFocus method a while ago for odd cases like this, where people need to manage their own focus state.
+And no javascript would be required to get the wanted behavior, the browsers would be handling it.
+I wanted to use the checkbox button groups just yesterday when I realized that indeed those are just styled buttons and that I needed a whole bit of HTML and jQuery underneath to actually make them work.
+Travis CI supports parallelization across VMs.
+We'll take a look at this in a future release, but not for 2.0—too crunched for time right now.
+For dropdown menus, I don't know if there's an explicit justification beyond it being less critical in that case. 
+Just to clarify: The label is merely descriptive. 
+The reason for this would be if you have a dropdown toggle (like a link or button) to the right of an element that can have variable width (e.g. a search query string that was entered). 
+Bootstrap doesn't currently require folks to use a particular JavaScript framework, and validation gets more into the business logic side of things, away from our core competency of visual presentation.
+The JS unit tests and the Saucelabs tests could be run in parallel, or as the Travis docs mention, the JS unit tests themselves could be split into directories and run in parallel.
+So the toggle can sometimes be towards the rightmost or leftmost part of the screen depending on what the user entered, and therefore the dropdown menu will sometimes be offscreen. 
+Currently, if I want to have a progressbar, then I have to use one out of the following possibilities:
+Note that this example has two buttons, one on the page, and one in the drawer (for closing).
+It's not currently on the roadmap at all.
+From a quick Google search I found http://www.monolinea.com/labs/bootstrap-style-guide-boilerplate/ but its not running the latest version of Bootstrap and no code examples.
+New features are no longer being allowed into v3.
+Please take a look at this dribble shot: https://dribbble.com/shots/1254439--GIF-Float-Label-Form-Interaction which shows this in action as well as some pros for it:
+All tables with a class of table automatically receive a row hover effect.
+To see a sample, go the following link and go to the bottom.
+Attached is a stripped down file of what I work with.
+I did switch with v3.0 on some web site and I didn't have compatibility problem!
+There is a variable $custom-control-spacer-y in the _variables.scss but it isn't used anywhere.
+Bootstrap 3 is no longer being officially developed or supported.
+We're talking to the current owner of bootstrap—will update when we hear more.
+I am currently managing all of my deps using npm and bootstrap is one of the few that is still not there yet.
+We've just published v3.1.1 as our first release in the NPM registry.
+jQuery 3.0 is only alpha still and is not a stable release.
+jQuery dropped the new .show() and .hide() methods in the latest beta (3.0.0-beta1).
+It seems like yamm (Yet another megamenu) has bootstrap 3 supported version here: 
+Bootstrap 3.3.7 now supports jQuery 3+.
+jQuery 3.0 final has been released.
+Parallelization is free on Travis and would require only a few changes to the Gruntfile to split the tests into subtasks that can be handled by separate build commands.
+I use Windows Vista (I know..) and tested in IE 9 and Firefox 22
+I see what you're suggesting, but that doesn't actually do what the above code does.
+Yes, though we probably won't start work on it until jQuery 3 ships a stable release; jQuery 3 is currently still in beta.
+Bootstrap has container and container-fluid classes for content.
+Here is a live example http://mrlopez.me/bootstrap-floating-labels/ someone else did with bootstrap.
+Turns out it's not possible to make the <body> clickable in iOS Safari using either cursor:pointer or onclick="void(0)".
+We're basically EOL-ing v3 anyway, so we likely won't try testing it out until after we ship our first alphas with v4.
+We have some unit test problems to fix before we can comfortably claim jQuery 3 compatibility: #20182
+We won't be moving anything and we won't be adding any new classes to v3 for this.
+The package contents from the dist folder and twbs:bootstrap.js in the packages folder are the local files. 

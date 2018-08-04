@@ -1,0 +1,192 @@
+Has anyone stuffed the data source with values retrieved from MySQL?
+I've looked and don't see it, but I'm wondering if anyone knows of link to make feature suggestions to GitHub?
+Could you please share what stuff is planned for the 3.1 ?
+Was it left in there on accident? 
+How can I get the file bootstrap.css directly (without having to download the whole .zip file)?
+Is there a CDN of some sort?
+What are the thoughts of just rolling a Bootstrap jQuery UI theme?
+Do you see this being extensible to include two months at the same time, side-by-side?
+Why are you using divs instead of a table?
+Any progress on that? 
+So is anyone working on it?
+Is someone interested on define the data range markup?
+Why implement these when there are already 2 different types of notifications?
+Why not use HTML5 Notifications?
+How would you set up the folder structure for the package? 
+I wonder what would be the percentage of developers using vNext projects in next 6 months, more than 20% ?
+What would this actually end up looking like?
+Does anyone have a working example that includes the markup and css? 
+Is there something you would change?
+What's the trick to get the javascript to work?
+How exactly does it need to get inserted to make the scroll-wonder happen?
+What about button elements that look exactly like label elements?
+What if all elements looked the same? 
+Could you make hovering more color intense? 
+Is there a way to set the modals width and have it center properly?
+How do you set an iframe width within the modal to be the same width as the new bigger width of the bigModal?
+is it possible to have a layout inside the modal header ?
+and is it possible to have the width / height and position aligned automatically ?
+Is there a particular style you think would be useful? 
+Can you confirm that you're using Safari v7.0.5?
+What is the best way to make a screencast?
+Do you have any Safari extensions installed, by chance?
+Could you please reduce that to a minimal JS Bin?
+Also, do you remember which browsers sometimes hide the scrollbar and when they do it? 
+Why you overwrite margin-right on .dropdown?
+What viewport width was this at?
+How do I use those with a customized bootstrap?
+Is there a particular reason for doing this?
+May I ask why is it considered closed?
+Could you please point to which example the problem is most frequently reproducible with?
+Could you give me some details or even better links why you not update? 
+is there a timeframe for how long support for V3 will last? 
+Are you using Bootstrap v3 or v4?
+Has anyone observed this problem on Windows or Linux?
+Could you please make a JS Bin, jsFiddle, or similar that demonstrates the problem?
+Has anyone been able to reproduce this?
+What OS(es) have you observed the problem on?
+Any update on this? 
+Could you please post your about:gpu and which distro you're running?
+Is your collapse animation broken on the docs example?
+Just to verify I wonder if this would affect any other functionality with the collapse feature, such as this example on bootstrap's docs:
+why do you think MutationOberserver is the wrong choice for this issue?
+Is there a way to achieve the functionality without changing the bootstrap file?
+How are you judging that the page is using a lot of memory, and which operating system are you using?
+Have you tested with Windows Chrome or Linux Chrome?
+Could you re-test using the latest Bootstrap code in the master branch?
+What OS and browser are you using?
+Can you test this and see if it works for you?
+Are there any updates on this?
+Can you post a screenshot?
+Is there any solution to attach a "size changes" handler to the modal that updates the modal without having to manually call the the update handler?
+When are you thinking of having the challenge?
+do you have a reduced test case (in jsfiddle or similar)? 
+What version of Windows are you using?
+I wonder if there is any possibility that this line would be somehow injected with a future Bootstrap. 
+Are you able to reproduce this in the iPad Pro Simulator in Xcode?
+Does converting to dojo first make the most sense?
+Is there a part time solution to this issue yet?
+What do you think?
+Could you give step-by-step instructions to reproduce the problem?
+Is there a way to achieve this type of layout with the current Bootstrap classes??
+did you try landscape mode?
+How does one correctly combine media queries? 
+what are you doing for the options?
+are you able to see what it output? 
+Why is the issue closed actually? 
+Is there a final solution/decision?
+Hey, is there a quick hack so links inside the modal window open in the modal too ?
+Can someone please post an example of loading content into the modal body, using the fix from @fat ?
+Is there a way to trigger that functionality with the pure JS with unadorned DOM (no data attributes)?
+Has someone already started on this?
+Why not use fractions instead?
+Is there a good work around?
+Does the new typeahead code support remote data sources?
+Is there a point in reimplementing his? 
+Could you please create a solution for fluid rows as well?
+What did they suggest to include?
+Is there a specific reason that this doesn't support remote data?
+Does anybody know of a workaround?
+Sorry if I am wrong, I'm new to Bootstrap community :(
+Why are any of these !important ? 
+Is there any progress on this one?
+I was just curious to know whether this "spacer" solution has been added in core of Bootstrap or not?
+Wondering if there's a better solution?
+Can you describe idea a bit more?
+Did you read his proposal?
+could you plz schedule this for v2.1?
+Is this coming to v4?
+Is this finally supported in newest release (v4.0.0-alpha.2)?
+any idea what release this will be included in, and when it will be live? 
+I was wondering why all of a sudden so many very simple show/hide calls weren't working in JavaScript.
+What should that involve except for aria and keyboard navigation? 
+Hi I was just wondering if any progress is being made towards this. 
+Has anyone done an audit of Bootstrap to identify all of the accessibility issues, or at least the most pressing ones?
+Or am I missing something? 
+Are there any developers working on it? 
+Are you using multiple monitors?
+If so do they want help?
+What do you have in mind to alert to visitor with?
+So the question I'd ask is do you feel strong enough about a feature like this to open a new issue and reference this thread to provide detail or do you feel you've done what you needed to and can move on comfortably?
+How does this cut down on time?
+Does anyone have the same problem or a solution?
+Is there a way I can take it a step further and simulate clicking the "Compile and Download" button in a script to download the generated zip?
+have you taken a look at how the customizations are currently being passed to the herokuapp for building?
+Is it possible to hack somehow our html to get this effect?
+Could you post your about:gpu with hardware acceleration re-enabled?
+Is this assigned to somebody and will we see a fix in 2.2?
+Is there an alternative place to get a custom build? 
+Can anyone else prove that master branch (last commit) still has this issue ?
+Just wondering, why would anybody want to first clear the menu if the page will reload anyway? 
+Can you be more specific? 
+What's the bug? 
+Can someone summarize the problems you've encountered with jQuery 3.0 alpha and Bootstrap 3, in the form of a few simple jsbin examples?
+Is there a remote cache somewhere that could be causing this?
+Can you provide screenshots of what you're seeing vs what you're expecting? 
+Have you tried with other browsers/systems?
+Any news on this? 
+What would I need to run the script myself ?
+Is this ever gonna be fixed?
+What's the status of this issue?
+I wonder if it could be linked to Chrome 19 specifically. 
+Is anyone else getting the same behavior?
+Anyone figure this out yet?
+Anyone else experienced this?
+Can you provide more details about what the conflict is?
+Can you explain me how to use noConflict?
+What did I do wrong?
+Any news about that?
+Is it the right way?
+Was it ever tested?
+Is it going to be fixed in any of the nearest releases? 
+Does anybody know a good solution until the library is updated ?
+What browser was used for those tests?
+What if someone has success as a post tag?
+Could you also please include the unminified JavaScript version of bootstrap.js?
+Can anyone offer any insight into why this style might have affected my modal layout without them containing any images that match that style declaration?
+Are there any other popover libraries that people know of? 
+I'm just curious as to why v4 is using 1rem as the html font-size? 
+Is there a planning for exit?
+Want to know when alpha.3 version will be available on the web site?
+Do you have a concrete example of a problem caused by this?
+What version of iOS are you running?
+What iPad model are you using?
+any update with this?
+Also, are you using Bootstrap v3 or Bootstrap v4?
+Is there a better way to handle? 
+How will this be handled in future versions of bootstrap?
+Why don't you open a new ticket?
+What if the proposed $.fn.bootstrap version number is appended only to the fully built bootstrap[.min].js file?
+Is there a way to do this currently with Twitter Bootstrap?
+Will the input-group-wrapper class be added?
+Can we now consider this sufficiently addressed?
+Would you be able to share what your specific, real-world form was that required such a layout?
+is there a place one could submit bugs and suggestions about your tool?
+Can bootstrap do this now? 
+Any updates in last 9 months?
+Can you @Yohn elaborate?
+Or is there a better way to handle this?
+Does anyone have a fiddle example of successfully using the "container" option?
+But is this anything guys want to do?
+Is this not essentially what a "well" is?
+What do you think?
+Could you link us to the dupe?
+How about we just use 1%?
+Is this what you mean?
+Do you experience this problem in the docs too, or just on your own page?
+Could you give your reasoning for not including the Firefox fix in the code itself?
+Can you post the solution into any other code tool?
+Is there anything we can do here to integrate with existing plugins? 
+how are you currently implementing it?
+Is there a need for that from "upper management"? 
+Are you targeting 2.0-wip or master?
+What browser and OS are you using?
+How do arrive at that conclusion?
+What do you think about introducing jquery.transit to handle the collapse functionality?
+Which local files are you referring to?
+Can you confirm that the problem is resolved using this Bin?
+Would you mind making your example into a JS Fiddle or JS Bin?
+When will this be published or is there any Internet accessible site with this new feature ?
+What are your reasons that the border-width "generally" shouldn't be defined by a variable, or customised?
+In case it's relevant, what version of Firefox and what OS are you using?
+Did you check it with 28.0? 

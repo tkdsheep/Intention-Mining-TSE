@@ -1,0 +1,103 @@
+Several times VS Code has become unresponsive overnight on the above configuration (locked). 
+Just about every day I'd log in to find my VSCode windows left overnight have all crashed (with the standard uninformative/apologetic crash error, "Visual Studio Code has crashed").
+I'm getting the same basic issue as @Elusive138, when I leave code running overnight (every night), in the morning without fail I get "Visual Studio Code has crashed".
+All of my crashes happened when VSCode didn't have focus. 
+I recently experienced a crash .
+Experienced a crash when using the insider build not long ago. Had been on for 2 days. 
+The app crashed a few minutes after losing focus.
+This is my first crash for the insider build but as for the normal build, I upgraded to v1.0 and it still crashes every few minutes or so after opening making it unusable.
+I'm still seeing the occasional crash in the morning with the latest insiders build
+Every morning, I unlock my computer to find VS Code has crashed overnight.
+VSCode 1.3.1 crashes about twice a day for me, once overnight (always) and sometimes randomly during the day.
+It just crashed now while I had it open in the background, not using it for about 2 hours. 
+i left open in the background for a while with unsaved changes, came back, started typing and vscode froze for a few seconds then crashed.
+And when i do a push show me an error: fatal: Authentication failed for 'http://MY-HOST.../branch-locatlocator-select-ui.git/'
+I'm using VSCode 0.10.6 (newest version) and I still have this problem.
+I can confirm that this issue still persists to some extent.
+We are using bitbucket as git store and when pushing from VS Code an additional / is added to the url when pushing (or pulling) and an authentication error is thrown.
+Today I faced same issue with vscode 0.10.6. I got prompted with bitbucket credential window but when I enter it got failed.
+I also arise same bug on windows8.
+Similar set up to BryanConradHart getting the error
+I am also facing the same problem
+I'm having some trouble getting it to work at all on OSX or Ubuntu 15.04 VM. 
+Using the DocumentFilter pattern **/docker-compose*.yml I was able to get this to work, however DocumentFilter **/dockerfile* does not work – I don’t even get syntax coloring.
+However, if I try to use a filter for Dockerfile - e.g. **/dockerfile*, it does not work.
+This seems to be a problem with our glob matcher
+However, using the pattern **/dockerfile* in line 15 for the dockerfile does not work.
+I am having these issues on Ubuntu 14.04.
+Notably, the dev console doesn't seem to indicate any errors that are thrown when I click the button, but every few seconds a bunch of errors are spewn independent of me trying to install extensions; no idea if it's related. 
+Like previous commenters - able to search extensions, but install button does nothing.
+Dev console spawning periodic errors exactly like posted by @WasabiFan
+No, it still has the issue on Ubuntu 14.04 with your provided archive.
+I'm using Fedora 24, and I'm still having the problem even when trying the versions you posted. 
+I also deleted the folder, but it still not working on ubuntu 16
+I have having the same exact issue.
+Adding "trace": "7683" to the launch config did not change anything for me and I still got the same error. 
+I can also confirm this issue is happening inside a generator function using bluebird's co
+Maybe is not related, but I notice that the problem ocurror more ofen when I try to debug promises (using bluebird for example)
+I'm using VSCode v. 1.4.0-insider (updated right now) on Windows 10 and I have the same problem (tested with node 6.2.2 and node 6.3).
+I set the breakpoint as indicated in #8859 (comment) but this code wasn't called when clicking on the “Install” button of the new extension panel.
+On VS Code 1.3.1 and node v. 5.9.1 I have this problem only when trying to debug mocha tests with the following launch configuration
+FWIW, I'm getting almost the same error exept that it says vscode_backtrace: Internal Error, instead of just Internal Error.
+I still habe this issue with an attached debugging session. 
+With "type":"node2" it won't attach and "trace": "all" does nothing. 
+Trying to launch a Node JS app give an error: Cannot launch debug target (spawn node ENOENT).
+I have similar issue that code-insiders does not respect my PATH variable (overrides with PATH=/usr/bin:/bin:/usr/sbin:/sbin).
+The fix in the June release (1.3.1) was not sufficient to cover all cases.
+For me the issue is NOT fixed. 
+I am getting this issue when attempting to install extensions.
+However, when I run the full installer from the website, it begins to fail again. 
+The first one fails because I try to install the most popular Python extension. 
+I did some research previously and electron and atom have a similar error but different circumstances.
+I normally use a VPN, and I also get the problem when using my home connection, without the VPN.
+Like I said, it updated the extensions once I updated the app, and then one I tried to install a new extension, I got the same error again.
+PS right now I'm on my mobile phone connection, and it fails again.
+Renaming it to add the vsix extension and running "Install from VSIX" produces the same error.
+But that won't work with a value that is just there but not defined.
+I know VSCode has not support JSX yet but it didn't appear so much error highlights in the last version, even I had already changed my language mode into Plain Text.
+It turns out that the xterm on the machine (3.19.0-15-generic #15-Ubuntu) is not setting SHELL to my actual shell (/bin/ksh) but defaulting to /bin/sh.
+Same problem here, none of the hacky "fixes" I've found around the internet seem to help either.
+With vscode I can only prepare commits. Pull, push, sync all fail because they aren't asking for password.
+The biggest problem is that on Windows the SSH_AUTH_SOCK and SSH_AUTH_PID variables may be available to all processes or just a single console session depending on how ssh-agent was started. 
+When I push from VScode I still get the same error...
+But I still have problem with lineEnd, will sync with @sandy081 offline.
+I have the same issue when debugging PHP script with XDebug. 
+but when i click on the link i have an error message :
+Sorry to open it again, but there is still a small issue.
+It seems unlikely to be a tsserver thing as it's the build task thats failing which is calling tsc, and when you open a file it does give the errors for that file.
+When any team member using macos builds through VSCode they get somewhere between 50-150 build errors shown in the Tasks output and problem window, on windows machines we get the full ~1300
+on the devices we're running here we are actually seeing some errors after running the build task
+I have issue with projects which are local i.e. that are not linked with any github or gitlab. 
+I am also experiencing same issue with VSCode 1.11.0. 
+I also noticed that the plain electron shell has had the same problem for some time.
+I encountered exactly the same issue after upgraded to VS Code v1.11.0.
+Disable all extensions(they are all grey), but the error come again.
+Having the same problem on my Raspbian (debian) running at a Raspberry Pi 3.
+Same issue with Win10 after upgrading to VSCode 1.11.0 with a Node.js application.
+I am also facing same issue the only extension I have installed is Material Theme extension and I have also checked after disabling it but the error was there whereas I have uninstalled and reinstalled vscode again but still the error is persisting..
+I recently got update of vscode but the error is still showing.
+I found this problem occurring when working in a project folder (e.g. D:\Tmp\hello-world) not enabled for GIT (no .git subfolder), but with a .git subfolder in the parent directory (D:\Tmp\).
+I am still facing the issue and also I don't have any connected git repository with vscode.
+I have the same issue...it runs my fan constantly and burns through my battery. (No typing lag, though.)
+Hi Benjamin, I am still having the same issues as described before with the build you provided. 
+I got some errors trying to install nodesource repo. 
+I have found Go to file's indexing against a full Chromium workspace to be very slow.
+Although, after uninstalling (using the uninstall command in vscode) several other extensions, the problem reappeared...
+I have had problems with the insider builds over the last 2-3 days where the editor freezes while I am editing typescript files. 
+I don't have the zip of this version laying around anymore, but I am pretty sure the issue existed there as well.
+I can confirm that this issue also exists on windows in the newest february 2016 release. 
+I just found the problem found a "translate3d" CSS transform that makes it blurry.
+If open source of VSCode with our SPANs in latest Chrome, there is same problem.
+I tested with 1.10.2 version and I have the same problem
+--disable-gpu doesn't work for me - still exhibits blurriness when scaling on external monitors:
+I am having this issue on Mac OS X since the march update
+I was experiencing the same issue on Windows 7 with 150% scale.
+I have the same problem @jamesone since 1 week or more,
+I updated vscode this morning to v1.5.3 and the problem still appears to persist.
+A similar problem occurs to me: the _ctrl+_ shortcut did not work on my keyboard (_German keyboard, Gnome/Mutter window manager_), it works likectrl++` : it increases the font size of the editor.
+In my case, the problem was the new Angular Language Service plugin. 
+So the original problem does not happen here, but another issue is happening:
+I found this issue also on a Mac when using the Node.js debugger, I just use kill -9 to shut it
+Currently, themes other than the default tend to look kinda awkward when displayed alongside the toolbar and sidebar. 
+Changing the type to node doesn't work with node v7.5.0
+I use exactly that, but when I try to commit from VS Code with that config attribute set, I get the following error output in the Git console of Code:

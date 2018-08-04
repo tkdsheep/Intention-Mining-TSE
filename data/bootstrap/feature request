@@ -1,0 +1,107 @@
+Would it be possible to add a callback, that I can use to query the remote server and return a set of items that match the entered query?
+I'd love to suggest they add an up/down voting feature or something so people could use that and we wouldn't get email notifications for all these +1's.
+1000 times - please add .col-tn with breakpoint @ 480 - important to have more control for small-screen layouts.
+With great mobile support in 3.0, it would be nice to have one more breakpoint, to separate vertial mobile & horisontal mobile. 
+It could be added manually but I believe it should be added to the default set of breakpoints because a lot of people are looking for it.
++1, needed this exact case today in a new BS3-based app.
+This feature is so essential, please make it in 3.1 release
+PLEASE add another breakpoint below 768... this is really needed!!!
+I would really love it if you guys would consider adding another size to more specifically target smaller devices in a future release.
+Bootstrap Team: add 480 breakpoint and you will achieve almost perfection! :)
++1 for adding a 480px breakpoint to Bootstrap.
+Might be nice to add a link to the grid documentation or have another example demonstrating this like the sticky footer stuff.
++1 for this feature, currently I've replaced entries with only two choices by togglable buttons in my forms, but on/off switches would be far more user-friendly and consistent with today's interfaces.
+Would be nice to have bootstrap cached on the browser once for thousands of sites to benefit.
++1 for a CDN
++1 for a CDN for both minified CSS and JS
+Another +1 for a CDN
+For the moment adding only a date picker and separate time selector would be great, and letter the final validation (maximum/minimum with date be handled by an own function (as is done when using ranges)).
++1 I would love a Date input for Bootstrap.
+I would love to see the same improvements and commitment to accessibility in Bootstrap.
+Being able to lay out content vertically in a responsive way would be extremely useful. 
+It would be nice to have a growl-like notification component within bootstrap :)
++1 for having growl notifications
+Would be great to have support for right-to-left languages.
++1 really is something that if needed I would like to get her at the next version
+Add support for loading remote data (like facebox) on model window
++1 for noty integration or having a noty theme compatible with bootstrap.
+It would be great if Bootstrap supported "autocomplete" like for a search field.
++1 for the integration of Noty with the now already done Bootstrap theme.
+We need a dark/inverted style alert for this.
+It would be nice to have a better API for this, the current workaround looks a little hacky.
+Adding NuGet would be a helpful addition.
+It would be nice to have some indication of the total number of items in the carousel and the current position of the carousel.
++1 Having an official NuGet package would be a big win.
+It would be really great if Bootstrap at least offered nesting down to a 2nd level this way.
++1 My team uses bootstrap within visual studio, being able to depend on a reliable NuGet package for it would be tremendously helpful.
+Adding NuGet support only helps even if it's not the primary packaging system in the future.
+It would be great to have a official nuget package
+I loved the way you did the subnav on docs, i would love that becomes an component and javascript plugin.
+It would be nice if this could be packaged up into Bootstrap proper 
++1 to leave plain design with later additional theme
+I want to add a new feature request for bootstrap 4 : Card Flips .
+Would be great if we have a file all.min.js with all .js there.
+It'd be nice to see Bootstrap add functionality for multiple data-toggle values in a future release.
++1 for the new flat design, makes it much easier to customize
+It would be useful to provide column push and pull classes for all three different grids.
++1 for the keeping the base stuff fairly simple / easy to maintain and adding in themes
+It would be great if you could add a progress tracker navigation device to your supported styles / examples.
++1 for making the wizard a core part of Bootstrap.
+I believe the current plan is to try adding RTL support as a new feature in a minor release post-v4.0.0, although given the Core Team's lack of RTL expertise, it's still a bit up in the air.
+but if I have a already bold text and I want to remove the text formatting, then text-normal would be very helpfull.
+It really would be nice to have an API to request a custom build from.
+It would be nice to see this issue taken into consideration in future releases.
+It would be great if when you click a button, the ajax would load the according content and add it to the modal
+I would like an option to remove the hover too !
+Perhaps you could consider adding a similar set to bootstrap?
+It would be nice if we could use negative offsets to allow presentation order to be independent from source order. 
+I'll add one more vote for better source ordering support as andregriffin suggests.
+would be awesome to write a plugin which you could drop in to easily extend all other plugins with accessibility support etc.
+It would be great to be able to specify a custom classname to be used by a popover..! 
+Bootstrap is a very great project and I hope they will support RTL very soon.
+Would be nice to have a simple way to have the headings of a table stay at the top of a table as you scroll the page. 
+Would be nice to have this integrated in so it's aware of the other fixed elements like the navbar and will adjust blocking accordingly.
+It'd be nice if Bootstrap offered a component to <audio> and <video> tags using the grid.
+I would like to propose adding additional _variables.scss to be baked into b4.
+Adding the uppercase and lowercase variables to the the _variables.scss file would help inspire a designer to utilize casing for in their designs.
+It will be good to add dropdown placement customizing. 
+Would be nice if it behaved like popover.
+I was thinking that it would be great if there's a easy and intuitive way to also bootstrap a configurable style guide on top of Bootstrap docs. 
++1 for having jQuery 3.0.0 support in Bootstrap 3.x
+I would love to see bootstrap on npm!
+It would be good feature add similar option for .btn-outline- or use colors from $btn-*-color in button-outline-variant mixin, or use sass functions for checking color lightness.
+However I am about to implement a feature in my project that I think would be useful to have in the bootstrap core.
+Further, it would be great for it to have Huxley (or similar) integration into a Grunt task, so that it also allows you to test your styles for unintentional changes.
+But would like to see the markup return for common implementation.
+In order to standardize transitions it would be useful to add variables for transitions.
+Please add this in Bootstrap docs.
+A way to declare the factor by which headings are scaled up and down by screen size would be great.
+Ideally, users should be able to define 4-5 colors (primary, secondary, etc) and the entire colorscheme would change to match exactly (form highlights, borders, background, everything).
+I think it would be useful, to add a black button.
+I would love to see responsive tabs added in the BS3 release.
+It would be incredibly helpful to be able to get a live preview what the user interface components would look like when customized (colors, fonts, etc).
+As the title says, can you add support for jQuery 3.
+Also -- Can we add a variable for the input focus transition (for border and box shadow) in the [13. Forms] section.
+Agreed with these guys above, badges are different because of the shape, and thus I would love to have the standard color states available for them as well out of the box.
+And classes like .m-xs-auto, .m-xl-auto would be great for responsively centering block elements.
+Keeping in line with the other table features that Bootstrap offers, it would be great if this effect is not enabled by default. 
+An "apply" and "reset" to default settings would be great.
+It is useful to have the default value as a placeholder, but it would be nice to have it in the value as well, which would make it possible to use the default value as a starting point.
+I'd like to see the Gruntfile become a tool anyone can use. 
+It would be nice to have a busy indicator component.
+Just wanna say me and my company is using this from around a year and this works like wonders and can be a good feature if its gets added up for Bootstrap 4
+At the very least it would be nice to have a class in Bootstrap that disables the hover effect.
+Please add a titled panel component to Twitter Bootstrap.
+So as bootstrap is a popular framework , it should have this feature so that ipad users will not face that difficulty in future.
+It would be nice to be able to set the amount of items to display.
+If I have a page wide carousel with 50 content items (product photos for instance), it would be nice to be able to show 5 items per time.
+Also with the option to display more items in the carousel container, the following extra options and functions would be needed for flexibility.
+I've used a bootstrap plugin (http://www.jasny.net/bootstrap/examples/navmenu/) for this sort of thing before but it would be great to have official support for something like this.
+It would be also nice to keep abbreviations like md, lg for only breakpoints to reduce the confusion.
+If added a OVERLAY option, this will be great :)
+So it would be really nice if there would be a bootstrap-native progressbar
+Basically it would be nice to add bootstrap via package but not add any actual files to the build output, but simply a reference to a (possibly configurable) CDN URL.
+It would be great if the gutter width could be configurable independently for the grid definitions in each of the screen sizes. 
+It would be nice to have responsive spacing utility classes to manage gutters easily.
+I'd love to see an option to configure bootstrap so it would use a CDN instead of local files when building for production. 
+in http://getbootstrap.com/customize, it would be a nice improvement if we could save or import less variables to customize bootstrap.

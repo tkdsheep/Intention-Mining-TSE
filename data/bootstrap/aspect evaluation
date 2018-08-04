@@ -1,0 +1,159 @@
+the new typeahead component is awesome. 
+I know, this increases the complexity of the typeahead component, but makes it on the other side very useful.
+I think its very good ideas but given the pressure they are under currently to release 2.0 tomorrow and lots of other issues on current 2.0 I think its better to slate this for a later release.
+I'm not opposed to using fonts—that'd be pretty awesome. 
+768px is too big for such split.
+In any case, I believe this extra breakpoint is important. 
+I don't really see this being an important or critical use case, @andyl.
+This is a free, awesome, framework.
+I get you can't add every possible device breakpoint, but the lack of a 320px breakpoint is surprising.
+IMHO, tn(<=480px) is much more important than lg (>1200px).
+Don't get me wrong, I do love Bootstrap 3 and I do admire the developers who created it (let's face it, they have made our lives much easier), but I don't understand what were they thinking when they selected breakpoints for BS3. 
+It's not good for much else beyond that, but I think it gets the point across:
+However, I don't think this should be part of the bootstrap "core".
+That's not bad, but I feel like it could be better.
+I think you are misunderstanding me completely. 
+In this case, I agree with @mdo, i think this sort of behavior should be under a click.
+In general, I think it's a good idea to make as many things as possible customizable through bootstraps customizer.
+This should make it easier to use the switch as a checkbox replacement because you won't need to change backend code that handles the checkbox input.
+But I think it's cleaner than my old test, and I prefer a non-JS solution personally.
+Also, the flat colors are nice, but I think it should be optional, maybe a .flat class.
+I understand the advantages I think, but what I like about tables here is that they maintain their intended structure when styles are missing or broken.
+this one seems quite extensive and good: Kalendae
+Perhaps you're right, but it is a very useful thing which is needed on almost all sites. 
+I don't really think a default border-color would be very useful anyway, the way the colors are handled currently makes sense.
+Maybe it is very basic, but I am using it on a project, and for me it is enough.
+Combining the looks and functionality of @eternicode with the keybord navigation of @storborg would really make it look great and easy to use.
+I personally like the approach of enabling a datepicker fallback when the browser doesn't support html5 date input, (with the possibility to always override the style)
+I agree with @ronlobo , I think since we have such great border control (in terms of colors) over most of the components, that having a border-width variable on the component level would indeed be pretty useful. 
+We can tweak the type scale, but I'm inclined to leave it as-is with a simpler and easier to understand behavior across devices.
+I have a feeling this would be very brittle.
+I'm not sold that it's necessary—it's an awfully narrow viewport on phones and I can't think of that many compelling reasons to add them (and thus push/pull classes).
+I would personally rather write the above row of classes instead of writing custom css for the media queries. 
+It might be worth checking out if parallelizing doesn't gain much speed.
+I think a datepicker in bootstrap should only use valid (and all of the) html5 input attributes, for compatability with different plugins/frameworks; 
+Im just afraid bootstrap will grow to heavy if it add to many official js plugins and the creators will get tired of maintaining it because it grow to big.
+What I rather see is maybe some offical plugin channel where people can find and contribute to bootstrap goodies that doesnt need to be in the core.
+My preference would be to use the jQuery Gritter plugin though.
+I really really like the different layout possibilities offered by Noty.
+I believe that the notifications should be styled just like alerts, but also offering a white and black flavor.
+The only one out of those examples i like is the cssdeck.com one but i hate the animation of it.
+But i personally don't think black as a default looks good. 
+The current v4 spacing utilities are very useful for laying out a page, but are ineffective in a responsive layout as they're a fixed size. 
+I think a light background would also fit better into the current bs style.
+And ideally, the process should not be complex or manual!
+Not sure if anyone has mentioned this or not, but it would be cool to have something like this:
+I think it should be opt-in (.table-hover) just like the rest of the table classes.
+We don't plan on duplicating work either - our development philosophy is very different from the jquery ui teams approach.
+I agree that not everyone will be jumping to upgrade their projects or visual studio immediately.
+Also, I don't think bootstrap author would consider a change so low level and pervasive.
+I like the way OOCSS handles the media objects and this is just a good compliment for Bootstrap
+I agree it's a little too late now, but better late than never.
+Hmm, I have to agree with @andriijas, it was fairly simple to just copy/paste the parts of docs.css and application.js that applied to subnavs.
+It looks great and from a UI perspective it's really very useful.
+I think BS3's new theme looks good, it's a little flat style. 
+But I think the form input element don't match the main design very well, the focus style on input(textarea) is not very good.
+I really like the look of Bootstrap 2, but like the new features of Bootstrap 3. 
+I understand Bootstrap is useful naked as a starting place, but I think it also offers a great service as a finalized platform. 
+However I personally think this is the perfect opportunity for the community to start a new project to keep the 2.x buttons going while the core team focus on innovation.
+The extra theme will help, but my personal opinion is that it should be included by default and easily removable back to the flat UI for customization.
+I don't think having a modal that covers a larger portion of the screen is defeating the purpose of a modal.
+Personally I really find them useful - as mentioned above, they are used to great effect when resizing to xs views, where the dividers can be transformed into horizontal ones.
+I also agree that they shouldn't remove it because it makes things complicated.
+I don't think the badges are appropriate for numbering steps.
+It looks nice, but after your comment, I'm not sure how I feel about it.
+I thought it should be, but didn't want to get too pedantic in my previous comment.
+Your responsive version with the badges alone actually looks quite nice, I get it, but using the badge element still feels forced to me.
+I think this only happens when the text/content of the modal is beyond the screen size. 
+I personally prefer this since if you have buttons in the footer they are always visible without having to scroll.
+I don't think it matters to BS if either is true...
+I assume we're good to leave it given the low usage rates of v28, but could be worth diving into more.
+Maybe this is related to our use of translate3d in modals? (Wild guess)
+I think there must be something else on the page that's interfering with Bootstrap.
+I think it's just that the browser actually considers the paper page (after accounting for margins) to be less than 768px wide, thus our extra-small / mobile grid styles apply, hence the stacking.
+I really dont want to get into the namespaced data option/attribute game because it seems really messy and painful. and kinda edge case considering tooltip/popovers are probably the most common use case and you can just not use the data-toggle with them.
+I've always hated the idea of class-based grid markup.
+I think the approach of having one big "ticket" for accessibility was probably one of my worst. 
+This sort of thing is making the task of moving something from Bootstrap v2 to v3 VERY difficult.
+So theoretically it seems like it should use the Small (non-stacked) grid, but I'm probably missing something that's eating those last 10px.
+Using the XS/extra-small grid seems like a bad idea, though. 
+I like the idea of changing the media query only for the print styles to be a smaller breakpoint.
+In my opinion the coolness of the bootstrap plugins is because of its simplicity. 
+I think things like what content goes in to the modal or tabs doesn't belong in the plugin.
+I still think some CSS for the job would be awesome though.
+I think the idea behind these requests is to stop having to use jquery ui :P
+It would be better to create matching styles, but it is not really necessary. 
+But I agree that's it's really bloated anyway and using both jQuery UI and Bootstrap is overkill.
+I personally very much dislike the effect and would rather see it as an "opt in" kind of option.
+I sincerely thank +markdotto and the others for sharing bootstrap, it is awesome.
+Bootstrap is great, and I love using it, but it's these blatantly ignorant comments that I can't stand. 
+I'm sure you think it's the same, but for me it's not.
+Again, I think we would agree on this when digging deeper, it suffices to say that this is my personal opinion and there is always something new for me to learn, this may not be an exception.
+Unless source ordering is no longer an issue nowadays, I think this would be good for layouts, especially left sidebars, as well as showing different block orders between desktop and mobile views.
+It's very inconvenient not to be able to use jQuery's .hide() and .show() method with these classes anymore...
+It's a terrible thing to debug when something is being overridden with !important.
+There certainly could be mis-uses of the spacer "helpers", but I think on the whole, they would be of benefit as an additional scaffolding feature.
+I really appreciate the fact that Bootstrap has introduced everyone, from regular developers to newbies to seasoned UX junkies, to a means of communicating about front-end development that didn't exist before. 
+I think we'd be strung up by our thumbs if we added another developers js framework instead of simple, wildly popular one.
+With a simple, yet full, framework, people could easily share ideas and reuse components which was desperately needed.
+Looks like its onto a different framework, or maybe just using jQuery and doing it from scratch if Bootstrap isn't going to look good on 90% of new phones.
+I feel like it is a very good framework however if it does not work on high pixel density screens and therefore is basically unusable as a solution for web development on mobile screens.
+At this point I don't think we'll integrate a pull unless we get a compelling and simple enough pull request.
+I don't like the approach of having a million more media queries.
+I agree with mdo's remark (#17280 (comment)) that the approach being suggested is overly simplistic and incomplete. 
+It is very strange that bootstrap did not support RTL until now.
+I would think this would tie in very nicely with the subNav bar changes you have planned for 2.2.0, as this really is just a special case of how the subnav bar is used in your documentation.
+I agree that the proposed change is a feature because of introducing a new option.
+Whatever is done, I think it should be optional or opt-out-able, since if i wasn't using the transitions here, I don't think I'd have any recourse to call .off('bsTransitionEnd')
+IMO it's a very reasonable request and your blanket dismissal was hasty.
+Bootstrap is awesome but it´s kind of dissappointing that something so basic doesn´t work.
+I don't think this should be included in bootstrap. 
+I have been finding these two variables quite handy.
+Having $text-uppercase potentially not be uppercase seems confusing to me. 
+Variables like ${component}-text-transform would seem clearer.
+I feel this is extremely useful on a regular basis.
+While I can see the merits of having this on the side, it does seem more like a per-project thing, and not very necessary to the overall goal of bootstrap.
+I don't see this saving folks time and I don't want us adding variables and properties throughout to state a default that's usually not overridden.
+My vote is to have $text-casing be applied to headings, labels, buttons, base-font, etc. and let the user turn it off and on.
+I gotta say I was indeed kind of disappointed and since we're already including a .js to make those buttons work I think it would be a good idea to already put the underlying markup and JS in Bootstrap.
+I think the format can be simple as each variable per line, like the example above.
+I like the idea too, though understand the desire to keep this out of mainline.
+It's not nice when you have 30+ elements in the same column. 
+I feel I have to highly disagree on this instance @gilronc.
+I loved the idea behind .tag but it would bring unnecessary breakage to wordpress projects if that is the case.
+Lastly, IMO, I feel that software decisions should not be predicated nor effected by other, third party, software. 
+In my opinion, it would make more sense to attempt for compatibility with jQuery 3.0 after it is out of the alpha stage and it can confidently be developed against in regards to general API stability.
+I feel this is a basic but decent start in for the Bootstrap framework.
+I assume the big pieces are done now (based on what their announcement said) but it sounded to me as though more changes will probably occur prior to beta / GA.
+I guess we'd ought to toss in some iOS Safari detection/UA-sniffing for good measure.
+I would like to see floating labels be incorporated into bootstrap 4.
+Me neither, I dont really understand this decision, but anyway it can still be usefull for anyone trying to do it
+Interesting, but I don't think differentiating between the label and placeholder text is a good idea.
+In my opinion, this is much easier to understand quickly:
+I love the foundation rem-calc() function too.
+That isn't a good long-term strategy, especially when all you're trying to do is alter colours.
+I fully understand that you don't want users to mix up labels with badges.
+It seems to be more compatible then any other version!
+I feel like sortable tables are common, and that one of bootstraps nicest features are standard class names that everyone understands.
+I agree with needing to make this change.
+It sounds like not a lot of code, but I'm really hesitant to do a half-implemented feature.
+Not all columns might be sortable, so I think putting the class on the <th>s themselves would be better.
+I don't think #element is an appropriate container, but I couldn't get it to resize properly with body or the button's parent either.
+It's a relatively easy component to build and not something I think folks should over use.
+While I think .col.col-{size}-{n} could make sense, I think we'd be opposed to .col.{size}-{n} since we don't use the "chained classes" approach to writing CSS. 
+Personally I'm not opposed to this though
+That's super helpful for us already, but I feel like we're leaving folks out to dry a bit when it comes to actually building Bootstrap from source. 
+Using a simple fade(black/white, 25) would have been smarter in my opinion.
+I think this might be a good idea, it will just take a little work.
+It seems worthwhile to have some kind of build tooling in place, no matter the method of inclusion.
+I think in Collapsible content is the best method to create off-canvas, drawer, or whatever name to references this.
+I think it's useful and very common: each comment on this page is enclosed in one.
+I also have a feeling that using .{size}-{n} as a class instead of .col-{size}-{n} might cause some problems down the line. 
+I guess it makes it easier to style columns externally if needed by separating .col as a separate class.
+I don't think media components are any more useful than the pull-left or pull-right classes in this case. 
+I'm still not convinced we need to override every single one of those values, but I am open to improving the customization on some of them.
+In my mind a floated element should behave the same no matter what it contains and that's why I thought that Firefox rendered it correctly.
+To be honest, I personally prefer the .input-group-wrapper since I need the dynamic minimum size that floats offer (and that was exactly my use case).
+However this design decision leads to users simply not using badges but labels for numbers (which is against the goal of not mixing them up) or using raw css inherently disconnected from the bootstrap color scheme, which I don't think is what you are after.
+yeah, I don't think label elements are allowed to be truly 'disabled'. 
+I would argue at least for V3 that this change wouldnt be possible as it is a new feature which goes against the feature freeze status of bootstrap v3 currently.

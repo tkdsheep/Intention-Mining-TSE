@@ -1,0 +1,400 @@
+I would like to use the "standard" file format, but the uncompressed TFRecords files I am generating are huge for my datasets.
+Though I have installed CUDA on my mac, TensorFlow wouldn't use GPU.
+Unfortunately, I tried it and although I got really close to doing a complete Bazel PIP build, it failed when trying near the end when going through the cuDNN v5 library.
+Because I tried forcing it to use cpu and that was an order of magnitude slower.
+It currently works well with armeabiv7 but crashes with intel x86 emulator.
+I modified the Makefile and the Application.mk as you said but I am getting this error with the make command
+When I tried this with x86 emulator, the app crashed with IllegalArgumentException at CameraManager.openCamera() because emulator does not have camera.
+In my situation app closes after showing the camera input for 1s, I have used my web cam as the emulator camera,
+When I open the TensorFlow_Demo, it shows the camera input for 1s with blue band on the top and then closes automatically (without any crash message on the emulator screen).
+tensorflow demo app stays with empty blue band with totally black camera input area.
+Another thing to notice is here default camera app on the emulator crashes. with the messages given below in the emulator message view:
+I already tried changing the max vertical, max horizontal in emulator .ini file but message still the same. 
+Commit f45874b broke existing GPU builds on MacOS with CUDA 7.5
+It has convolutional layers listed, for instance, but does not show the RNNs. 
+Thanks, I have seen the tutorial but it is not a substitute for an API; I filed the issue after consulting with a friend at Google Brain
+Building the wheel fails with Python 3.5 on Linux unless wheel 0.26 is installed.
+I have a similar issue on my mac running the eval lua command (th eval.lua -model .. /model_id1-501-1448236541.t7 -image_folder .. /img -num_images 1) on a small folder of ten images.
+I got the same syntax keyword error with both 0.5 and 0.6 versions of tensorflow.
+Oddly, I got the error within ipython sessions, but didn't get the error when running python.
+I got the same syntax error on the gpu 0.5 version installed using python 2.
+I have exact the same problem.
+The example demo for iOS is very very slow in comparison with the Android version.
+On Android it with report accuracy levels about 70% sometimes but I can't get it above about 15% on iOS.
+Tried the docker install, but the docker image is configured for a particular NVIDIA driver version, and doesn't work with others. 
+I have the 7.5 installed with tensorflow and when I try (like in the tutorial about gpu)
+with tf.device('/gpu:0'): it breaks !
+The docs for distribution seem out of date when I tried to do this.  
+I found the problem: the new installation of CUDA did not overwrite or otherwise remove CUDA 7.0, but installed it in /usr/local/cuda7.5 leaving /usr/local/cuda, which got picked up by $LD_LIBRARY_PATH.
+This is due to a deep technical issue with being able to access the values on a GPU.
+I have the same problem using a docker container and the nvidia-docker tool with an image based on the cuda:7.5-cudnn4-devel image.
+If I run python in /usr/local/cuda/lib64 I have errors related to #808:
+there is an import of ../components/tf-tensorboard/tf-tensorboard.html and in fact this file doesn't exist.
+I have just installed CUDA v8 and the issue still persists.
+However, CUDA 7.0 is hard-coded in the configure script, and I am unable to configure to use CUDA 7.5:
+The errors are 1)Unable to load cuBLAS DSO,2)Unable to load cuDNN DSO,3)Unable to load cuFFT DSO,4)Unable to load cuRAND DSO.
+However, whenever I try to import Tensorflow (import tensorflow as tf), I get the following error:
+Expanding on the above question, when I try the above suggestion (which works fine for the mnist softmax example) on the mnist convnet example I get the following error:
+Regardless, I can't get past tf.import_graph_def because it seems that internally it uses a V2 checkpoint, but tf.learn still uses a V1 checkpoint (which is hard coded into the underlying graph_actions.py).
+The bidirectional_rnn() is not taking the advantages of dynamic_rnn(), it runs into memory issues for even moderate length of time steps.
+Moreover, it doesn't work with the new decision to represent LSTM states as tuples.
+However, when i want to set stride > 1 for 1d conv using conv2d with h = 1, i got an error "ValueError: Current implementation only supports equal length strides in the row and column dimensions". 
+I found out that the problem with the strange labels predicted by the Inception model is indeed the classes and their names in the ImageNet data-set. 
+However now I get 'Executor failed to create kernel. Invalid argument: AttrValue must not have reference type value of float_ref for attr 'tensor_type'
+I am able to compile executables and .so files from within the tensorflow build environment, but when I take the compiled so file and link it into my project with my own cmake build environment, the resulting program does compile but crashes on startup at some Tensorflow Kernel related method. 
+When I launch a network that uses local response normalization, it works perfectly on a CPU, but it appears to not have a gpu implementation and results in the following error when I switch to a gpu device:
+Just in case anyone is using this code, theres a typo.
+Indeed, even on CPU it's slow.
+That (slowness on CPU) was my observation too.
+I tried running a CNN with embedding layer on a GPU (AWS), but ran into the same problem as described here: 
+ScatterSub doesn't seem to be supported on GPUs and the device placement fails. 
+There are unit tests that are failing on the GPU configuration due to this issue: 
+but there's not much information on TypedKernel or Kernel that I can find.
+Sequence length should not be required for bidirectional_rnn as _reverse_seq simply reverses the input if lengths is not given. 
+I am now facing the problem to set seq_len = batch_size. 
+The biggest problem though is that you are forced to used a cpu for the softmax, meaning you can't take advantage of using another gpu to do the softmax. 
+As a result, it does lead to longer training times.
+The performance is actually worse on the CPU, which is rather surprising. 
+Strangely, when I set num_threads to 1, both implementations speed up, contrary to your expectation.
+Hi, I'm loading a previously-built model using the tf.train.Saver and running into an error: 
+For note to others, this error happens when you try to restore using the object ckpt = tf.train.get_checkpoint_state(model_dir) and not the ckpt.model_checkpoint_path.
+However, I could not find a similar layer in tensorflow.
+Adding the dependency on protos_all does not resolve it.
+One question: when I add the variable that I optimize into the list of fetches, I got error Variable:0 is both fed and fetched.
+Momentum and Adagrad optimizers do not work when I use tf.reshape like this:
+This might be connected to #464, the error is similar and also appears with Momentum and Adagrad.
+Indeed, the graph where I had the bug #464 was also using this mix of embedding layer and reshape. 
+So I might have misinterpreted, and there is actually two bugs: one with "tf.reshape" and Momentum and Adagrad, and the other with "tf.nce_loss" and RMSProp...
+On further investigation, this looks like a bug in tf.gather()'s gradient, when the indices are >1-dimensional. 
+This break code with v0.5.
+As the title states, even if a GPU is not CUDA compatible, Tensorflow will occupy the GPU and then proceed to ignore it.
+The cifar-10 demo ran fine under 0.5.0 but gives errors under 0.6.0 (I rolled back to 0.5.0 and confirmed this). 
+When running and passing a tensor containing -1 as segment_ids, tensorflow just exits without error message. 
+The following piece of code: crashes the Python kernel.
+I realize it's not right (for one thing I'm not feeding it a feed_dict), but it should give an error and not crash the kernel.
+tf.gather is ok to slice element, but it yields errors when training time 
+The cpu case is a bug in the gradient of tf.gather, which wasn't correctly updated when I made gather handle arbitrary rank indices (including scalars).
+The problem is that an optimizer step for two nested calls to tf.gather can't be efficient unless tf.scatter handles multiple index arguments. 
+It doesn't seem to work with tf.placeholder.
+It gets stuck on the call to ravel_multi_index
+Line 498 of gradients.py is too strong for while loop:
+But when I try to run it on a GPU, it dies with: F tensorflow/core/kernels/tile_ops.cc:131] TileOp: Invalid combination of Device, DT and NDIM: N5Eigen9GpuDeviceE, float, 0
+However, during compilation of dna_encode_op_gpu.cu.cc, Bazel doesn't find the CUDA headers:
+The instructions work fine for CPU-only ops, but seem to be insufficient for building an op with a GPU kernel. 
+I tried to run the example "tensorflow/g3doc/how_tos/reading_data/convert_to_records.py", but there is an error saying function signature mismatch on the bool WriteRecord(::tensorflow::StringPiece record); call.
+not having this on GPU really slows things down.
+We are getting unexpected names (they lack outer name scope) in NamedOutputs tuples added to collections using tf.contrib.layers outputs_collections.
+This issue makes it impossible to retrieve items from collections filtered down with a name scope, an approach that we are trying to use for decoupling op creation and summarizing.
+Tracking that down in TF source reference in the original description, it can be seen that tensors which use internal variables (such as fully_connect and conv2d) are using variable scopes when creating NamedOutputs, which seems a bug.
+It looks like a bug, probably not in scoping per se but, as you said, in assigning NamedOutputs.name based on variable_scope and not name_scope.
+After a clean install of TensorFlow v0.10 (from master) my TensorBoard is suddenly broken.
+The scalar event plots do not show upon clicking (see screenshow below).
+While the logs in the terminal do not show any errors, the Chrome Developer console shows the following error upon opening a figure:
+Looks like a dependency version problem.
+I was installing TF from source like I always did but I'm having the following issue this time when running 
+plus, I can't find that file anywhere... 
+The same slow-down is observed when using the pip version with CuDNN4 or with a version compiled from source and CuDNN 5.1.
+That looks like a build dependency is missing: pip_package should depend on that gen_word2vec.py file, but doesn't. 
+Right now, TensorBoard does not properly evaluate a path beginning with ~ (at least on mac).
+Using the GPU tracer (e.g. via session.Run with RunOptions FULL_TRACE) results in warnings like the following:
+Anyway, expected behaviour is 'logdir flag is missing', not crash.
+Even after rollback 39d0932 this issue most likely still exists @elibixby, due to the fact that the if name == main doesn't get evaluated when the pip generated script calls it.
+I'm receiving this error when calling tf.image.extract_glimpse:
+It must be that the code isn't being called correctly;
+there is a bug in the imports for this code.
+Will not load the correct model
+translate.py will fail on my Mac OSX El Capitain using VirtualEnv and cause to load an empty model.
+When running Tensorboard (v0.6.0) on the output from I get a broken link symbol and the following in the logs:
+I have the same issue, nothing whatsoever appears to load into tensorboard, no images, no CSS, no summaries of anything.
+Clearly, the mismatch between documentation and code is a bug.
+I am in the process of implementing a version of BinaryConnect in tensorflow, and ran into this weird crash. 
+Seems that line w = tf.select(draws,mx_fill,-mx_fill) is causing the problem when the optimization graph is being constructed.
+the code is broken: it uses tf.types.float32, which should just be tf.float32.
+The problem is because when you're doing the tf.select(draws, mx_fill, weights), you're potentially sending the gradients to the result of tf.fill().
+running the convolution model results in a hang
+The hang only shows up with external Eigen library.
+During the hang, one Eigen kernel was stuck on GPU.
+It is known that there is a recent slowdown after switching to the external library. 
+This is a regression problem, code was working fine 2 wks ago, did a git sync to the head and now I have this log message:
+I can confirm that with eigen-a0661a2bb165, an Eigen kernel fails to launch. 
+When running "bazel-bin/tensorflow/models/image/alexnet/alexnet_benchmark --benchmarks=all" on my machine, I get the following error:
+When a conv2d operator has a stride greater than the kernel size, the following error is thrown:
+This makes implementing the 1x1 convolutions used to reduce spatial resolution in several papers (MSRA 2015 among others) awkward.
+The same error is thrown when calling tf.nn.max_pool or tf.nn.avg_pool with stride greater than filter size.
+I hit this bug while trying implement ResNet.
+I'm marking this a bug since it really should work. 
+after few iterations it deadlocks.
+All threads are blocked on condition variables, but tasks they are waiting for can't run because all thread pool threads are busy:
+On a machine with a GPU, under the GPU configuration, I ran the command: bazel test -c opt --config=cuda //tensorflow/core:ops_array_grad_test and I got the following error (see highlight in bold font)
+It appears that although the change set fixed the ZerosLikeOp-not-defined-for-GPU issue, the test bazel test -c opt --config=cuda //tensorflow/core:ops_array_grad_test still fails, with a seg fault:
+Then I got the following error, which seems to be similar to the closed issues.
+However, when I try fully_connected.py, this error shows up.
+I'm on an Ubuntu machine, installed tensorflow and ran the image processing example as in the website but it failed complaining about gFile not found,
+Same here, got this error when running cifar10_eval.py
+Was with this error to run ptb_word_lm.py in the old version.
+Running cifar10_train.py outputs the following warning message:
+And the training command hangs. 
+In fact, even the mnist example on setup page hangs too.
+I am having the same problem.
+The brower will give an error something like Uncaught TypeError: Polymer.dom(...).unobserveNodes is not a function when I click the graph tab
+I have had the same problem ever since I first tried to use tensorboard a few days ago (with 0.6.0).
+The problem persists in Firefox, Konqueror, AND Chrome (!), and it is not fixed by reinstalling as a git clone after issue #650 nor by updating any of the dependencies as suggested on various other threads. 
+I had polymer 1.1.5; after martinwicke's comment, I git-cloned polymer, copied the html files, and the version became "master", which didn't work either; then, after dsmilkov's comment, I downloaded the ZIP file and put in the 1.2.4 files, but it still didn't work.
+The end result is still as in has2k1's original picture with the toolbar showing but nothing in the big panel, as opposed to running an empty session, when it does say that the required files are missing.
+And still no error messages in the terminal from which I launch tensorboard when I try to access the graph mode, but there was one earlier (I just noticed) about favicon.ico being missing from the .../tensorboard.runfiles/... directory, but I put some random .ico file in the required location and that didn't fix it either.
+In 0.7, there are different errors about Saver, first Warnings in serialization, such as moving averages, or dictionaries: and then, it throws an OS Error:
+The OSError is a bigger problem, and is caused by an incompatibility between our internal and external tf.gfile.MakeDirs() functions. 
+Following the instructions for installing with pip I am getting this error:
+I had the same issues while trying to install tensor flow 0.70 GPU for python3 (pip3). 
+For whatever reason, it was just the FILENAME which was wrong. 
+I am seeing the same issue with Python 2.7.x on Ubuntu 14.04 LTS (64 bit)
+Exact same issue as @terrybroad on Ubuntu 14.04 (64 bit) with Python 2.7
+I have the same issue, it did not solved by any of these solution.
+Same issue happening for me on Ubuntu x64 14.04 LTS and python 2.7
+Same issue on Ubuntu 14.04 x64 Python 2.7 using commit 3ff0f0d
+Same issue on both CPU and GPU with Ubuntu 14.04 64x
+I had a similar issue stated above with python 2.7.6 and cpu setup. 
+I have Ubuntu 14.04 LTS x86_64 with Python3.5 and it is giving me the same error for build 0.7.1, 
+I'm getting the same error for build 0.7.1 as well.
+I still get the same issue trying to install version 0.8.0 with python 2.7.11 on OS X 10.11.5 
+I had the same problem with 0.8.0 with both python2 and python3 installed. 
+My problem was that 'pip' was pointing to the python3 installation instead of python2.
+There is a potential TOCTOU bug in this code because the process is:
+When I run the line : flipped_images = tf.image.random_flip_left_right(images) I get de following error : AttributeError: 'numpy.ndarray' object has no attribute 'get_shape'
+Just to check if my input data was packed in the right shape and type, I have tried to apply this simple function in the (not modified) tutorial "Tensorflow Mechanics 101" and I get the same error.
+Finally, I still get the same error trying to use the following functions :
+OK, I've looked into the event file you've provided - it's perfectly fine, which means the issue is in TensorBoard.
+Nothing shows up on Tensorboard pages.
+Tried all these things but getting same errors and lack of anything in tensorboard.
+The TensorBoard shows nothing.
+Mine was a pip installation and I am not seeing anything on tensorboard.
+I had this problem, but was specifying my path as "~/path/to/logs" -- 
+I am having this same issue on debian8.
+Navigating to localhost:6006 gives me the tensorboard dashboard, but thats it. no graphs or anything.
+I am experiencing pretty much the same issue, although my error message is a little different.
+I have the same TAG error, but as far as I understand that is just used for debugging which is why its only a warning not an error.
+the bazel-bin directory without receiving the TAG warning, however no events are showing up in the dashboard.
+However the dashboard shows nothing.
+Looking at the page with Dev Tools in Chrome it looks like the CSS stylesheet is missing from the deployment directory for some reason.
+And indeed the GET call for it results in a 404
+After the 404 are a bunch of javascript errors but I'm assuming they are there because of the missing stylesheet.
+Firefox did not show anything on Tensorboard. 
+I faced the same issue on Ubuntu with both TF 0.9 and 0.10. 
+Fail with trying to decode training data as ascii (see log at the end)
+The error turned out to be caused by my GPU setting (one user of the machine had set the compute_mode to be EXCLUSIVE_THREAD). 
+I unclicked run1 and run2, but when I click on some variables, the run1 and run2 still show up. 
+By unclicking and clicking a run1, my board just messed up with more and more plots. 
+I have just recompiled TF to commit f952246 and got an error on cifar10 example.
+The following script will fail for Momentum, AdaGrad, AdaDelta, RMSProp and FTRL.
+The problem appears to arise when input_shape.ndims is None (which is a valid possibility).
+For some reasons I am not allowed to post my code here, but the bug occurs when I try to stack multiple layers of BLSTM using dynamic_rnn() (see this related request: #1779). 
+I've noticed that since April 2016 built python wheel files are missing css in tensorboard/lib.
+A lot of tests seem to run very slowly
+It always hangs at the start of the test right after:
+It is ok with cpu, but fails with gpu. 
+I run some black-box test (as i don't know a better way to debug it), and found that it raises error when it try to compute gradients with the statement
+It seems that there is a problem when it tries to launch a cuda kernel to compute the l2loss.
+I ran into the same issue.
+When TensorFlow is compiled with -c dbg, this fails with the following message:
+The Split kernel assumes its inputs are nonempty, and TensorArrayUnpackOp doesn't check this.
+However, I have come into a roadblock when using the tf.gather function in gradients.
+I obtain a floating point exception when I run the following code
+Ah, there are two bugs here: one bug that we crash the process on integer division by zero, and another that we generate a division by zero.
+Hello, I'm trying to build a big word model, and I'm getting overflows in the corpus_size_ declared here
+The error is being thrown here:
+Then it starts to run, but hangs immediately after reporting the following error:
+when I use "with sv.managed_session(server.target) as sess:", it shows error: AttributeError: 'Supervisor' object has no attribute 'managed_session'
+When I set "vocab_size" to less than but near to 83886, (83886*200*4<67108864), it shows the warning:
+I have similar problem with my async-distributed word2vec.(79840 vocab, 300 dim)
+But same problem occurs while running my own distributed word2vec_optimized.
+We've tracked down the issue: the generated code for gRPC uses a protobuf parsing routine that doesn't override the default 64MB limit.
+I use your codes(ptb_word_lm.py.txt) and run it on two machine. but i get the errror:RuntimeError: Graph is finalized and cannot be modified. 
+Unfortunate that simplistic code doesn't work out of the box because tf.select doesn't broadcast.
+The saving mechanism does not validate the size of a variable—which can be much larger than 2GB—before attempting to write it into the Protocol Buffer. 
+The following code can cause a segfault:
+the issue is that we don't use that flag in the PNG decoder, we use the IS_LITTLE_ENDIAN flag, which is only defined by some transitively included google-internal header.
+The second part of the issue is that we don't have any tests for the png decode op that would catch this on jenkins.
+The gradients are computed by computing the full prod and then dividing, which is broken as you point out. 
+TLDR; handle movers register Python SessionHandle instead of string session handle, which causes InternalError: Unable to get element from the feed. when garbage collection is triggered on moved persistent tensors.
+However I am now able to build the project despite configuration errors, whereas I was not able to do so before commit f66b491.
+The issue is that when update_with_movers moves CPU Tensor to GPU, it'll register CPU tensor handle for deletion. 
+But if _auto_gc_enabled is True (it is True by default), at the point when Python runtime garbage collects that TensorHandle object, it'll register same handle for deletion again, so the program will fail on next gc pass with something like
+I'm running into a situation where loading weights for one of my models causes a segfault, and I can't seem to figure out why.
+This is unexpected, and definitely a bug.
+Using exactly the same code on exactly the same hardware with exactly the same data, on a gpu-centric application, with a dedicated gpu that wasn't driving any monitors, each epoch took roughly twice as long on OS X.
+If I click on run1 and run2 again, five plots will be shown, with 2 of them repeated!
+Thanks, it looks like it is failing to deserialize a large proto. 
+There's a higher level issue, which is that running the saver shouldn't be causing large amounts of data to be transferred across the network.
+One potential issue is that protobuf doesn't handle messages larger than 2GB.
+If I set up two servers, and try to transfer a tensor larger than 2GB from one to the other, it fails with SIGABRT on the sending side.
+However, I haven't managed to get it to "successfully" send a tensor that the other side fails to retrieve.
+There were certainly segfault- and SIGTERM-causing bugs in that path, which should be fixed now, or at least in the next push from the internal branch.
+I also had an issue with collections occurring because I was transitioning to a frozen graph implementation.
+The resulting exception caused a segfault for some reason.
+The result is that some tests may fail which would otherwise pass in a hermetic requirement. 
+Also it could mean that some tests would pass which would otherwise fail in a hermetic environment.
+All the misaligned memory reads came from Eigen kernels in the attached error messages.
+I have a similar setup on Ubuntu 14.04.4 LTS: Cuda v7.5, Cudnn v4, /gpu/tensorflow-0.9.0rc0-cp27-none-linux_x86_64.whl with GTX750 Ti and see the same issue on the mnist example:
+It seems they run OK, see attached log, and the problem is in the code of convolutional.py.
+See the same error when running MNIST test.
+I get the same a similar error from running tf.nn.softmax().
+Same error trying to run basic MNIST example.
+I tried running the mnist example after I installed TensorFlow in virtualenv and I got the same error, Ubuntu 16, gcc 5.3.1, python 3.5.1, Driver Version: 361.42, cuda 7.5, this time with a GTX960 with 4GiB, which should be more than enough for this network model:
+I've run into the same problem exactly as described by floringogianu except w/ Ubuntu 16.04 and gcc 4.9. 
+I attempted to build from source myself but ran into some linking errors which I don't have time to address at the moment. 
+Same problem here. 
+Downgraded to gcc 4.9 to use theano, now tensorflow is broken with CUDA_MISALIGNED_ADDRESS. 
+Was facing same problem, get "CUDA_ERROR_MISALIGNED_ADDRESS" with MNIST samples. 
+TF would just hang, nvidia-smi shows temperature at 68 C and the process stops responding.
+Using the GPU tracer (e.g. via session.Run with RunOptions FULL_TRACE) results in warnings like the following:
+The following fails with UnboundLocalError after b80a4a8
+It's an incorrect usage of Session I think it used to fail with a more informative message like ``*** TypeError: Expected binary or unicode string, got log_device_placement: true` before b80a4a8
+Actually there is a bug in data_feeder.py it should use get_shape() instead .shape.
+None work and all attempts result in the same AttributeError.
+I'm also having this issue.
+I haven't found a small reproducible case for this: but in the code I originally found this bug, no error is raised as the other variables are trained, leaving me scratching my head as to why the linear rectified variable was not being trained.
+The same issue also occurs for tf.nn.softplus, and perhaps other methods as well.
+Supporting this is the fact that the expression tf.real(tf.reduce_sum(g)) produces the following error:
+I also ran into problems of computing gradients for nested gather inside while_loop(), 
+You're experiencing a bug because of the way while_loop gradients handle shapes of inputs and outputs. 
+The example in skflow folder gives this error:
+Sorry, the autoencoder example is terribly out of date and we haven't deprecated it properly.
+While trying to get insight into the source of the slow-down I also noted that I wasn't able to compile from source using CuDNN4 as noted in the SO posting. 
+For some reason, the timing routine gave repeated error messages when running under 0.9 but not for 0.10. 
+Unfortunately both those files seem to be corrupted - it looks like the process didn't exit cleanly.
+Just chiming in to say that I also experience heavy slowdowns using TF 0.10 RC0.
+In My case, the slowdown is even more severe: ~10x when using a ResNet-like architecture, on Python 3.5 using cuDNN 4 and CUDA 7.5.
+I can confirm that the SumOp kernel is much slower in 0.10.0 than it used to be in 0.9.0 on an Nvidia Titan X.
+Note: implementations using built-in Tensorflow functions as show above doesn't solve gradient issues caused by the handling of complex numbers:
+This code will fail with the following error:
+Compilation errors however occur for multiplication (and division), as seen below.
+Sadly, I obtain the same errors if I clone and compile the fork ibab@8c3baae without any modifications.
+First of all, the chain rule is completely wrong.
+EDIT: I'd like to emphasize that the chain rule is embarrasingly wrong...
+I was installing TF from source like I always did but I'm having the following issue this time when running bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg I got
+Moreover, if I keep the decorator I also need to do this: x = tf.identity(x). If I comment out this line, I get the following error and I don't understand why:
+The fact that you can't apply a Defun to a variable is a bug.
+Your gradient function is wrong, since softplus isn't the identity function and doesn't have derivative 1, but computes what I'd expect given its implementation.
+tf.nn.l2_normalize(tf.constant(np.ones([2, 2, 2, 2])), [0, 1, 2]) crashes with the following error: ValueError: Shape (1, 3) must have rank at most 1
+The problem is that l2_normalize function converts the dimension list into [[0, 1, 2]] (double brackets) and it stopped being supported recently.
+Thanks, the bug is in l2_normalize.
+The change that broke this was that reduce_sum was not checking its shape contract, and now it is.
+The number of "enqueue"s is not deterministic, but the code never finishes.
+It looks like the GPU installation from source got refactored and is failing to compile on my Ubuntu 16.04, CUDA 8.0, cuDNN 5.0, with GTX 1080 GPU.
+I had the GTX 1080 working with the build from a few days ago, but just pulled from the head and now cannot compile so I am not sure if this is the auto_configure for the GPU or not I saw going though.
+Trying to provide a custom list of summaries to tf.contrib.layers.optimize_loss fails
+I am having trouble configuring the latest master branch (dbe7ee0). 
+In my environment configure fails on the latest commit (7705791) with the following errors:
+Having this issue as well
+I had the same issue too.
+I've narrowed the problem down to commit ed87884 using git bisect.
+I was thinking it might be a bazel version thing, but I tried both 0.3.1 and 0.3.0 (after a quick fix: #4343), and I have the same problem.
+The configuration fails in my environment due to the following two targets:
+I fresh cloned tensorflow for latest master commit, and I confirm I'm experiencing the same issues as @woodshop, so not fixed yet.
+meet same issue.
+I only get these errors when I build with CUDA. 
+Those builds are broken at the moment, but at first glance, it looks like a different issue (the nightly failures and the reports here)
+exactly the same error in #4799
+An example in the code base does not work with the docker image.
+Except, this example is not working anymore : 
+Can't manage to make it work and understand the error : InvalidArgumentError: No OpKernel was registered to support Op 'Conv2D' with these attrs. Registered kernels:
+Maybe it is related to the error I have here to #4930
+The problem is that after a timeout occurs a enqueue or dequeueop throws an error
+here i get the usual timeout error. 
+The problem is that when I then run sess.run(enq, feed_dict={ph:2}, options=timeout_option) i get the error:
+To clarify, the problem happens if you call enqueue after previous dequeue operation timed out:
+Whenever I try to execute tf.nn.softmax on GPU, I get an error:
+dynamic_rnn fails on OS X with unspecified batch_size but works fine on Ubuntu 14.04/Python3.4.3.
+It seems that on OS X the 'None != "?"' evaluates poorly, then at some point in ops/rnn.py +918 this equality fails:
+Looks like we updated the branch for rc1, but when merging it back into master we missed that diff, and stayed with cuda7.5
+I used tf.contrib.losses.mean_squared_error, but during training stage, tensorflow give me warning 
+But I already used mean_squared_error, so this warning should not show.
+Also the mean_squared_error definition link has the same warning, which I guess should not be there?
+Wait...when I upgrade TF to 0.11.0rc1, I still get the same warning when using mean_squared_error. 
+While going through tensorboard/DEVELOPMENT.MD it is not possible to have tensorboard's demos working as demo's html as well as components htmls import other html with wrong file names.
+MetricSpecs always pass both values and labels to metrics, meaning metrics which don't use labels like streaming_mean are broken.
+Hi I'm running Linux-64 bit os and I'm getting the following error after running:
+Ok I have installed v0.11.0rc2-py27_0 using conda and its still giving me the same error.
+I had a few segfaults along the way when I mismatched things, eg: if you only have one worker specified and set task_index=1 will SEGFAULT.
+The current implementation crashes the Python kernel when given an output shape with a -1 in the first dimension. 
+When I build a large seq2seq RNN graph (i.e., 3000 timesteps encoder, and 100 time steps decoder), both the graph construction and step time is insanely slow.
+When I run nvidia-smi while the graph is computing , the utilization is something like 12% ... definitely something wrong...
+I found tf.nn.dynamic_rnn is much slower than tf.nn.rnn in tensorflow_serving inference.
+Running the code above gives this error:
+When trying to use MaxPoolWithArgmax I got the following error:
+However, I can't store the mask in a tf.bool tensor because that breaks the queue system.
+I was hoping to implement higher order derivatives using the map function but am getting an error message I can't quite get my head around. 
+When I fetch the hessian, I get the error message
+I assumed that tensorflow has an issue because it doesn't know about params in the loop (cf. non_sequences in theano scan), and extended map_fn to pass extra arguments to the loop. 
+I am from China, and I cannot open the tensorflow.org web site. 
+Everything looks fine until it comes to define the optimisation. I got this error:
+In some TF code I wrote recently I had to make the following function to avoid this bug:
+It could certainly cause some code to get slower, which is a potential concern.
+If the cell contains code of the form: the cell will run correctly the first time, but throw an error the second. 
+Obviously this error is appropriate in python files, but really just gets in the way for notebooks.
+It usually crashes on the c.eval() giving the following error:
+The issue is that start_queue_runners() starts (one or more) threads that are running portions of the graph. 
+Since graph modification is not thread-safe, you will see problems if the graph is modified after start_queue_runners().
+I looked into this issue, and as far as I can tell, the issue comes from this line in the class Optimizer() implementation, and not the clip_by_value op. 
+However, when i want to set stride > 1 for 1d conv using conv2d with h = 1, i got an error "ValueError: Current implementation only supports equal length strides in the row and column dimensions". 
+I let ivan create the bug issue but I confirm that the new behavior can cause some troubles. 
+After writing many code based on it, I found it is very inconvenient that when the C++ code meets an error, it just breaks instead of passing the error to the python front end, so it is impossible to deal with the error gracefully.
+However, I get an error 'image' must be fully defined. - the image not being fully defined because the size of the JPEG is variable.
+the main problem is Mesos by default does not handle GPUs as resources. 
+If TF goes to read a JPEG that isn't there for some reason or hasn't finished writing, decode_jpeg will fail. 
+I have downloaded the latest nightly build but the same problem is there! 
+It looks like the recent docker images, including r0.9rc0-devel-gpu and nightly-devel-gpu (as of June 14) are failing to load libcuda. 
+The CI tests seem to be missing these failures and reporting success.
+So it looks like the GPU libraries are failing on the first two docker images.
+However, it also seems this is causing problems for the CI tests, since it isn't detecting a failure:
+When an op constructing function is called for multiple times on the same set of inputs, each of these calls adds a new op to the graph, which leads to extra computation.
+When I try to implement this on a GPU I run into several kernel support errors. 
+I am using v0.10 and did learn.DNNRegressor(..., model_dir='some path') and then new_regressor = learn.DNNRegressor('path where the model is') and got the error
+I directly run the program, it produce the wrong result.
+The problem is that the gradient of tf.sigmoid is a dedicated C++ op called SigmoidGrad...which has no registered gradient:
+Specifically, I find that running the second command in the code block of the section "Compiling the kernel for the GPU device" returns a linker error complaining about the lack of the lcudart library.
+The Inception v3 model seems to have problems recognizing people. 
+There is a problem, which might have high severity:
+A lot of files disable pylint messages, but don't enable them in the end -- this potentially might cause a missed warning if several files are imported, because # pylint disable is a global disable.
+The main problem with running configure again is that a clean build is performed afterwards--which takes some time.
+I'm currently trying to use a model that was retrained from the inception model using the image_retraining example and I'm running into issues since there is a totally unnecessary DecodeJpeg Op in the model that isn't supported on android atm (#2570).
+The problem is if one executes the op directly in Session.run() the whole tensor is copied back as a numpy array.
+The problem is that tf.scatter_update/add/sub() Ops return the whole tensor although they are typically used to update only a small part of it.
+Well the problem is that the actual unitary RNN uses FFT and IFFT within its cell.
+I'm not really sure what's happening here but I'm not getting the performance from the gpu implementation of batch_fft2d that I was expecting. 
+When using rmsprop, I get this error:
+When using adagrad or momentum, I get this error:
+After checking bug #505, it seems that there are actually two bugs going on here. 
+This fails with this error:
+However, for certain input values (in this case, where the kernel size in the depth dimension is greater than 1) it will raise an error at runtime if the op tries to execute on GPU.
+there're some error happens:
+BUT when I use these tfrecords to train model in tensorflow , it's report "TFRecords: DataLossError (see above for traceback): corrupted record at XXX" again（some step after, not at the begining, so maybe some part of the tfrecords error） .
+But when I loop all files to read , it's stuck at some lines without any error. when use these tfrecords to train model , errors "TFRecords: DataLossError (see above for traceback): corrupted record at XXX"
+Currently tensorflow serving project will build gcs_file_system target which may fail, with the following message:
+As a result, building from r0.11 source and selecting GCP support during configure will fail when building the pip package.
+I was getting a toolchain error.
+Your particular problem is that the ZerosLikeOp kernel defined in constant_op.cc is only registered for float and double (contant_op.cc:234/235), instead it should be registered for all numeric types.
+Getting this following error when trying to build tensorflow.
+But, run example failed with following kernel message.
+But, I failed to compile it with --build=aaarch64-linux-gnu.
+I have the same problem on aarch64 platform.
+The problem is that there are too many moving pieces.
+Each set of instructions may fail when Bazel/Protobuf/Eigen/TF are updated.
+I am having this issue but I can not find this file to edit like you mentioned.
+Interestingly, this problem only appear when compiling with GPU...
+I've noticed same kind of problem, not limited to FIFOQueue -- specifically, when Python client requests data from another TensorFlow worker, the data is transferred at a rate of 50-200MB/s even if all the workers are local. 
+I tried running on two different systems (Python 3.4.3, Python 3.5.2), and the same error arises.
+I'm having this same problem at the same point in the code with Python 3.5.2 and TensorFlow v0.11.0rc2. 
+I also hit this issue in 0.11.0rc2, even though I pull the latest source code and build the library.
+I tried reproducing your problem, but there seems to be something wrong in your description.
+I also tried reproducing the problem but ran into the same issue as @poxvoculi. 
+I have the same problem in a similar situation (though without the assurance that it used to work).
+The biggest issue right now is that it's unclear what the various options really mean (attn_length, attn_size, attn_vec_size, etc) as their descriptions are very concise and without a paper reference to ground what the documentation is referring to, it's impossible to know what the attention mechanism is doing short of going through the code line-by-line.
+I get error when directly running retrain.py, without build it first.
+But when I type the command, build does not work.
+I have the same problem and my operation is similary to "changyun79". 
+I have the following error when I try to compile the pip package from the source code.
+I do have an issue to compile tensorflow with 0.3.2 now:
+Currently, I'm running into an issue in which I cannot get the SWIG generated .cxx file to compile; it's trying to reference JNI.h, a header located in $JAVA_HOME/include/, but I cannot seem to get Bazel to understand the external include path.
+Looks like the API link is broken: http://bytedeco.org/javacpp-presets/tensorflow/apidocs/
+One of the biggest issues I've had using the javacpp presets from @saudet is that when you are manipulating tensor objects in Java client code you're dealing with a org.tensorflow.framework.

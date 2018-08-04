@@ -1,0 +1,274 @@
+I would suggest using lzo for compression as opposed to gzip, as the former allows compressed files to be splittable.
+We should try to isolate the problem and study it once we get a reliable way to compile TF under Mac. 
+I assume you'd edit the occurrences here and add x86 and x86_64 to each.
+It looks like you'll also need to remove the ARM-only flags being passed to the compiler.
+You can take a look at tensorflow.bzl and try using the argument list from there with the exception of the mfpu one.
+If you rewrite the relevant code to use android.hardware.Camera it will run fine on older devices.
+If possible I'd suggest running on a real device or altering the code to take canned images (if you're just trying to test a model).
+A work-around is to create a symlink
+We decided to hardcode the libcuda.so symlink inside nvidia-docker because too many things are broken without it, so reverting is one solution.
+You should look at the RNN tutorial.
+We'll keep this bug open in the meantime, and for now you can look at the source code documentation if you're interested in playing around: 
+If you want the final state at time sequence_length, you can concat the state vectors and use transpose() followed by gather() with sequence_length in order to pull out the states you care about.
+An alternative solution is to right-align your inputs so that they always "end" on the final time step. 
+This fixed the problem for me:
+Moreover there seems to be no solution as of now except installing python locally using brew rather than using pre-installed package by Apple.
+For the protobuf issue above on OS X, not only should you pip uninstall protobuf to get rid of protobuf 2.x, but make sure you brew uninstall protobuf if you are using homebrew.
+By the way, if you would like to use homebrew, you can install protobuf 3 via: brew install --devel protobuf
+I was able to solve this by doing brew reinstall --devel protobuf, which installs 3.0.0a1. 
+My solution was to remove ipython from the system install and install it in the virtualenv environment, instead.
+It works for me to remove the protobuf 2.6 in the brew. 
+Just one command to uninstall the protobuf 2.6 brew uninstall protobuf everything is ok now.
+It's not yet documented, but you can pass in "-Os" to the build_all_ios.sh script to compile an optimized version that should run in under a second.
+So instead, you need to run the compile_ios_tensorflow.sh script:
+Exact same library locations, etc, but downgrading from cuDNN 7.0 to 6.5 worked.
+yes you do not need to reinstall the cuda 7.0 driver, just provide the path to libcudart.so.7.0 at the end of the LD_LIBRARY_PATH variable. 
+If you install version 7.0 in a separate directory from 7.5, and point tensorflow at it via the configure script (or LD_LIBRARY_PATH), it will work.
+You can just install them separately and reference v7.0 in your bashrc file
+symbolic link libcuda.7.5 to libcuda.7.0 and it works.
+If you want to try out CUDA 7.5 under Linux, you could try building my pull request branch:
+The only change you'd need to make is to edit the configure file and set CUDA_VERSION='7.5' when Linux is detected. Lines 48-49 would look like:
+A simple google search "install cuda 7.0/7.5 for 'OS here'" should surface all of the information you need
+Well you install them separately as they are both standalone and then you point to the one you want in the bashrc file afterwards
+Linking libcudart.so.7.0 to 7.5 solved the problem.
+Installing the download for Ubuntu 14.10 works for me. 
+Yes, test_session is just a thin wrapper around creating a normal TF session, so you can see how the code disables this optimization here: 
+Using the path the cuda link works very well.
+If you search for RegisterGradient in the python directory, you'll see all the places we define the gradients of various ops. 
+I had to symlink it to the 7.5 version to get it to work.
+If you want earlier versions supported, you can build from sources and set the appropriate library paths / versions during ./configure.
+I have executed this command to solve it
+In case anyone else encounters the same issue, the solution is to create symlink. 
+I got it to run. just manually modified all references to 7.5 (7.0 for cudnn).
+Just do grep -r -n libcu * from inside the tensorflow directory and then open another window to manually adjust the source files.
+Another (hacky) way to fix this: on linux, in your cuda directory there are already symbolic links from the *.7.5 named file to the non-suffixed files.
+Just create another symbolic link for each of those that is *.7.0 and it works like a charm!
+From looking around online, it seems that I need to install cuda on my machine.
+Renaming is the temporary solution.
+I'm current solving this by holding the state in a non-trainable variable that I initialize from the default state. 
+To do this now, I think you need to reshape, do the matmul() and then undo the reshape and then do the pooling.
+For those looking for a workaround, I have two implementations of batch vector x matrix multiplication:
+As a temporary workaround, you can make the plot in matplotlib, and then inject it into a TensorFlow image_summary so that it will display an updated copy in TensorBoard.
+A workaround, you can write your summaries to different directories, and load them as different runs, tensorboard will draw scalars in the same chart as long as they share the same name.
+I did get it working by forcing TensorFlow to use GPU for only matrix multiplication.
+For me, using GradientDescentOptimizer instead of ada grad seems to solve the issue - now it runs on gpu (although it doesn't seem to be any faster than cpu) 
+Not at the moment -- you might try building from source for arm.
+For the purposes of prototyping, you could probably implement this using more primitive operations (e.g., using tf.exp, tf.reduce_sum , etc) -- let us know if there's something missing from the set of primitive operations.
+It's slow and not numerically stable, but it works for now. 
+In the meantime, if you want to test your model without explicitly specifying the device for each op, you can do: ...when constructing your session.
+I've been using a hack where you just define a series expansion within the TF graph.
+To avoid naming conflicts, we could add the copied elements under a common namespace in the target graph.
+If you want this to get fixed sooner, the best way is to come up with a plan for what the API should look like, get buy-in, and then submit a pull request
+Edit: removed call to tf.nn.log_softmax now that bug in multinomial is fixed
+You can also compute them dynamically if your sequences are zero-padded (more details on my blog):
+Provide sequence_lengths and it will reverse correctly, keeping padding on the right.
+This is a better question for stackoverflow, but the answer is easy, so: get_variable takes an initializer argument which you can set to constant_initializer with any numpy array.
+You can also easily build your own initializers if you want to build the initializer with tensorflow ops; look at the source for constant_initializer to see how.
+You could try going the other way, of course; splitting the tf.cross input in four, one for each CPU, and seeing if it matches your expectations.
+It's hard to say off-hand; you'd need to look at a profile for what takes up the CPU time.
+Perhaps there could be e.g. a FullBatchOptimizer base class that implements line searches, with a virtual function StepDirection to compute line search directions (which could then be implemented separately for gradient descent, conjugate gradient, L-BFGS, etc.)?
+If you use persistent tensors directly or have "operator batching" in your immediate mode, you could reduce significantly the number of run calls, and hence eliminate a lot of those 200 usec overheads.
+In that case, you wouldn't need to pass the extra -L to point to the location of cuda libraries.
+When I replace the tf.reshape with following code, the error disappears:
+This could be solved by changing https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/gradients.py#L447 to e.g. sum(1 for _ in filter())
+As a workaround until it gets fixed, does this work for you?
+For example, you can look at the supported types for the addition op here:
+It works for indexing, and gradient descent updates too. 
+Tile is a nop for scalars, so we just need to copy the input to the output.
+A slightly modified BUILD works fine though (for GPU-only kernels):
+A simple fix is to change bool WriteRecord(::tensorflow::StringPiece record); to bool WriteRecord(const string &record); for these two files,
+Removing the "::" solves the problem.
+I found a temporary fix. 
+This way the plots will work again.
+Your problem looks very similar to another issue, you probably can try the workaround there: #1157 (comment)
+I have reproduced the problem in my Ubuntu 14.04 desktop and fixed it with this workaround.
+I found this was a problem too, and hacked a solution together by registering a shape for it:
+You can either wait for the 0.7.0 which will be released soon, or rebuild tensorboard yourself following the instructions at 
+There is a fix pushed to the release branch but if you want it sooner, take this commit: 68e8b0f
+To fix the summary-icon, you need to rebuild tensorboard using bazel and run it:
+building TF w/o GPU support. or in release mode works fine
+I patched this manually by adding bounds_check.h to framework_headers in tensorflow/core/BUILD:
+Revert the WORKSPACE file and eigen.BUILD changes (to use an earlier version of Eigen) and see if the problem goes away.
+I used resize_nearest_neighbour to circumvent that problem: 
+Or you could also use average pooling for sub-sampling, although it will not be exactly what the paper proposes.
+Yes, changing it to return [None] would be the fix.
+Try upgrading to 0.7.1
+Could you try updating polymer to at least 1.2? That has fixed it for at least some people.
+Updating polymer fixes the problem.
+Going to 1.2.4 of polymer works for me and I'm using 0.6.0
+Otherwise, as @rdadolf pointed out you could have two functions GetCudaDriverVersion and GetCudaVersion which would return the cuda version (e.g. "7.5) and "1" ("" for OSX) respectively.
+Just wanted to note that uninstalling protobuf and reinstalling TF 0.7.1 worked well for me on Mac OS X - the Polymer version issue is gone and graphs are visible. 
+If you want to be able to serialize your collections and avoid this warning, you can call the tf.register_proto_function() function for your collection.
+As a temporary workaround, prepend "./" to the save_path argument when calling Saver.save().
+However, when i downloaded the file myself and renamed it to "tensorflow-0.7.0-cp34-none-linux_x86_64.whl", then executed the command again with changed filename, it worked =)
+Here is a patch for your BUILD file that adds the genrule targets for copying the JNI headers you need and some changes to the cc_library target to set up the right dependencies, namely:
+Cheers @HellMood and @hannes-brt downloading it and changing py2 to cp27 worked for me.
+But i ran the new wheel 0.7.1 and it worked for me.
+The new 7.1 wheel installs properly and runs the mnist convolutional example just fine.
+Downloading and renaming the file s.t. "cp35" -> "cp34" appears to work.
+This way the final state will represent the "final" state at max(sequence_length).
+In the meanwhile you can try nightly build 
+Or, if you prefer, here is the bazel executable for aarch64 I ended up with:
+Also just from a practicality standpoint, you should be able to compute gradients and then perform mathematical operations with them without having to worry about something unexpectedly becoming a non-Tensor and causing an exception to be raised.
+Either using 'pip2' or properly linking 'pip' to the default python interpreter (python2 in my case) fixed the issue.
+Running these tests in exclusive mode is a workaround for the problem.
+You can call convert_to_tensor to make a tensor from a numpy array, or you can put the numpy data into a tf.constant first.
+Or you could fix flip_left_to_right to call convert_to_tensor, which would be the right thing to do.
+Well, I tried pip installation on another Linux machine, seems everything magically worked!
+I pip installed the nightly binary and tensorboard looks to be working now for me.
+When I pip uninstalled and reinstalled tensorflow, tensorboard started working as expected.
+once I swapped out "~" for the absolute path to HOME, it worked fine.
+One other thing that might be useful to others having this issue: It seems you must start tensorboard after the file has been created.
+what worked for me is copying the global.css file from this git repository to the location listed in the error log in your earlier comment. 
+Also, you will probably need to create that css directory first.
+Reinstalling from master did not solve the problem for me (OSX), downloading and adding /css and /js from source to /usr/local/lib/python2.7/site-packages/tensorflow/tensorboard/lib/ did though as previously mentioned
+Upgrading from TF 0.7 to TF 0.9 on my Mac solved my problem.
+After creating a file called "TAG" with the content "22" (which was the content in the master branch when I looked it up) everything worked fine.
+With Chromium, it worked like a charm.
+So the right fix for that is to put b in front of the regular expression definitions to get bytes-compatible regular expressions.
+However, with one BLSTM layer, everything is fine.
+When i remove either the convolution layer or the recurrent layer, it works well with gpu.
+To make sure your op runs on the GPU in tests (where you presumably feed in constant values as inputs), use self.test_session to run your test.
+If you replace ind with a non-empty array, such as [[0,1]] it works fine.
+I think the solution is in #582, the protobuf python package solution as the bottom of the thread doesn't seem to work for everyone as mentioned in #2046.
+For example, instead of fetching a large fully connected layer to compute the logits, you might use a sampled loss function, and you can use tf.nn.embedding_lookup() instead of tf.gather() to more efficiently access sparse rows in an embedding matrix. 
+Alternatively, you can shard your variables manually to avoid the limit.
+As a workaround, clamping to 1e-5 instead of 0.0 caused the NaNs to disappear.
+The fast way to solve this is an add an extra op that does x * log y and does the right thing for x = y = 0. 
+The simple way to solve it is to use x * tf.log(y + y.dtype.epsilon) in the gradient.
+As a workaround, the values can be fixed by swapping the bytes via integer-operations
+The easiest way to fix this would be to do two scan products to get the sequence of partial products from both directions, then multiply them together to get all products with one element removed. 
+I've had a shot at solving this today using cumprod, and it's working great for full reductions.
+Have you considered extending the cumsum operation to take a list of indices instead of a single index over which to sum?
+I just realized that I could make use of tensor.shuffle from Eigen to do the same operations as described above (permute the axes so that the scan axes are in the front, and then reshape).
+This makes the existing tests pass and also works if there are zeros in the input array.
+The solution is to replace self._register_dead_handle(handle) with self._register_dead_handle(handle.handle) in session.py
+Actually for fix above to work, _auto_gc_enabled has to be set to False for all TensorHandles.
+Try passing sharded=True to the tf.train.Saver constructor and that might also solve the problem without rebuilding.
+The easiest way to get it is probably to run under gdb (otherwise you could turn on core file recording and load one of those in gdb).
+I figured out a workaround.
+A work-around is to create a symlink
+A work-around is to remove _python_build directory before running bazel test
+Alternatively, you can try a different GPU.
+I've been able to circumvent the issue by following this setup, which includes switching to python 3.x. and the associated binary.
+Here are a number of things to try:
+you can set compute version for 5.0 via "configure".
+You can download and install directly from NVIDIA.
+If that is not possible, if the file directory is similar, you can pass that directory to "configure".
+If the file directory is completely different for some reason, I guess you can build another directory with symlinks that mimics the downloaded Cuda directory.
+If those are not symlinks, I would recommend you to manually reinstall that.
+Installed all the latest versions (except TF) and its all fine now.
+If this is a blocker for you then a simple workaround is to add the code below here:
+There's a workaround by transforming tree structures to a matrix. 
+The easiest way to get a graph proto is probably to insert some code into your training script to write the graph to a file.
+Once you're done building your graph, right where you would start your session (maybe with a supervisor, etc.) -- you could do this:
+The quickest way to do that is to run the program under nvprof as follows:
+You can save a graphdef with shape annotations using code like this:
+Implementation using builtin Tensorflow functions works, if the real and imaginary parts are separated. 
+You would need to add complex64 and complex128 to the macro (and change it into REGISTER6).
+You should make sure that the GPU tests are enabled for complex64 and complex128 for each op that has been extended, for example here: 
+So far, I can make it work with some operations (add, sub) by simply adding the complex data types when registering the kernels: e.g. 
+It seems to solve this problem, people have been using reimplementations of the std:complex type (e.g. from thrust, cuda_complex or cusp) so that it can be used in device code:
+If you comment out the Defun, it's computing the gradient of softplus correctly.
+It works fine in 0.10 branch as far as I can tell.
+tf.reduce_sum is working correctly, the dims argument must be a scalar or a vector.
+You can fix this by commenting out the if_android and if_ios calls in contrib/session_bundle/BUILD and the android_tensorflow_lib_lite_no_rtti_lite_runtime target in the core BUILD file.
+Confirmed that if I make these changes to the following three files configure runs without error:
+You don't need to remove them from the call to load at the top of the file, but instead each time they are used, like this:
+Following @ibab @woodshop suggestions solved this problem.
+I fixed the issue according to @ibab and @woodshop advice as well.
+The quickest way to debug this is probably to reproduce it at head, and then do a binary search on github checkins to narrow it down to a particular commit.
+Commenting out the targets enables the configuration to complete without errors. 
+Going ahead and removing the next 2 targets enables the configuration to complete without errors for me, using CUDA 8.
+Yeah, if you delete all mentions of "//base", "//tensorflow/core:android_proto_lib_no_rtti_lite_runtime", and "//tensorflow/core:android_tensorflow_lib_lite_no_rtti_lite_runtime" it seems to build okay.
+Try running sudo apt-get install python-sklearn inside the Docker container.
+To sync after each op, you'll have to build from source by modifying this line.
+For the short term you can just broadcast the images tensor to to be shape 128,24,24,3 (i.e. copy the image 128 times). i.e.
+You can use sed s/bazel.clean/true/ <configure|bash as a workaround.
+Please try a newer version.
+You could grab tensorflow/python/ops/special_math_ops.py from HEAD.
+For now, depending on how multi you are, quantizing normal_normal may be a suffiicent workaround.
+From an internal discussion, a workaround was suggested using Gumbel argmax trick as follows. 
+For now, if you want to inspect values of the tensors you probably want to add a histogram summary, and you can then view the distribution of values from the tensor on the histogram page. 
+_input_producer is a fine solution for now, but it isn't part of the public API and will go away once we implement __all__. 
+Currently, you can compute the Jacobian of, say, a vector, by calling gradients multiple times, one for every scalar component (obtained by slicing) of the original vector, and reassembling the results.
+In that case, you should differentiate with respect to that single scalar.
+There seem to be two solutions here:
+Ok, so I can partially train from a deserialized graph by manually create the missing tf.Variable's and hooking up their internal properties to the tensors and operations from the original graph. 
+if you download tensorflow from github instead of 'git clone', you will not meet this.
+I have a temporary solution working until that lands.
+To provide an example, it would be great to be able to do something like this:
+For a hacky (unsupported) workaround, you could try the answer to this StackOverflow question.
+We could use tf.Graph.finalize(), which is intended for such purposes. 
+Someone should try adding dtypes.float64 to that line and seeing if it works.
+You can achieve what you're looking for by padding your input with zeros and then convolving the padded tensor with ones. 
+The product version of this would be useful to fix #2641.
+My workaround for now is to just reshape my tensor to [-1, 1, 1, depth] (with depth as the number of outgoing connections of my fully connected layer). 
+Reshaping to [-1, 1, 1, depth] is the correct thing to do though, and we should probably just do that.
+For now, use tf.to_int64 to convert your values.
+Maybe we need temporary smart walkaround-wrappers.
+Okay, see 0ed66eb for how you can set a min log level for logging in C++ using an environment variable.
+If you want to optimize for matrix trace, there's a workaround as follows.
+Fixing it would require changing a few routines to compute height and width via tf.shape at runtime rather that at graph construction time.
+You can do it in this way, maybe a little tedious
+My solution is , cut the total array into the format , in the SummarizeArray method.
+tf.cond should be enough to make this work
+If I understand things correctly, the only way to use np.multinomial is to tensor.eval() (to convert the tensor to a numpy array). 
+This is a super easy fix by just adding another wrapper around _input_producer.
+So maybe this can be solved without resorting to tf.cond, but it's certainly not beautiful.
+One way we could do this is to host a static graph visualizer on tensorflow.org/tensorboard/graph-visualizer (or similar) and by navigating to that url, you could upload a pbtxt file from your computer and visualize it.
+There's a way to show graph visualization in IPython notebook, see the function "show_graph" in Alexander's deep dream notebook
+TensorFlowEstimator is deprecated, please use Estimator that takes params argument. 
+However, open it with h5py.File as numpy array and feed the tf.placeholder is OK for now.
+This would be easy to fix by adding a symlink option to ListRecursively().
+I don't know that we have a build for 7.5, so at this point I'd recommend building from source.
+I think we can write a custom data reader, that reads data from HDFS, which seems doable: 
+You need to install Hadoop locally, but you don't need to configure it. 
+I recommend using Boost.Compute as a wrapper for OpenCL (it makes running kernels, testing, templating easier).
+You can just download a binary Hadoop release or use a standard distribution (e.g., Cloudera).
+As you can see in the docs, you can do what you want by specifying objects that inherit from RNNCell (just like your Grid LSTM would), and then the output_size and state_size properties can specify multi-dimensional sizes by using tensorflow TensorShapes.
+You can run bazel test //tensorflow/... to run every test, although that will be unnecessary since it will test a lot of code you haven't touched at all.
+Read the manual on LD_DEBUG so you can trace what libraries are loading (use grep with it) 
+I would recommend circulating a proposed implementation on the discuss mailing list early on, so that a consensus about where such API might live (in repo / off repo / in 'contrib' directory) can be reached ahead of time.
+Actually, I missed this earlier but you can restore by specifying same model_dir when you call the constructor and it will load the saved model for you. 
+The solution is to use tensor_util.constant_value_as_shape() in the shape function for tf.tile(). 
+So for my problem, the current solution is just replacing tf.sigmoid(x) with 1/(1+exp(-x)), right?
+For now, you could use the TensorSliceReader::GetTensor() function to obtain a tensor from a checkpoint.
+I have solved this issue by adding the option -L /usr/local/cuda-8.0/lib64/ to the command, since the libcudart.so library is located in that folder on my machine.
+One solution would be to use the neural networks for generating captions, e.g. "Man wearing tall hat, bow-tie and purple jacket."
+I think the best solution is to explicitly add a second derivative function in Python, similar to what I did for InvGrad here:
+You can write a variant of the LSTMCell that returns both state tensors as part of the output, if you need both c and h state for each time step.
+You can take a look of python/kernel_tests/fft_ops_test.py to see if it works for you. 
+E.g., here is how you can use numpy fft modules to in tf:
+you can either use timeit [1] which turns off GC or you can use TensorFlow tracing [2] [3] to measure the op timing from within TensorFlow.
+To fix this, we should add __all__ to our Python modules and make sure __all__ matches the documented public API exactly.
+maxcuda's instructions for building bazel worked quite well for me..
+yes, changing the buildenv.sh should fix that issue. 
+While a stable set of instructions may remain elusive, one effective way of documenting a working set is to create your own fork of each of the repos and push any changes you need to make as commits on one branch for each version of TF you're targeting. 
+Try adding some swap space
+Try something like bazel build -c opt --local_resources 3072,0.5,1.0 --verbose_failures --config=cuda //tensorflow/tools/pip_package:build_pip_package
+Note this will take several hours to build with these settings, but it's the only way I've found to work.
+You can see which files elirex changed in addition by looking at their diff.
+I had to modify the content of the file bazel-tensorflow/external/protobuf/BUILD, re-ran bazel build command and it helped to resolve this issue in my case.
+Back to your first question, using the tensor_content field of tensor.proto, or the TensorResponse interface defined by tensor_coding.h would be the way to go.
+The way to run without Python transfer in your example is to do sess.run(dequeue_op.op) instead of sess.run(dequeue_op)
+If you could dump the activation/gradient values from a single step on both versions, initialized from the same checkpoint, that might show something useful.
+Try to rearrange your code to do one tf.split upfront before any per-timestep calculation.
+In the mean time, an alternative would be to copy the latest files from https://github.com/tensorflow/tensorflow/tree/master/tensorflow/models/rnn into your own directory and run them.
+We can update the bazel build and workspace files to pull the latest version of Eigen any time.
+An alternative would be to copy the files to their own directory and rewrite the imports a bit, so that example code isn't picked up from the installation.
+I am able to resolve it by adding the following line at the beginning of sentence_to_token_ids in tensorflow/models/rnn/translate/data_utils.py
+Another shot is to use grpc to interact with tensor.
+Probably not the best solution but once I commented out lines that had tf.contrib.deprecated in it the code ran.
+As a temporary fix, try removing just the "contrib.deprecated" parts leaving just tf.scalar_summary instead.
+You should check on the bazel issue tracker.
+If we're going to change the default behavior, I think the only way would be to make the special Zeros class and give it suitable arithmetic overloads.
+This can be done by either specifying these options on the command line, or in one of the rc-files.
+If you are working in a separate repository and using a different build system, then you would need to use the protobuf plugin for that build system.
+You can just have a cc_library rule with the name tensorflow and the build target will build a shared library called libtensorflow.so.
+If your goal is to generate an .so file, then something similar to what @saudet suggested would work.
+If you need to use the TensorFlow protos in Java code, then you would need to add dependencies from your java_* Bazel build targets to the proto_library targets that generate the Java classes from the .proto files.
+Once this works, you would have the JNI build set up for Linux since the copy_link_jni_md_header genrule only copies the Linux-specific header.
+Note that in general, compile actions in Bazel are run from the root of the source tree, and you would need to change the includes in your SWIG file as follows and then re-generate the C++ files so that they will have the correct includes as well:
+I guess you should follow those steps to build Tensorflow and all it's dependencies. 
+In the meantime, you can use the bindings that saudet mentioned.

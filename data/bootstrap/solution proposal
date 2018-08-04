@@ -1,0 +1,109 @@
+You can always add your own breakpoint by customizing grid.less. 
+In the meantime, the only way is roll the hotfix above on your own.
+To trigger the data-api, simply add data-toggle="switch" to your switch element.
+In addition, you can use the on and off options (or data-on and data-off attributes) to set the switch text. 
+Of course, you could change your CSS by changing the two lines to .input-switch { display: none; } and remove the :not selector.
+That solution is already available in Bootstrap under Javascript Plugins > Button.
+I've created a solution for this and its an actual on/off switch and visually matching of bootstrap. 
+This is my initial solution for an easy-to-use switch (using the @mdo 's guidelines)
+A solution also is: http://bootcdn.com
+I add this to my jQuery UI Datepickers and place them inside input-append divs and it looks just fine.
+The shims are just an example, but ideally you could use the html5 format to create your form, and if you want extra customization (bootstrap style instead of standard browser style), load the plugin to override the behaviour, without calling some javascript functions.
+This one at http://www.eyecon.ro/bootstrap-datepicker/ works just perfectly.
+Besides, same way you can use the noty alerts as an external addon, you can always DO NOT download its CSS and JS using Bootstrap's Customizer.
+Came up with a simple, minimalistic approach to the solution: https://github.com/olivierlesnicki/colibri.js.
+Creating a new block formatting context for .tab-content will fix it though, and recycles the principle that underpins the "media object".
+A best-practices solution from the massive Bootstrap community would be preferred over pointers to several separate projects headed in slightly similar directions but with potentially different technologies and not-quite the same goals.
+With respect to the issue being closed, I'd just like to contribute a workaround that I've found to be nifty and reusable for shrinkwrapped modals:
+You could also include max-width and min-width if you wanted even more control.
+to play well with responsiveness, try the following (add modal-big class)
+This plugin fix and improve modal windows: Bootstrap Modal
+Putting it on the grid will solve this problem, and collaborates well with the bootstrap conventions.
+You can use it by simply adding the class "nav-wizard" to your element just like you use "nav-pills" or "nav-tabs".
+try to remove '-webkit-overflow-scrolling: touch' property for '.modal'. it helped me to solve the problem.
+Only way to get out is to pinch to zoom out.
+I've found the following to fix that within iOS 8.1, Safari 8, Chrome 40, Firefox 35 on the body class:
+Not sure if this is the most elegant solution, but adding this class to the modal body does the trick.
+Setting this property -webkit-overflow-scrolling: auto; fixes it.
+The fix for this was to set
+I finally found a solution.. removing the overflow-y: scroll on .modal and having a wrapper div inside the .modal-div with:
+This helped me get to a working solution for my app.
+I believe you can fix the issue if you use following code.
+I fixed this for UI Kit using the following CSS.
+mikebranderhorst's comment was a good temporary work around. 
+This fixed it for me on iPhone 4s and above
+Even though it should have no impact, declaring bootstrap.css before bootstrap.js seems to fix the issue.
+Try moving CSS files to the footer and see if you can reproduce.
+Interestingly, Alt + left click seems to indeed fix the issue.
+The only workaround I found is to disable the transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; property of .form-control for select elements.
+Added this to our .css and problem solved!
+Adding the transition: none override to select tags with form-control fixed it for me.
+If this is actually the problem, a solution would be to define the background gradient for each .progress-bar-striped.progress-bar-{warning,info,etc} combo with opaque background colors to forego infinite alpha compositing.
+If we could put the right sidebar first in the source order but keep it displaying on the right, this would solve our problem.
+I found a work around that seems to fix it in chrome and not negatively affect other browsers.
+I met same problem, after googling I found here and zacechola 's answer solves my problem, thanks
+The temporary solution is to override the rule in another css file:
+If you leave it commented, then it works fine everywhere.
+You can use the .offset* classes for pushing columns over.
+Here's how I got this working. 
+As you can see, removing trigger('focus') fixes it.
+Commenting out the .trigger('focus') at the very end solves the issue.
+Here is a hack I am using to fix:
+To turn off bootstrap's focusing/or to implement your own, just do this:
+It might work if you switch from pixel-based media queries to centimeter- or inch- based media queries
+As an alternative to .hide one can use the attribute hidden. 
+An simple fix for this is targeting .input-group-btn and input-group-addon within .navbar-form with a auto width. 
+As a temporary and not semantic solution, you can try to put your rows inside <thead> if you don't want the hover effect.
+In the meantime, you can add this to your css file
+If you need a column to not be collapsed, add a min-height to them.
+I solved this problem on a site I was building by setting the right-hand column to float:right explicitly and then re-declaring a few of the responsive rules to remove the float when we want the columns to stack. 
+then below that rule, you just have to re-declare your responsive adjustments for smaller screens (or stick the float:right rule before your responsive stylesheet, whatever works for you):
+In 960.gs, there are pull_X and push_X (equivalent to offsetX in Bootstrap) available, that solve this issue.
+a possible workaround to avoid using loops in any way could be guarantee a column layout UP-TO 24 columns.
+For checkbox you can get away using a label wrapping the desired input.
+Seems like you could use documentElement.clientHeight to help calculate the scrollbar's height.
+For all those who like to use this functionality immediately, here is a simple solution using jQuery plugin: PositionCalculator.
+I guess you could just make a super-long URL with all the options exposed as well, so then you could manually hack the URL.
+or, another solution might be, what I wrote in here:
+This is what worked for me:
+The easiest way to style disabled label is to wrap it in a <span> and write something like this in CSS.
+Edit: For those interested, this is my little "workaround" that seems to work, add it after the "bootstrap-dropdown.js" include (I put mine in the $(function() { } section which is located at the end of the page in my case):
+I seem to have a better workaround by adding this line after the line dpwolf mentioned, rather than changing the line:
+well my solution was to add class dropdown to the parent tag on HTML markup.
+My workaround is to divide this line in bootstrap-dropdown.js:
+For 2.3.2 there is a fix, add css property
+try this and let me know if it works for you
+A possible solution would be to use a MutationOberserver to react to changes in the DOM so you don't have to worry about it.
+I was able to apply this fix by incorporating it into my complete callback using something analogous to the below
+I wrote some code to fix a very similar issue I was having with the fluid grid.
+I have a working workaround based off the javascript workaround proposed by @Sanjo (thanks!)
+I fix it with this css
+I've found another solution, this is my example: 
+hey man there's actually a fix for this but might need some JS to force it on IE6-IE8.
+Instead I ended writing a js script to fix it.
+if you apply .hidden instead of adding styles directly to each element, you can modify the nth-child fix to be:
+I just upgraded to 1.9.1 and this solution works very well:
+Try this, the last log of $.fn.button should be the jquery-ui version: 
+As you can see above, I created a patch to get the noConflict method working.
+It should be noted that jQuery UI also provides a simple workaround via $.widget.bridge():
+For people looking for an alternative solution that closes on an outside click by default and doesn't require two clicks after that, this worked perfectly out of the box for me with the default options:
+I fixed the problem by overriding the max-width attribute on the only page in my app where it mattered, but I would also prefer that this wasn't a global style.
+in iOS when open tooltip and then close it by click somewhere outside, the only way to open closed tooltip again is to open another tooltip and then first one will be able to open
+If you need to change style only for columns on one single page, you still can simply add col class and change styles for this.
+there is a way to do this is the 2.1.2-wip branch see 
+If you need to change style for all columns, the best way to do this is changing standard bootstrap mixin for this and compile your own version (sic - just use any build system for recompile and happiness will come).
+To fix this, I believe a tiny set of column classes is needed when screen size is between 480px and 768px -- "col-lg-3 col-sm-4 col-tiny-6 col-12". 
+Adding this css solves the problem for us:
+To use this snippet, just add the .table-disable-hover class to your table.
+Below is a dirty solution I just came up with which will look for a script tag that references bootstrap.js, attempts to retrieve it from the same location just to parse the comment. 
+Another fix is to add fade to this style in your custom.css. Line 5098 in the bootstrap.css file.
+We could work around this by checking if docs/ exists and only then push the affected tasks into the dist tasks.
+A possible JS solution could be to use insertAfter for the backdrop like in Issue #3217 ( look at @tompi solution )
+As a workaround for now, I'd suggest wrapping all input-groups into one .input-group-wrapper and give it display: table-row-group.
+You can set your package.json/bower.json file to point to the raw v4 repo or monkey patch whatever development version you are using. 
+You should be using .navbar-left instead of .pull-left when aligning things in the navbar.
+I've just discovered this issue and after some experimentation I've found that hooking into the click event for the label and returning false if the disabled attribute exists works well for me. 
+The suggested fix would be:
+Setting display:table-cell; width: 100% to fieldset element indeed fixes the problem.
+Best solution I figured is to use jQuery migrate 1.4.1 plugin along with jQuery v3 so it restores any deprecated features of 1.9.x in v3.
+If I'm not mistaken, all you need to do is replace show() and hide() functions with .css('display', '') or addClass('hidden') and fix a selector in alert.js

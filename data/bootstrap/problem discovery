@@ -1,0 +1,132 @@
+Well i tried to add less but somehow it breaks the grid system.. 
+The other problem is the IE7 doesn't support :before and :after. 
+There's an error in the minified JS link above.
+However, there are some problems in Opera/Linux:
+I have a very strange issue with your datepicker using Chrome if there's only one field on the page: when using the keyboard it moves 2 days forwards or backwards instead of just one.
+The problem with using a select to choose the year is that the choices are limited.
+When I click on the year and enter 20 for the year, the week numbers doesn't show correctly:
+I noticed that too, but that's a JavaScript error.
+That won't work on IE 7 and 8 for the same reasons my earlier attempts didn't work. 
+I could replicate the subnav but dropdown is not working on it :(
+Displaying, hiding, and displaying the same modal multiple times will sometimes fail, leaving the modal backdrop fade in place and no modal displayed.
+Modal scrolling appears to be broken in iOS 8, but only in some cases. 
+However, according to the HTML5 validator, your example has some validation errors, which might potentially be causing your issue:
+i had the same issue after focusing on any input/textarea element in modal. 
+The use of -webkit-overflow-scroll: touch; apparently doesn't have anything to do with this—I still have the same problem without that property.
+I’ve had a similar problem where a modal will not scroll on iOS.
+I still have this issue after using an input field in the modal..
+A similar issue happens in IE11 on Windows Phone. 
+I'm still having the issue as well even with 2.2.2(.0). 
+However the issue per se is a bug in bs3 for me because the behavior isn't consistent.
+Edit: that might just be the placebo effect, still having issues scrolling when in landscape mode :(
+I'm having same issue in my app.
+Also have this problem on IOS 6.
+Love that you are working on fluid thumbnails, but they're still broken for me after the first row.
+I get the same results that you do, animations for .in in FireFox does not work.
+The problem is that the transition adds the class collapse back to the element, transition is called when you uncollapse an element.
+So with every collapsable panel inside a modal I will have problems with the backdrop.
+It's a major break in backward compatibility.
+Because of the change with modal backdrop and the new function from #15106 there are a lot of problems with the modal backdrop now.
+Was having this problem too with bootstrap v.2.3.2
+I get the same error if i add the icon-component only to the bundle.
+bootstrap-dropdown.js when minified with JSMin::minify produces error in Firefox error console saying clearMenus()needs ;
+This doesn't actually work for me – I get TypeError: Cannot read property 'name' of undefined every time I try var autocomplete = $('input').typeahead();. $('input') itself is as expected, but and has a working typeahead in the UI, but .typeahead() still returns an error.
+Sometimes it's the opposite, the button is on the first row and refreshing the page will break it.
+I tried removing the margin-right on .collapseMenu and still have the issue.
+Also, the weird thing is that sometimes it renders properly but once I refresh the page a couple of times it breaks.
+If I keep hitting F5 after that the button breaks again
+I am still seeing this problem on Firefox 33.1 and also after an upgrade to Firefox 33.1.1.
+Therefore the problem has to be somewhere in lines 455—472 of the current customizer.js.
+And, unfortunately, the latest FF 34.0.5 is still not triggering the download for me...
+I also have a vague memory of the same issue on Windows 7 64-bit, but that may be a false memory.
+Just ran into this issue after updating to latest version of Chrome.
+I'm still seeing the issue in ipad for 2.3.0
+I just downloaded custom version without icons and it has the same problem.
+The problem was we were concatenating CSS files with spaces instead of just straight up joining them like we do with the JS.
+I've seen this bug outside of Bootstrap and was also able to prevent the flashing by killing the transition. 
+You seem to have found a different bug (related to DOM attribute mutations) which also causes the same type of flickering.
+Basically when bootstrap styles are included on the page (compiled from less or directly from dist/css)
+chrome fails to print/preview the page.
+Same problem here, I get this error even with everything checked :
+Still getting this error, as well with a custom build.
+The bug cropped up when the outermodal (with overflow hidden) scrolls valuable content out of view when a modal opens in our iframe.
+Biggest problem with floating thead is such a function is intense for such a small feature.
+This is still an issue with Chrome 48.0.2564.109 m (Windows 7).
+I'm experiencing this issue as well :(
+This issue is still going on even in IE 11.
+I tried to make it work simply with a new typehead() call and new values, but it does not update at all.
+I experienced the issue on IE11 desktop/laptop.
+I can confirm its still broken...even using defaults.
+The problem is still there.
+This bug is preventing us from moving up from Bootstrap 2.3.2 on our project.
+I believe I am also seeing the same bug in Safari 7.0 on OS X Mavericks.
+I have just encountered a small related issue with .hidden-* and .visible-* classes - they define display rule for block and table elements, however, I needed to show/hide inline elements. 
+There is a problem in IE, caused by this line:
+I'm having this issue too.
+The *::first-letter selector in _print.scss is causing the problem in IE11:
+One issue I found is that due to how Typeahead is written, after you modify the source array the results don't get picked up till the next keystroke. 
+The problem with this particular effect is that it's very difficult to override without replacing the whole bootstrap/tables.less with your own file.
+Still getting error
+When printing in Safari 7 and Firefox 25 the grid carries over to the print style, but in Chrome 34 and IE 11 everything stacks when printed.
+Unfotunately, it looks like it fails to pass the tests neccessary for submitting to bootstrap.
+Having the issue in Chrome Desktop with v.2.1.1
+the first-letter issue was causing a crash.
+Same problem for me with Bootstrap 2.1.1 on iOS 6 :-(
+This issue can be replicated by selecting an item and holding down the mouse button without releasing.
+I can confirm this issue with my 2.2.2 build as well.
+unfortunately still happens. custom build, nothing default, same error message.
+I am still getting errors with custom package.
+Just checked in Chrome 23.0.1271.64 m (updated today) - bug continues to appear.
+Since the error is located in mixins.less bootstrap fails to build the css if you have at least one css option checked.
+even after fixing it in alpha 5, printing itself isn't working correctly in IE.
+Addressed issue causing “Print all linked documents” to not work in Internet Explorer 11.
+The issue in Firefox appears to be a bug with how floated elements are handled across different pages
+I downloaded a good copy earlier (about 2 hours ago) but now get the error again.
+Yes, i have the same error.
+I'm facing an inconsistency issue (between Firefox and Chrome) when using floats on a multi-line "form" that contains input-groups, as demonstrated here.
+One problem I'm encountering is that button panels aren't "responsive" enough. 
+The issue is still reproducing on iOS devices.
+When enabling flex to create an auto-layout column, the colum reset with the use of .clearfix doen't work.
+I ran into this problem as well using the Google Map API alongside bootstrap.
+I looked around and found out it is this definition causing the issue :
+We were able to reproduce them on other iOS devices and simulators with the same version of iOS.
+If you reorder the thumbnails and call the JS again this won't work as expected every time.
+I'm trying to get Bootsrap through Customize, but every time I get a blank boostrap.css and file error.txt with the error:
+just tried still get an error:
+Your workaround doesn't work for me.
+Partial solution is to use display: run-in;, but it's also not working in all cases.
+I see this is still a problem in v4 as well in iOS.
+I'm using card-block now as a flex item but it won't work if I want to have card header or footer.
+I just stumbled on that same issue myself; While the proposed solutions here works for thumbnails "alone", it still fails when using the Sortable plugin from jQueryUI
+Using the noConflict method to rename the bootstrap tooltip function causes the tooltip code to throw a lot of errors.
+Unfortunately this solution don't work with drag & drop.
+... the fix breaks the layout on mobile devices, though.
+Facing the same issue on Chrome Version 21.0.1180.79, selecting the option form keyboard keys works but using a mouse no update in the input box. 
+If you reorder the thumbnails and call the JS again this won't work as expected every time.
+His solution was not working right for me when I had an element with a span12, and things were messy while sorting that.
+I'm having the same problem on bootstrap 2.2.2.
+I also trying to use bstooltip function but it doesn't work. 
+osx 10.8.2 , chrome 22.0.1229.94 bug continues...
+My original problem is that we are using jquery tools which has its own tooltip method and the two don't play nice despite the attempt to add an ineffectual noConflict method.
+I have not tested everything but Modals are broken because of this major change:
+I'm coming to the conclusion that the bootstrap tooltip noConflict doesn't work :(
+The proposed jquery code didn't work for me; i have span12 li's that each will be put on a new row. The second thumbnail still has the margin.
+I appreciate everyone enjoying / using this hack, but realize it won't work with anything that doesn't support nth-child.
+Using the nt-child() CSS3 selector would not work if IE 7 and IE 8 support is to be kept.
+Unfortunately this solution don't work with drag & drop.
+Problem is the lack of .fade on the div.modal. 
+I removed it but I was able to reproduce it with and without the collapse div
+I have managed to isolate and reproduce the problem: https://jsfiddle.net/fczbkk/jhdsua5k/
+I was able to reproduce in Chrome only (Version 50.0.2661.102 (64-bit)).
+I'm seeing this issue with Chrome 22 on Mac OS X 10.8.2 as well.
+Hovering .table-striped rows remain broken with @mchiocca's fix.
+I still have this issue with netdna host CSS.
+osx 10.7.5, Chrome Version 22.0.1229.94 issue still exists.
+I've looked the source code and the problem is in this function
+When the IE9 browser window is minimized an error occurs with responsive-table and table-hover. 
+Same issue, have the same problem with S7 on 6.0.1 SM-G930W8 and Chrome 51.0.2704.81 and Chrome Dev 53.0.2782.9
+quasiperfect's answer doesn't work in all cases because it does not take the size of the tooltip into account. 
+Now I can have tooltip functions (Bootstrap and jQuery UI) but $('#example').bstooltip() doesn't work
+I think the biggest problem with the table background hover is that it's a hardcoded color, meaning it will only go with the default table color.
+Disabling a button group item does not seem to work anymore in 3.3.5.
+The above jsfiddle example still doesn't work.

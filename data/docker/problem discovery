@@ -1,0 +1,127 @@
+Dockerd 1.12 & 1.12.2 also have this issue.
+Failed to upload schema2 manifest: manifest invalid: manifest invalid
+Similar thing happens when I try to push an image to Docker private Registry it fails with an error ¡°manifest blob unknown: blob unknown to registry¡±
+At the moment we run into the same problem.
+Hi Brian, I have tried the latest version but it still fails with the same error
+I deployed the registry "https://github.com/docker/distribution/releases/tag/v2.5.0,",yesterday but it fails to run I get the following error , either there is an issue with the way I have deployed registry or there is something wrong with the image, I have tried it on 2 different machine and have the same result.
+But I get the same issue as everyone else
+Theres still a small issue that the image has to be tagged with port :443 otherwise docker complains about unknown ssl authorities but I think thats something I should be able to figure out. 
+I am having the issue with the "docker ps" as well.
+Hi, Even I am facing the docker ps hang issue with docker 1.12.0 . 
+We are facing pretty much the same problems. 
+But when I do systemctl start dockerd, I found container is restarted and pid is changed too which seems is not expected.
+docker and system crash when excute docker cp.
+I deploy a kubernetes cluster in docker containers with images gcr.io/google_containers/hyperkube-amd64:v1.2.0, when I copy a file from this running container, the docker daemon were crashed and my linux proc were carsh too.
+issue happens once you excute docker cp from this container kubelet
+journalctl also crashed and it doesn't record the docker crash log. reboot cmd also can't use.
+the problem is that you are expecting here that it's only HTTP related, for which exists plenty of proxies, load balancers etc. But if you go for some private protocols or SSH for example then you are stuck, you either need to implement one yourself or find a workaround. 
+From a docker container, I cannot ping gateway on my LAN (192.168.1.254) or 8.8.8.8 on the internet.
+Whether I have iptables up (with the iptables configuration which worked last week) or iptables flushed (-X, -F), I cannot ping outside world or LAN
+This morning (not sure if related - after updating Debian & reboot), suddenly all communication from containers to outside world stopped; specifically ping 8.8.8.8 did not work anymore; I could not build any containers anymore (when apt-get is required).
+Hi All, I am still running into this issue, that at some point, I cannot access the www from a container (ping 8.8.8.8); verified with iptables disabled.
+Since original submission, dockerd got updated to Docker version 1.12.2, build bb80604, still facing this issue.
+Hi, I tried:sudo brctl addif docker0 veth44dac6e,but get response:device veth44dac6e is already a member of a bridge; can't enslave it to bridge docker0,Issue is still randomly happening; today again.
+The problem I am seeing is that when I am running 100+ container the server starts loading because I am making too many requests too often to the docker daemon (aka one call per container to the /stats endpoint every 20s).
+We're having issues using the PUT /containers/(id)/archive endpoint due to file ownership permissions.
+Got the exactly same problem here
+My error in the initial implementation was to bluntly pass root as a "chown" option rather than passing the full maps and letting the code already in the archiver do shifting (if necessary).
+This, in turn, causes the pam_limits module to report a failure; and this prevents su from continuing.
+For docker, parallel gzip presents some serious performance issues.
+Our issues is that every Dockerfile we have to build, using container or otherwise, we have to pass
+COPY command in Dockerfile fails intermittently with no such file or directory
+One problem here is that the error message could be more clear (i.e. it doesn't state that /myvol is not a directory but a file and thus the mount fails).
+But the bigger problem here that this error is reported for step 4 (WORKDIR) and not for step 2 or 3. 
+The main problem here is that people want to do operations such as map ports (#25594), specify volume names and options, scale services, and more.
+While I was not able to establish a connection on these ports (I tried an SSL connection on port 443, with no success), this is still a bug, as it exposes information on the host IPv6 address unnecessarily (nmap can tell that something is listening on these ports).
+When upgrading from 1.12.3 to 1.13-RC1 in a follower manager I am seeing these errors.. 
+The connection succeeds, but whatever I type, I never receive a response.
+Verified that the same problem happens for non-swarm services also with userland-proxy=false. 
+before update, it worked very well, after update, I could not start up any container correctly.
+I even rm all files which exist in /var/lib/docker. (with BTRFS driver), still not work.
+I got the same issue.
+Similar error while trying to build with docker 1.9.0 and 1.9.1:
+I have troubles when update docker to latest version.
+Happens that one of the dependencies points to git@github.com:angular/bower-angular-i18n.git and since git fails there, bower fails, and the image building fails, too.
+I got error - Error response from daemon:
+The moment bundle install starts and tries to access the private repos, I start getting this error
+We tried upgrading Linux and docker4mac to docker 12.2 beta, still having the same issue. 
+I cannot even ping the IP address for a container running on a different node, so it's not just the resolver failure. 
+I am able to reproduce this issue on a set of hosts, with different containers, different docker versions, and kernel versions. 
+Service Discovery in windows sometimes fails to resolve services on the same network. 
+The problem we are facing is that before SwarmKit or Swarm Mode ever exists, we uses the old standalone Swarm with Consul backing to create our own service "orchestration" layer and this is currently in production. 
+I am receiving the following error when on 1.13-rc2 and directing a Docker host to build a container through the mounted Docker socket.
+This causes issues where I have tools that bind mount /proc and /sys to other places on the fly, since mount refuses to work when it's not root.
+Things like ENV PATH $PATH:/opt/local/bin are quite common, but with HOME it just doesn't work.
+For instance I can't set a GOPATH. ENV GOPATH $HOME/go doesn't work.
+With Docker version 1.3.1 it doesn't work anymore because Docker client automatically assumes Registry is reachable on HTTPS. 
+a similar issue came up in another PR that @jhowardmsft was working on, and the problem is extracting the env vars from a container. $HOME is, sort of, easy because we might know where its value comes from, but for any random env var there's no spot to look at to get that info. 
+However the provisioning gets stuck when trying to provision bla.sh.
+When I look at the syslogs of the host, I see errors about containerd not being able to save the container. 
+This error always appears whenever I try to run the packer build with a shell provisioner. 
+i just suddenly can not push images by docker push command.
+We have the same problem with overlapping networks, causing random network failures on our CI servers. 
+On master, I tried to reproduce the issue you are facing with and the daemon works and errors out as expected.
+Error when trying to pull or login to a private docker registry from a docker client node.
+I've just tried disabling the authentication then restarting docker and the same issue occurs.
+When trying to build the way you said (from inside docker's build environment container, built using the Dockerfile which includes your modifications) I got the following errors:
+When running something like for i in {0..100}; do docker run busybox echo test; done with Docker running on devicemapper, errors are thrown and containers fail to run:
+Confirming that I ran into this issue as well using the stock freeipa image.
+The problem is that starting a container creates a dm device, activates it and then immediately deactivates it and then activates it again.
+I ran into another error which might or might not be related:
+I'm still getting the error even with the changes:
+The containers did not come back up automatically, and trying docker start on them would give me this error message.
+Got the error while doing a 'docker build'
+I am having a similar problem with Docker 1.1.2 on RHEL 6.5.
+I still have this problem with docker 0.9 on centos 6.5 with the default 2.6.32 kernel.
+I thought docker-library/openjdk#19 was related but maybe not, here we're getting a hang, there they got an error about not finding "java".
+I experienced the same problem with 1.9.1 on OSX El Capitan, downgrading to 1.9.0 didn't help.
+I'm having a similar issue running a cpu intensive go process within a docker container on 1.12 with Docker for Mac.
+I'm seeing this same issue using the stable Docker for Mac v1.12.0 (build: 10871).
+I just saw this error on my Docker for Mac.
+Docker 1.6.1 (Ubuntu 14.04) still has this issue. 
+I'm using kernel 3.19.0-39-generic and the bug is still there for me.
+This issue just popped up for me before updating to the latest (1.12.3), I uninstalled docker and reinstalled, and am unfortunately still seeing it.
+I was getting this error: "Error: HTTP code is 500 which indicates error: server error - dial unix /Users/johnuser/Library/Containers/com.docker.docker/Data/*00000003.00000948: connect: connection refused"
+I've also seen this error when attempting to volume mount a directory located on a loopback device that wasn't mounted when the docker server was started.
+I'm getting the same issue as well on Ubuntu 14.04:
+Containers seem to continue running fine, but as soon as we do a pull, restart or ps sometimes it crashes the system. 
+I keep running into the same issue when building from a certain Dockerfile. 
+On one machine, I tried uninstalling apparmor and still same issue after reboot.
+I can confirm encountering this issue on the the docker os x beta-15 (current version).
+I see an unexpected permission error in the final command.
+I just tried it again, and it still does not seem to work.
+We have seen this problem on both Ubuntu 12.04 (kernel 3.8.0-35-generic) and 13.10 (kernel 3.11.0-15-generic)
+If I restart my docker daemon with the aufs daemon, I get an error when using the ubuntu image:
+if you run the following command two times PARALLEL you will get many errors like: Error: container_delete: Cannot destroy container ... Driver aufs failed to remove root filesystem ...
+Can confirm this is still an issue in 1.1.2
+I can confirm I'm getting the same issue. 
+I've got this error when I use docker remote api v1.17 and docker 1.6
+I encountered the problem with boot2docker 1.9.x with a custom mongodb container.
+In my debugging, I've found out that it's a bug in Go and probably won't be fixed any time soon.
+Tried setting the docker daemon opt to my encrypted home directory, and receiving the same error.
+So I just unpacked and repacked the tarfile with --no-xattr and I still have the same problem.
+I've experienced problem with memory leak which looks pretty simular to #8084 .
+There is a bug with image removal where an image with multiple tags will be allowed to be removed regardless of whether that image is in use or not if you try to remove by id.
+Docker API (v.1.18) does not report correct images for /containers/json endpoint. 
+For completion sake, this bug also occur on 1.5.0-dev version.
+Running overlay fs on ext4, kernel 4.4 (info below) a simple COPY foo /foo will fail with "no such file or directory" error (error in the last line of the shell output below):
+21 out of 90 times it has failed to install by getting stuck forever at the point I described earlier.
+When i set 2 cpus the problem still occured most of the time (about 90% of the times i tried to stop the container).
+On massive client reads much slower than output comes (I used yes <long string> for reproducing) and bufReader repeatedly growing internal buffer, which causes memory leaks.
+Unix domain sockets don't seem to work when using overlayfs.
+I seem to have kernel 3.19.0-49-generic but still having this issue for neo4j/neo4j:2.3.2 image from official docker registry.
+Same here, a container got stuck during execution, and now cannot remove it neither stop it (even with option -f).
+Running C endless loop in the container leads to docker crash:
+I am facing the same issue with Docker Quickstart Terminal. 
+we're running into a potential docker memory leak situation here and this is the most recent open / potentially relevant issue i found
+I am getting a similar error, no encryption, but also non-standard Docker path, but using -g to move it to /srv.
+We are seeing the same issue with log heavy applications. 
+Attempts to stop/kill/rm these containers fail with an error like this:
+I am seeing this problem with docker version 1.8.1 and api version 1.20.
+I reproduce the problem with ConEmu with bash/zsh.
+I also encounter such an error with Docker 1.7.0 and syslog driver enabled on an EC2 t2.micro instance.
+Description of problem: I get a 404 response from the Docker server when stopping a container, although the container exists.
+In the containers using the data container, the media volume mount failed.
+It doesn't work even if I set the mount on a specific container (without then using the data container).
+The BIG problem here is that --volume flag creates /opt/app/records.json as a FOLDER, anyway ${WORKDIR}/records.json is a FILE and that is the problem.
+Having updated/upgraded everything and rebooted, I'm still encountering this issue.

@@ -1,0 +1,159 @@
+I do not think tabs are a good way to show the list of open files unless you manage these things actively and close them.
+Personally I think this is a bad idea.
+One of the key things I love about VSC is its simplicity.
+Also the file find/replace box covers the first line of code, very annoying!
+And I personally like to nav with arrows, not the mouse.
+I wholeheartedly agree that the multiple cursors are more powerful...but sometimes "simpler" is what's needed. 
+Plus, using multiple cursors is powerful in some situations, but the behaviour is very dependent on Codes word boundaries, which are odd imho.
+While I do think the column selection behavior is a major improvement over previous behavior IMHO the lack of virtual space is limiting the use.
+Might be able to do that now by modifying the current key bindings, but it would be better to modify the underlying defaults like @ericwj described. 
+I think the shift-alt-leftclick version does add value, but it feels awkward to me, since I typically intend to start the column selection where I click.
+A horizontal split would work much better in this case.
+Also, going from MDI to SDI layout to support putting panels on different screens seems like a nice addition. 
+I'm not sure if I would use it right now, but I have done that in the past with UltraEdit as well.
+As a note, Sublime is not particularly good at doing this stuff, but you can customize it more than VSCode.
+This, I think, is a hallmark of the ST/Atom/VSCode paradigm, simple fast & agile with reduced cognitive load.
+Adding the horizontal split pane would be a huge benefit and, at least in my use case, complete all of the necessary features for the type of product development I do daily. 
+Alt+shit is very annoying : (
+I agree with @seva0stapenko, I expected the same behavior that Visual Studio, which has been copied in Scintilla, thus in related editors like Notepad++ or SciTE.
+I agree that it feels a bit naive, but you're probably right that it's what the user intends in most cases. 
+that functionality could be problematic for some of the copy/pasting I do with column selection. 
+In this case having something imperfect is 100% better than nothing at all. 
+P.S. Overall I love this editor, having used Emacs for many years, then Sublime for a year, then Atom for six months, and now VS Code.
+I think I was looking at this as a rendered document buffer which appears to be a different thing entirely.
+I think the easiest would be to lowercase the file name when passing into the glob call @jrieken
+I am unsure if making stuff lower-case is desirable...
+I would say case doesn't matter; since Docker users will probably have more than 1 dockerfile, our idea was to provide the syntax coloring and all that magic for files that are named dockerfile*.
+use of promises seems to be a common pattern of this issue. 
+My guess is it probably has something to do with deep callstacks, or generators & promises (which we use a lot of).
+we should align the names of the tracing/logging options and make them official, so that they appear in intellisense ("trace" is not documented and we can drop it easily).
+I'm not sure how other Chinese users feel about Noto but I personally am a huge fan. 
+I like the idea of connecting this with the lang attribute on the root element.
+I think there is either archive corruption repo side or there is something wrong with they way the extensions are being decompressed.
+It seems that removing the ANSI escape sequences is not enough (#7644). 
+That appears to have done the trick of including the missing paths, but it also seems to have duplicated some paths.
+I guess you have either installed additional fonts (such as Monaco) or modified the FontSubstitutes registry settings or so. 
+I think this one is best for zh-cn:
+If linux/mac user installed YaHei, text still beautiful and clear, but other font is not clear/blur on Windows(except hi-dpi)
+Latin fonts should come first, because the latin characters in CJK fonts are notoriously bad.
+Hmmm, maybe rearrangement is acceptable, since the original CSS's Latin part is also in the "Windows -- OSX -- Linux" order.
+So it looks like it isn't version specific, but package specific.
+It's just weird because it seems like it only affects certain packages that are the most popular.
+This is heading down a rabbit hole I would rather not go down at the moment, I am really busy and was hoping this tool would speed things up.
+You install notes are vague on what the dependencies are, it's possible that there is something not quite right about my environment. 
+It could be that something is missing as requirement but it could also be that we do something wrong when setting the window dimensions for VS Code. 
+The quick open UI isn't working fully well.
+I like this because it is minimal, practical and solves many of the currently existing issues.
+The concern is that this solution would be confusing since clicking an extension would not open any editor view.
+There is a lot of good content/images in many extensions that will barely fix in the sidebar.
+Seems like you could just automatically show the README for any of the selected extensions, but maybe I'm missing something there.
+I like the idea of having a higher level affordance that you can use to switch between coding and management. 
+Another thing we might consider too would be if we could allow the user to work with both views simultaneously, similar to how browser debugger tools can be snapped inside the browser or as a separate window.
+I know that this goes against the principle of not introducing any new UI but from a UX point of view I think this potentially provides a smoother workflow.
+I think making management (settings, themes and extensions) as a mode of the product is a wise choice, because it would allow you to leave your editors all intact.
+It also gives us more real estate and a neater, more consistent place to render these views.
+These are some excellent ideas. 
+my fear is that once you go into the management UX, it looks too similar to the actual coding UX. 
+for that we should make it very clear (in terms of UX) that the UI for managing extensions, settings, etc. is visually looking different from our workbench. 
+I do think my mock up is a little 'over designed' we don't need all those controls all over it. 
+It's also not nearly flat enough i.e. it would look out of place in VS Code right now. 
+I'm not too much in favor of a modal experience as I don't perceive any of the UI actions as blocking - so I'd love to leave the interaction mode free.
+Also, @jrieken, I'm not sure I like replacing buttons in the activity bar, since it might be confusing where they went and it adds another level of interaction to get back to certain parts of the Editing views. 
+We run the risk of debating different UI designs without a shared understanding of the problems we are solving.
+In my mind each part of the above life cycle is important and should be considered in the design. 
+Personally I dislike the idea of having a UI management for extensions, I dislike it in Visual Studio and if anything I'd argue that this is nothing but annoyance!
+Imho, it's fine, just nuke the icon given its reliance of symbology, size and colour have a negative effect. 
+Although I really like the willingness to improve the user experience, I have a few concerns I would like to put out there. 
+There is one thing I really dislike about atom - I have to leave my keyboard and use my mouse to install extensions. 
+It's only a minute worth of time, but the experience is very jarring, and I have found myself trying to avoid installing packages until absolutely necessary, or trying out new themes at all. 
+I definitely prefer @jrieken's mock-up (and it seems like others do as well).
+I have another flicker of an idea, which largely keeps the same flow as now, but also makes it more easier to read the docs and manage extensions:
+I like the idea but I think this needs another option because not everyone might want to ever see the activity bar?
+I like your suggestion though with having multiple settings, though the toggle action would probably still just hide it for good.
+Pushing the notion of workspaces down to the platform layer was very bad for those areas where we do not have nor want a notion of workspaces (which is all of them except for workbench). 
+from your examples it sounds to me that all you need to know is if a setting is defined by the user or not.
+I'm not fulling understanding the purpose of the proposed inspect method.
+I think one of the issues seems to be that jsx is seen as different to normal js (which seems to work pretty well with autocompletion/intellisense etc). 
+My concerns about supporting any super set of JavaScript in .js files is that it could potentially make the code for standard JS parsing more complex, slow, and hard to maintain. 
+I don't expect any superset of JS to be automatically supported. 
+I think it would make sense to have a setting option to recognize JSX within *.js files so it can enabled or disabled per user preference.
+js-is-jsx extension + eslint extension looks like the best combo for now, as you will get both syntax highlight and hinting.
+This new optionA although sounds good, will create more fragmentation in the way snippets are written/maintained IMO.
+IMO TextMate snippet syntax will be better as people are using them already.
+For once it's not as bad as you think and then there seems to be a subset that is accepted also in other editors, like sublime. 
+My initial thoughts were that I would display a quick pick with two options (agree or disagree) and that I would then store their choice for later executions.
+I'm sure other extensions would find this useful as well to help guide users to setting up sensitive defaults.
+For me it makes sense that you cannot write a setting which isn't defined anywhere, like "editor.foobar": true will throw unless some extension has contributed this using the contribution-point.
+I think the main use case is to write a value for a setting that shows up in user settings.
+Now, I am not sure if you could enforce this at all given that in the end all of these things end up being one large object.
+I think an extension itself should not react to the error cases in any other way (besides maybe showing the error) because the error cases can still change in the future and we do not want to make them API.
+Maybe it's better to not expose update like I have proposed now, but wire it up inside a richer object (maybe returned from inspect).
+it would be easy for my writeConfiguration method to support task/launch.json, the ugly part is that it needs hardcoded knowledge about these 2 files which is odd because the concept of task and debug should not be wired into the configuration service. 
+I like the idea of making the target of the writeConfiguration call implicit from the extension API, however I do not think we can cover all use cases doing so easily.
+Now, from an extension point of view I also think that this should be made very explicit in the API: If an extension can change launch configurations, there should be a namespace in the API to do so (same for tasks).
+Imho we should not implicitly write to tasks.json or launch.json if the settings key starts with task. or launch.
+So it does not make a lot of sense that VSCode should verify them since the extension contributes those keys in the first place.
+From my understanding the latter value (false) will be the effective value but it seems now that writing will change the other value.
+It is strange that you always get the wrong file, even on the very first debug start when we have no stale internal modules.
+If that is true than I think it is not a duplicate @weinand
+So it is far easier to start a ssh-agent from within VSCode instead of reusing existing ones (at least on Windows).
+This is turning out to be quite an interesting challenge for me. 
+For me this is really a blocker.
+I like VSC, but without the ability to use git I can't use it as my daily editor.
+same here, VScode is amazing, much more than Atom.
+I love the speed the integrated terminal the UX and the possibility to use git.
+This wasn't an intended (and clean) setup, but I don't think that this was causing such a problem before. 
+And vscode without the go plugin is unusable for me too, so it's tricky.
+Our fuzzy sorting is reasonably fast at this point.
+I'm not interested in getting the information from the file watcher.
+It has a simpler scoring system (just plain subsequence search I believe) but it's extremely fast.
+I still prefer it for smaller projects, but for larger ones I really have no choice but to use Sublime or Atom.
+Hitting sshfs (or any network mount) for every find request is not feasible.
+The blurriness is really annoying!
+Having a Windows 10 installation on a 4k monitor without scaling is absolutely tedious to say the least (I'd like to preserve my eyesight for the next years...).
+It is a really strange bug, as the blurryness only occurs in special situations and files. 
+I suspect that a lot of the slowness I'm experiencing with fuzzy search when I use sshfs is that VSCode is remaking requests to build the directory structure unnecessarily.
+The font looks similar at a size of 12px, but it still looks bad.
+I do not understand the idea of creating an IDE on the engine for a web browser. 
+It's really hard to tell which is the selected text and which are the selection matches.
+I think this raises an even more interesting question.
+One possible optimization is to not split the file into lines but only do it if a match is found.
+Not sure, but I am sure these new user settings work, and that is great.
+It seems that would solve these problems fairly simply: users could provide whatever color they want.
+It is really helpful that VS Code now allows the user to specify these in settings so that theme choices (or non-choices) for these can be overridden universally. 
+Your approach above (computing the .selectionHilight) sounds like a good fix as well (and it's certainly easier and more conservative). 
+I'd also want to see some kind of filtering / searching abilities (In more complex case, allowing custom queries, not only textual label matching).
+Also a thought: it might make more sense to be able to view this information for a file underneath the file inside the file explorer and exposing a command to expand/collapse it that could be keybound for convenience, rather than a completely new viewlet.
+I actually totally agree with everything you said; I would much rather Code has a standard way of implementing these that was consistent across languages. 
+In a sense Outline is closer to Minimap instead of Viewlet I believe.
+IMO Symbol search and Outline View serve different use cases.
+This article does a good job of explaining the impact of differences and advantages of different signing policies.
+Signing commits is not "totally stupid" and, in fact, has very real security implications. 
+VSCode is great, I enjoy using it daily but lack of multiple instances pains me when I must open another editor to view multiple project files side by side.
+Besides the summary, I also do not like that we have 2 folders, one for application data and one for extensions. 
+I understand that multiple windows will provoke many technical problems but there is a middle ground that I believe is a safer and more feasible approach, an idea taken from other IDEs.
+Split editor is great and all.. but anymore than two isn't very efficient.
+I think what people really want is to open a single instance of VSCode, but allow undocking of the tabs so that you can move the tabs to other windows...much like you can in Visual Studio 2015.
+I don't think we should be encouraging the use of admin rights within vscode, instead a permissions elevation dialog would probably be better than allowing a specific place for root user data #5561
+To be honest, going for a full blown second window with ALL functionality would be LESS useful, probably just confusing.
+At first I liked VSC so much I dealt with it by running it on my main monitor and just opened up any other files in sublime for viewing on my 2nd, but this is just a horrible way to have to work so I went back to my full blown WebStorm setup.
+IMHO it's a blocker for most of the people working on their work-seats, not in cafe-points.
+I also like .vscode more than .code, Visual Studio stuff is also in .vs and it is less ambiguous.
+I'm not sure I like the idea of having this as a opt-in flag.. 
+I think Atom behavior is a reasonable default configuration. .gitignored files and directories are still accessible from the sidebar explorer, but greyed out in the UI and not findable with project-level search.
+I really really like this whole clean-up, especially with moving to appdata on Windows and dropping the User folder (as this is already in the user's personal folder)
+Right now it looks like one of the tools of Windows. 
+This shouldn't be too difficult as the Chrome Web App environment would act as the shell for VSC much like Electron does.
+Regarding the fact that 'auto' only uses inspector for v8+, that's a good point.
+vscode is a great code editor with a lot of features and the hackability it provides the only thing it doesn't have is a good UI and look & feel.
+I do not think it would make sense to change the sorting based on other criteria unless there is a good way to explain this to the user.
+I understand your point of view, I would probably prefer it too.
+I haven't actually created a Chrome App myself, but I thought the idea of it was to be something like Electron on Chromebooks, but more efficient because you are using the platform's own copy of V8 & Chrome etc. rather then bundling.
+I don't think .gitignore should dictate this, in other text editors it's normally done on a project setting or editor setting-level.
+Themes looks particularly bad when the background is neither particularly dark or light:
+One thing I find weird is that you nest the Visual Studio Code folder under a Microsoft folder. 
+The feature should be prioritized in my opinion because otherwise I have to switch to another editor like Sublime/IDE's despite of nice features and ecosystem of VS Code.
+As an alternative, I find TestDriven's unit-testing experience much better than that of built-in VS or as offered by R#.
+XML validation (and intellisense) via xsd is a huge hole in vscode from our perspective.
+I suspect that dependencies are missing or conflict with Raspbian Jessie versions. 
+I think this request is fair because it talks about lifting our current limitation that you cannot open the same folder twice in 2 or more windows.

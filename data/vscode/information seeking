@@ -1,0 +1,148 @@
+is there an extension that offers a terminal?
+Anyone know if there's an issue for split panels at the bottom?
+Any progress on this?
+Could you define "be configurable with a flag in settings" a little bit more?
+What do you want to configure?
+Does VSCode leave logs anywhere?
+can you share the workspace you let vscode running on?
+I'm wondering if there is any telemetry crash/dump data that is automatically sent when VSCode crashes? 
+which protocol does your git server use? 
+Can you show me its URL? 
+Can you create an account on it for me to validate your claim?
+Is the file tree exposed to extensions api?
+What is this still doing in the backlog? 
+Makes me wonder if the editor has already a similar functionality that I'm not seeing??
+Is this different behaviour a deal-breaker when it comes to using column selection?
+Any suggestions for how to troubleshoot the keyboard shortcuts CTRL-ALT-UP and CTRL-ALT-DOWN on Windows?
+is this implemented in the current stable vscode? 
+or do i need to grab the latest from source?
+Is it possible to have Code split editor panels vertically?
+Where is this on the backlog?
+Just out of curiosity, where can i check this issue priority in the backlog?
+Is it possible to rebind the keys that go with click+dragging?
+did you figure out how to do change the binding to just Alt + drag? 
+Does that mean I'd need to save the text locally first?
+@jrieken's proposed API doesn't include that yet, but is it possible that this could be enabled as well?
+Does that make sense?
+By any chance is there a sample extension that demonstrates this?
+Can you provide some samples, like filename -> [feature set] etc?
+Should this work in the most recent mainline release?
+I wonder if there is an environment variable alternative to --debug-brk?
+Just to clarify, you have a filter like this { pattern: '**/docker-compose*.yml' }?
+Can you point to the exact line in that file?
+is your scenario actually such that case matter and is it common that the file must match on name (like a package.json, tsconfig.json) but is given varying cases?
+Is it possible to get this in the January 2016 milestone?
+Is it that you guys want to contribute a language service for docker files or do you want to add specific features for certain docker files - those that match a name pattern?
+Do we already support some sort of globbing in the filename-to-language mapping?
+Are you looking for input from us or the underlying implementation?
+what distro are you on?
+Everyone, can you still reproduce with the downloadable archive?
+Do you have any extensions installed? 
+Could you zip up your extensions folder and send it to me?
+Can someone set a breakpoint in extensionsWorkbenchService.ts:163 and trigger the bug? 
+Would you be willing to do a live Skype debugging call with me?
+does the problem occur in VS Code 1.3 too?
+in what situations are you seeing his error?
+Can you share the project where you experience the problem?
+Can you get a hold of those 100 bytes?
+And finally, how about this one?
+what version of VS Code are you using?
+Is there any other assistance I could give?
+What kind of promises are you using?
+Can you replicate it somehow?
+What extension are you trying to install?
+Why do you need to strip out some of the text from the environment?
+Is that the latest one I published?
+Do you have Code Insiders installed in /Applications/Visual Studio Code - Insiders.app?
+Which version are you running on? 
+does it work adding those other fonts you mentioned in your comment?
+is lang on html going to be set to the correct language in #3841 ? 
+Does simplified vs traditional Chinese make any difference?
+Or does the font need to be a system font that comes with the OS?
+I am relying on you guys telling me the best option. 
+Is there any way we can assist in debugging this? 
+Just to confirm, did you try this build?
+Did you configure the http.proxy and http.proxyStrictSSL settings?
+What can I do to get around this issue?
+Any chance I can use the same proxy you do?
+Does it reproduce with 1.6.1?
+What tool are you guys using for these mockups?
+Are you behind a bad internet connection?
+Are you able to build and run VS Code out of source code here on GitHub?
+Why would you assume it's the network?
+Is there any extra debug information I can get/provide ?
+Is there a console where we can see any errors in the VS Code runtime?
+Do you have an antivirus installed? 
+Can we discuss the relevant user scenarios?
+Can you give me some curl command, to verify it's not a network issue?
+Is there a log file or any command line options that would make it easier to find out what is wrong ?
+Does this still happen with latest?
+What do you get with /bin/sh --version?
+Is there an "update all" button? 
+Do you think these are relevant and should be considered? 
+What would you change? 
+Is there any user scenario you would add?
+did we end up getting an "update all" button?
+How would you then be using search, git, debug etc?
+Is there also some sort of key enumeration?
+Can you share the use case for this? 
+Would you be OK to just have a method that tells you if a setting is defined by the user or not?
+Is renaming our files to use the IDE properly really our only option at the moment?
+What is the motivation for JSX syntax in .js files?
+In that case, is there any roadmap to adding full textmate support to vscode snippets?
+Is there any way to order tab stops with this syntax?
+Are you saying they have implemented the internal syntax? 
+Is there any sample code on this new API can work?
+How did they know what to implement without a spec?
+Does it mean it's asymmetric?
+Were you looking for a way to insert a snippet straight into the editor without going through a completion provider?
+Are you considering allowing extensions to write settings or is using extension state the better approach for this kind of setting?
+Is that a user setting and can it just be updated like a real setting?
+Apart from reading, how do their values end-up in the configuration service without their files naming being known?
+As for the inspect API I wonder what it means to have an update method on the ConfigurationValue that has source: schema? 
+Could you link/attach a simple example that reproduces the problem?
+is this a problem with VS Code's document caching?
+Let me know if there is any tracing or diagnostics I can do on my side.
+Why did you moved it to the backlog?
+Does it work from the command line? 
+How exactly do you setup git to use the private key file?
+To verify that it is a duplicate @ezolenko do you first correctly stop in a file (internal module) and everything is fine regarding the content. 
+Is there a piece of code which is called whenever a Git call is made?
+Does launching it from a command line where you've started SSH Agent fix it for you?
+Any plan to handle this problem ?
+Do you have any watch expressions defined? 
+Does the problem disappear if you remove the watches?
+Can you share a workspace so we can try on our end?
+I wonder if this issue is now scoped to the terminal alone or do you see it in more places?
+And is there anything particular you do while debugging that causes this message to appear?
+so does this reproduce even when you run without extensions loaded (using code --disable-extensions)?
+is the workspace you are using containing large folders with many files?
+is there no other encoding we provide that can deal with cp850, e.g. windows1252?
+Could you explain what you mean by "the editor will be dead"?
+What settings are you using and what theme is that?
+Is a project's directory tree currently being cached in memory?
+Is there any way to see where the fuzzy matcher is taking the most time?
+can you attach a screenshot how it looks and maybe your settings and display/dpi environment? 
+Or is there a limit on number of indexed files?
+Why are the 14px fonts in VSCode the same size as 9px in the system?
+can anyone suggest a theme that will allow me to see multiple selection vs highlights?
+Is there maybe a way to increase some timeouts on indexing or something like that, that might be causing this?
+Is there a reason the highlight color is simply customizable on its own? 
+Is there any reason you can't simply modify the .tmtheme file for your theme?
+Also, I wonder where the request for an OutlineView comes from? 
+what are your thoughts on getting this in for April?
+Any update about this request?
+Can you try launching with --disable-extensions and check whether it reproes?
+What version of node are you using?
+At what point is the build failing? 
+Also I'm curious whether an extension could impact this.
+Does anyone have a repeatable working procedure for installing VSCode in Raspbian Jessie on Raspberry Pi 3 Model B?
+any update on the current status? 
+Does it occur if you run with code --disable-extensions?
+Does it help if you change the debug type from node2 to node?
+Any update on this?
+Is it possible to have concurrent editing like split editing on two monitors?
+Can we reopen this issue and investigate in problem?
+Is there an extension point or services where we can possibly contribute in order to enable this?
+Could you post a simple code example that reproduces the problem?
+does it make a difference if you set the "protocol" to "inspector"?

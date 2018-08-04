@@ -1,0 +1,194 @@
+I saw this suggestion pending in uservoice(https://visualstudio.uservoice.com/forums/293070-visual-studio-code/suggestions/7752357-integrated-terminal) and repost here since it has specific repo
+Hi all, I've started work on the integrated terminal and have a prototype up and running (branch), this will likely be integrated into the product in the May release.
+Hi all, here is an update on the current state of the terminal and next steps.
+The terminal can be triggered using ctrl+` or by triggering the View: Toggle Terminal command in the command palette. 
+Based on my testing of Sublime Text 3 build 3114, Sublime only enables hot exit when only a single editor is opened. 
+Here is a screenshot of what I have in sublime.
+Currently vscode does not log to disk.
+This log was created overnight with 3 large workspaces open in different windows. 
+I'm currently using another editor just for the cases when I have to do a mass find-replace for refactoring.
+I'm in the same situation of having to use something else solely for "replace all" in multiple files :(
+I've put all this information in a easy list of steps to make this work with sublime icons at least until this is officially supported:
+The default keybindings on mac are cmd+alt+down/up.
+I have pushed a change just now that adds column select with the mouse with the same modifiers as Visual Studio (Shift and Alt pressed), the key difference being currently our cursors cannot float on air (they get bounded by the text shape).
+The current behavior, using "Insert Cursor Above/Below" yields ok-but-not-perfect results:
+I could not find anymore free keybindings on Linux by default, so on Linux, you'd need to bind them in your keybindings.json. E.g.:
+I implemented what I have observed in Visual Studio (which was pointed in this thread as a good implementation of column selection):
+I use 2 on the left and one on the right in atom often and this is missed in VSCode.
+I often have VS Code on one half of the screen, and a terminal window on the other half.
+Guys there is now a like button on GitHub, lets stop +1ing issues if we dont have anything else to say
+But I had to pull of the desktop version of the site to see it. 
+I commented on split panes in the tabs discussion so I'll also include it here:
+We will share our designs and ask for your comments and feedback.
+Just a reminder that we will be sharing our designs for horizontal split in just over an hour (16:00 BST today). 
+We have some early designs for this experience that we would like to share. 
+We will continue to monitor feedback and usage to determine if we should provide more flexible support for a mix of horizontal and vertical editor groups.
+Before we go down that path, we want to take this initial step of supporting horizontal editor groups within the current design.
+FWIW, coming from Vim and its infinite flexibility, I found VSCode's 3 vertical split limit vastly reduced cognitive load of splitting, switching and cleaning up.
+I searched the keybindings.json but can't find one for that. 
+When copying / cutting a rectangular selection, it puts a "MSDEVColumnSelect" empty flag (and a "Borland IDE Block Type" flag with byte 0x02) in the clipboard, so when pasting, each line of the block is pasted in a line of the destination.
+I made a Gif out of a manip in SciTE, showing cutting & pasting a column selection, and the reverse operation using drag'n'drop too.
+There are only two things keeping me from switching to VSC right now. 
+The first is the limited flexibility in splitting.
+I run 27" 4K monitors in portrait so having both splits is essential for me. 
+we don't currently have grid layout, but in the latest Insiders Build we do allow you to hide the left toolbar (activity bar).
+I will keep you in the loop once we sketch out the API for this.
+I'd love to test this when possible.
+The mechanics to create a virtual document are in, the preview/render html command is tracked in #1946
+I am developing a vscode extension for the Coq Proof Assistant, which allows the user to manually step through each line of their proof scipt and see how their hypotheses and proof obligations change. 
+Check the source file I referenced above.
+Check the file here: https://github.com/Microsoft/vscode-docker/blob/master/dockerExtension.ts. 
+The properties of the document filter must all match so that the filter matches (logical AND). 
+I've added a sample that illustrates how to use TextContentProviders and the vscode.previewHtml commands.
+I've also published the sample to the market place just in case.
+By default, launch.json does not allow us to do this.
+Right, since glob patterns are not RegExp syntax, there is no syntax from what I remember to form a case-insensitive glob.
+I am not trying to match docker file to the docker compose pattern. 
+For docker-compose files I am using the pattern below.
+a VS Code 'launch' configuration is used to launch 'node' in debug mode listening on a specific port.
+I'm not aware of a way to pass the debug-port to node via an "npm start".
+That is then not the document filter, but the language mapping as defined in package.json
+We've updated our yo docker tools to use docker.debug /docker.release to enable developers to compose up multiple environments. 
+This requires still two steps 1) npm run build_test_debug 2) F5 to attach.
+This means our scaffolding is generating assets that hide the docker editor features. 
+Yes, I know it doesn't - I have a separate document filter that's for dockerfile only and its pattern is '**/dockerfile* and files like dockerfile, blah/dockerfile-dev, etc. are not recognized by the pattern.
+we do not support glob patterns for registering file names to languages currently. 
+For example, if I open a dockerfile in VS Code today, I get syntax highlighting and all that magic.
+Make sure that the debug port is identical to the one used in the "dev" script (or is 5858 if no port is specified in the dev script).
+The code that decides which mode to load given a file name is https://github.com/Microsoft/vscode/blob/master/src/vs/editor/common/modes/languageExtensionPoint.ts#L451
+I also have difficulties to see the installed or outdated extensions
+See log of the first minute of VS Code running here.
+I had extensions, but deleted them to reinstall them (but couldn't), so I can't provide them for you :(
+I am on Ubuntu 16.04 LTS, but have workstations on Debian 8 Jessie also.
+It reproduces in Linux, 1.2.1 only with telemetry enabled. 
+Does not reproduce in 1.1.1 nor 1.3.0.
+The listening of SIGTERM within the shared process prevented it from shutting down whenever the main process sent that signal.
+It would then trust all the telemetry adapters to properly dispose which for some reason never happened.
+This listener has been removed since, explaining why it can't be reproduced in 1.3.0.
+Since I'm not sure where this comes from (and I cannot reproduce it myself), I've added additional information to the error message and added some additional checks in the injected code.
+I have a small program that extracts the "url" value from har files (the JSON you get when you record a browser session.
+In the July release (and next Monday's insider release) VS Code should show an almost complete call stack even is this problem occurs.
+Since I could not reproduce this problem, I've instrumented node-debug so that we can get additional information when the problem occurs.
+Here is what I did to try to reproduce the issue:
+Debugging node running regularly produces no errors.
+It's my workplace code, so I can't really share it, and it's rather large (100k loc).
+Bluebird is a Promise library for js.
+the "trace" option is not supported by node2.
+If you are using "attach" with node2, you'll have to make sure that node was started with the --inspect flag because only that enables the CDP debug protocol that node2 relies on.
+I'm running a jasmine testsuite inside a docker. 
+This is what I get for just the first two lines:
+Opening the Developer Tools (F1, Developer) and typing process.env.PATH in the console will print out the PATH.
+If I open Terminal (Apple's Terminal.app) and do the same, here is what I get before:
+When I open Apple Terminal, these system global paths are added prior to sourcing my .bashrc.
+I just downloaded it and tried opening the integrated terminal without changing anything.
+But things that were missing and not working before, do work now. 
+I can also add code to my .bashrc to only add a path to PATH if it is not already in there.
+Yeah, when inside the integrated terminal, it will definitely duplicate the PATH.
+This has been long fixed.
+I have the default font set and VSCode falls back to Consolas in the editing area.
+The edit area uses Inziu Iosevka SC.
+zh-CN and zh-TW should use different fallback sequence to provide correct character shapes. 
+An example of different character shapes in East Asia is this:
+Well, but we do not have translations for all 5 of those languages.
+We plan to release a new insider soon so that this can be verified.
+For Source Han Sans, it is after Windows fonts so on Windows it will not be used (and most users will not install them).
+I can make such a change in the font-family list easily tomorrow.
+I verified that for the explorer we now use a 'zh-Hans' specific font.
+I tried different extensions, such as Go, Powershell (the first two shown when browsing with ext install), but also some Angular JavaScript and TypeScript Snippets extensions.
+According to our proxy admin "microsoft.com" is completely unblocked.
+I'm also seeing this behind a corporate proxy on all extensions as of today.
+The other ones succeed, including the second most popular python extension. 
+There is a proxy and a firewall along with a virus called McAfee Antivirus installed on every computer. 
+I can download all of the less popular packages pretty easily.
+I noticed that the vsix file seems to download successfully into my temp folder. 
+I have the software running on my windows machine so I can use it there for now.
+The Ubuntu machine I am using is a vm on my windows machine (using Hyper-V) and it is NOT a full desktop install, it's version 15.04. 
+Also it will run if I log onto the console of the vm (when it's running gnome) and double click on the program from the folder/explorer view. 
+Our workbench is optimised for the coding-task with the 3-level parent-child relationship between the sidebar, the viewlets, and editors.
+This was never the case with SublimeText, which in spite of having a limited UI around extension discovery/installation, makes the experience of using new packages much faster.
+Here are our guidelines which are work in progress, to be honest we haven't fully settled on how to separate a discussion inside github issues and usevoice
+I am using this method in the IConfigurationEditingService to validate that a key a user wants to write exists.
+Because with multiple open windows the bar takes a lot of real-estate of my screen, an example:
+Now depending on where my code lives my service dependency changes which weakens the whole point of having interfaces and injections.
+Its only in Insiders currently, but will be available in the next stable release this month.
+Since Code has no support for this kind of setting so we decide to initialize the default for useCtrlKeys while the extension starts. 
+So if there is a userCtrlKeys option in Workspace or User settings, we just use the value.
+The idea of inspect is that it tells you from where a setting came such that you know where to update it.
+The <T> is the actual type of the setting, like boolean or string
+Once upon a time I replied them on twitter for asking jsx support, and they said they were working on getting it better just a start.
+VS Code does have jsx support now.
+Appart form syntax highlights there is no real support for JSX yet, but it is on its way.
+We plan to improve this by integrating the Salsa work from the TypeScript team: Microsoft/TypeScript#4789
+Closing - Salsa will be the default for the February update and supports JSX.
+I am in the process of creating a jsdoc comments extension, and it can insert TextMate-style snippets, but only as a string. 
+We didn't document it because we didn't want it to spread.
+When I saw CompletionKind.Snippet the first time, I thought it was used to declare the insertText was actually a snippet but later I found that this property only contributes to the icon. 
+I have added telemetry to see how often which syntax is being used and from what extensions.
+After some infrastructure work and collecting some telemetry this is my plan
+These are the API changes that will enable this.
+There was undocumented functionality that allowed completion providers to have placeholders that the user could tab between (we use in Dart Code to pre-fill arguments) which is why this is a fairly small change for those already using that. 
+The extension state is meant for remembering a user choice, store some installing path etc.
+We have decided to open up that way - giving extensions the power to modify the configuration outweighs the risks.
+We also have some hidden settings that aren't defined in the settings and there's always the the case that an extension is not present.
+Because they end up in a file which is supposed to be human readable, if an extension by accident fills it up with random stuff your configuration is effectively lost.
+I actually don't use the enum value but its name (providing a little bit of extra detail):
+The catch is that keys can be dot-separated and that the configuration is an object-tree along those dots.
+There are more ways of defining restrictions with JSON schema, but that would require the full schema checking code that is now in the JSON extension.
+I pushed a change to carry the error inside the promise as discussed. 
+Keys in the launch.json are contributed by each extension, vscode is aware of them by reading the package.json of that extension.
+If you have tasks.json with a key foo it ends up to be tasks.foo in the getConfiguration call.
+There are several comments in this thread that suggest we shouldn't be having settings that don't exist in the package.json. 
+Contents with settings.json are being put top level, any other file contents is being added under a key that matches the name of the file.
+Any configuration key that starts with launch.* or tasks.* ends up in those files in the workspace. 
+there is no validation happening when using launch.* or tasks.* keys because those are not in our collection of configured schemas and default values
+I added support to write to launch.json and tasks.json. 
+I currently do not allow to replace the contents of the file (e.g. you cannot use launch as key and provide a rich object as the contents), so you always have to provide a key within the file. 
+Pushed a change to ensure that any value in tasks.json or launch.json overwrites anything in settings.json under the same key.
+Also, the way the editing service is implemented, it is not aware of any file besides settings.json in a workspace or settings.json globally.
+Unfortunately I don't know app internals well enough to reproduce the environment outside of it.
+And getting the screeps server itself requires a steam purchase.
+In case somebody has the game already here are setup steps:
+Here is my config and the detailed scenario to reproduce it.
+This is how it looks, in case there is something useful I'm missing.
+There are a few big-ish json files going up to 7 MB. 
+Looks like the TODO parser and Git History extensions updated in the last few days...possibly one of those was the culprit and has been fixed by the author?
+I use git bash (MINGW64) on windows.
+AFAIK we had no changes in the scroll handling logic, but we did update to a newer electron version (that includes Chromium 52).
+My workspace is a Node.js module with most js files under 20KB. 
+I've put together a very basic reproduction at the following repo
+I have currently hacked together a proof of concept by starting the ssh-agent against a private key.
+Yes - starting VSCode from a session that already has them set in the environment works perfectly (Launching from Powershell in my case). 
+It took ~40 seconds to find "Tab.java" whereas a simple find command took less than a second:
+Check this post on reddit by author of sublime text on how they totally nail it 
+I have added a unit test for measuring file search performance with a large workspace, instructions and results from the optimization with #9380 are in #9545.
+In comparison, sublime text over sshfs is able to fuzzy find files almost instantaneously. 
+I've just switched over to use native commands (find/dir) to do that, yet it remains the main part where time is spent.
+I am using VS Code on a 4k monitor (ASUS PB287Q 4K) and have set Windows 10's scaling on that monitor to 150%. 
+For reference, he is talking about electron/electron#4299
+FWIW, this is also true on OSX (10.11.3) with 96 DPI monitors, but setting the zoom level to vscode to anything other than default (e.g. I have "window.zoomLevel": 1).
+AFAIK this is waiting on an Electron update to bring Chromium up to 53, such that enable-use-zoom-for-dsf is enabled by default for Windows and Linux (sampled above in #1896 (comment)). 
+In chromium, this will never be fixed, otherwise it will affect the display of all sites.
+A change I included was to use 'find' to retrieve all files and then apply the exclusion filter on top. 
+All font rendering is ultimately handled by Chromium. 
+The selection color comes from the monokai theme: rgba(73, 72, 62, 0.5);
+The tmTheme editor I've used in the past allows specification of a selection color.
+I've tried to optimize the highlight colors on my new theme Sapphire, there is a selection section on the theme readme. 
+In ST there is a console you can open which outputs useful debug information.
+Not all Git code happens to be "pushed" to Github or BitBucket.
+Currently VS Code prevents opening a folder more than once which makes it impossible to work on a project in multiple windows (e.g. on multiple displays).
+i currently just run vs code on one screen and vs code insiders on another while working on the same project but that comes with it's own share of problems ;-)
+I had some code with the "co" library, lot's of generator and promises,
+Currently the sorting is based on our scoring algorithm. 
+Chrome Apps have lost some momentum as Google has announced that they won't be supporting them on non-Chromebook desktop platforms, but they are still supported for the Chromebook.
+I your case the extension host shutdown and the other processes are sticking around. 
+Btw the largest chunk of stuff in app date is created by Chrome itself and is used for local storage, index db, etc.
+See, for instance, how it can change the general look and feel when using something like VScode Custom CSS extension.
+Currently, results from git-ignored files are mixed in with results from tracked files. 
+Hi @alexandrudima here's the output from my test this morning.
+I am currently working on an extension for ui5, which also heavily depends on xml files.
+VS Code currently only supports JSON schema based intellisense/validation.
+Also, I'm afraid I can't provide a code sample that reproduces this on earlier node versions.
+I will monitor this thread to see if anyone after me has a procedure to build, install, and run VSCode run on Raspberry Pi 3 Model B in Raspbian Jessie or Stretch from clean (only locale config updated to match my US keyboard) Pi setup. 
+As you can see, there is also a conflict in my keybindings with a Markdown extension.
+To be extra clear, VS Code does not support what Atom calls "UI Theme" below.
+About parsing, there are libraries like https://www.npmjs.com/package/gitignore-parser but I don’t know if their implementation is completely correct.

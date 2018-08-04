@@ -1,0 +1,359 @@
+have you tried using L1 regularization?
+How big are your model files after that?
+Would running it in docker make any difference as a workaround?
+Does anyone know the status of this?
+can you please give a link with more info on the performance? 
+Or any way to reproduce the behaviour.
+Does Mac manage also the GPU threads?
+Aren't they supposed to be managed by the GPU controls and the drivers?
+Can you please run the CUDA benchmarks on OSX and Linux for something simple like repeated GEMM calls (to ensure proper burn in) and report back?
+But I do not know how?
+Could you try this branch?
+What should I do?
+Have you tried emulator with webcam as the camera?
+What was your detail configurations of the emulator in your case?
+If so how do I fix that?
+Is that have any effect on the issue I am facing?
+If someone can drop API level of the app to 19 I can try it on my phone?
+If not, is there a workaround to input multdimensionnal time series ?
+Wondering if there is a way to input data if m=2, 3 in the LSTM tensor flow ?
+@3XX0: Can you clarify what things TensorFlow should do and what needs to be fixed elsewhere? 
+Is it already available? 
+If so, are there examples to show how it can be done?
+Is there being work done to support these ops on GPU?
+So I'm also wondering whether the compression of TFRecord file will be supported in the future?
+Will TensorFlow treat that as a symbolic loop and compile it?
+What does it mean by dynamic calculations?
+When t is past max_sequence_length, can it just break from the loop instead of continuing with zeros state? 
+Returning zeros state is different from returning the state at max_sequence_length, isn't it?
+May we assume that TF is going to use semantic versioning for releases (ie. major.minor.patch)?
+Is there a python3 development branch?
+Are there any specific tickets open?
+Can we get support for cross products? 
+Are there automated tests in place to ensure that Python 3 support isn't broken in the future?
+How do we contribute towards python3 support?
+can sombody please let me know their difference and what i could do get rid off the syntax error as well?
+May I know, When will the tensor flow for iOS will be out? 
+I may sound dumb, can you give me an example use case of having the machine learning on an ios client, please.
+How does the neuralnet learn when it's on an iOS client? 
+Will the training data be only users' data i.e their photos, playlists etc. 
+Does the neural net sit in the background and train itself with user's data like a cron? 
+Is there anything I can change within the demo code to improve the speed?
+Out of curiosity, have you set your LD_LIBRARY_PATH to your cuda installation's lib64 directory?
+I'm curious why it is hard to upgrade to CUDA 7.5 and CuDNN v3? 
+Could you share the method of installing different cuda(7.0 and 7.5) separately?
+Does symbolic linking libcuda.7.5 to libcuda.7.0 or just providing libcuda.7.0 have side effects?
+do you mind explaining what you did?
+can you please write the detailed command?
+Do you have plan to release python 3.5 version in near future?
+Did you make 6ish links in your /usr/local/cuda-7.5/lib64 folder?
+For example, what did you name the one for cuRAND? 
+And what did it link to?
+Anyone can help this?
+Hi, can someone either point to code example or documentation how to extract final predictions after the training the model.
+My next question is how to get probabilities of predictions?
+In this case how shall I print out or save the probability value in csv format?
+Is anybody working on this?
+Any plans to include an equivalent in tensorflow?
+Should I leave this one assigned to you?
+Is this request specifically for truncated BPTT? 
+Is there any support for reading/writing compressed input files, e.g. with gzip?
+Also, how large is the events file?
+Is there example code for the my_parser function in the example in the documentation for batch_sequences_with_states?
+Is there some hope of fetching and feeding list of state tuples for MultiRNNCell in some way.
+Do you know how if that's possible?
+I want to know if there is a way i can do this.
+Could you please add some details how to build tensorflow setting it explicitly to 5.0?
+are there examples or docs that explain how to actually use the 1D convolution?
+Could you explain how to inject a matplotlib plot into an image_summary.
+Has there been any progress on this or related issues?
+I also wonder if there are "finer grained issues"?
+Are there any plans to make the tf.matrix_determinant() GPU op? 
+Is there a way to ask the build system to build a shared library that one can link a program written using the C++ API against?
+have you gotten a shared library working?
+Can we do that? 
+How can I see what compile options bazel is using?
+just ran into this, anyone working on it?
+Does the person working on it have a Github username?
+Is there any news on this bug?
+Should I better compute it with different operations?
+Is this expected behavior?
+Why is TensorFlow so slow when inverting a matrix? 
+Is there a way to improve the TensorFlow runtime duration?
+Is there a road map link to see which issues will be resolved / new features will added first the next weeks?
+Should this bug just be the catch-all for now?
+Could I have your script to reproduce?
+Is it possible that this gap exists only in OSX?
+Had this been implemented on GPU?
+what's the status of graph functions?
+From an API perspective, how do you imagine this working? 
+Would the upper bound be configurable?
+What sort of range would be a good default?
+Just curious, what is the use-case for differentiable Cholesky?
+Or is it possible to implement it using existing GPU ops?
+Can the desired functionality be achieved using other ways?
+Is the code within github now?
+or is it still to come as you said in the next release?
+When will it be made available to public?
+Any good paper that you would recommend explaining bi-directional RNN ?
+I am wondering what is going on with the bidirectional RNN function in TF. 
+How can we create an RNN using C++ API in TensorFlow?
+What's the status of bidirectional RNNs?
+I have not seen the implementation , just want to know if it is processing correctly or not .
+How can this be done using get_variable?
+Any updates on this? 
+Is the (core) functionality coming anytime soon or no?
+And I'm wondering if it would be worth the extra investment.
+Any thoughts on why and if it may be improved?
+What happens if you run on only one thread?
+Any update here?
+Does the logsoftmax be added?
+Is there some specific reason it's missing, or is it in the works?
+Do you have any numbers on the speed?
+Are there cases that a run call produces a tensor but the tensor is only used in a subsequent run call?
+Do you have any specific use-cases in mind?
+Can you provide a minimal example of using the loss_callback with fetches ?
+would you mid elaborating a bit further on how to use a BFGS optimizer?
+If you have suggestions or some pointers to where to look for answers I'd really appreciate it.
+And if not, can you give me an idea how to implement this behavior?
+What errors are you seeing?
+What would be an optimized way of doing this? 
+Any ideas on how to adapt this if the indices are placeholders and not variables?
+What's going on?
+When can I expect the fix to hit github? 
+Also, what happens if you change ::tensorflow::StringPiece to just tensorflow::StringPiece (i.e., remove the ::)?
+Is this a scope issue or something wrong with how we use the scopes in layers?
+Are you printing variable names or just tensor names? 
+But is it this?
+Or is something else wrong? 
+Since you tracked it down, could you say where in TF code this appears? 
+How are you running TensorBoard?
+did anything change or am I missing something?
+Do we have a pip czar?
+What is your environment?
+Did you successfully run the "bazel run"? 
+Which version of bazel are you using?
+Is there a workaround?
+How are you providing args to the script in the first place if you're not executing it as main?
+If you aren't providing args, why is the expected behavior for FLAGS to be not be None?
+If so, how can I go about implementing a solution?
+can I just run this once in my own code, or do I have to paste it into some of the tensorflow files?
+how did you fix this?
+Is this because we're missing a unit test?
+Does anybody know whether cudnn supports this?
+Could you explain why None is preferred over 0 ?
+Anyone else facing this too?
+do you have 64 bit ubuntu or 32? 
+Is it a bug of Tensorflow Python API or is it my "fault" because of the type/shape of my input data?
+How could I get it to work and be able to apply "tf.image.random_flip_left_right" to my training set?
+Also, are you getting any 404s on the console in the TensorBoard frontend?
+Is it possible that your code is 2 days out of date?
+Can you guys shed any light on why this file would be missing from the pip package? 
+Next question: what exception are you seeing?
+What error do you get if you only make the line 134 change?
+What could be wrong with my gpu setting?
+Is this the desired behaviour?
+Also, where should I look if I'd like to implement my own optimizers for GPU?
+Hm, when you set ./configure, did you specify cuda compute capability to 5.0?
+I wonder if this is related to ptx-sass compilation somewhere.
+Is this still a problem?
+I would love to help to add them, however could you please provide some small guidance on where to start?
+Is it still an issue?
+Were you able to reproduce this at some point?
+Any idea where the bug could come from?
+Is there any way to disable this optimization in a regular tensorflow session - ie. with tf.Session()?
+Are there any solutions to this problem currently?
+Is the bug a complex one to fix?
+Is there a reason for why an empty bottle neck tensor in the gradients produces division by zero though?
+As a question, is there a local version of the patch I could use?
+Do you want source or binaries?
+Is the fix python only?
+If so, would I be able to just use the corrected python module instead of the standard module without rebuilding the rest of the source?
+Did you solve this problem?
+Is it working for distributed version?
+Just out of curiosity, what is the gradient value at y = 1e-5 then?
+What architecture are you running on (little endian or big endian)?
+Any ideas on how this could be solved?
+When you run it in the single-machine mode, are you using the tf.train.Supervisor? 
+Is it the Python client that calls saver.restore() or the parameter server that runs the restore op?
+Also, are you running the 0.8 release or a nightly/from-source build of TensorFlow?
+Are there any very large (> ~2GB) variables in your model that could be brushing up against the protobuf limit?
+Does the whole cluster need to be in debug, or just the master worker?
+I don't see any obvious debug logging, where can I expect to find the stack trace?
+If so, what have I done wrong?
+If not, then what can I do to get tensorflow working on my machine?
+Does "All the misaligned memory reads came from Eigen kernels" mean I've done something wrong?
+Do you have a basic block size like (or such as) 256 , 512, 1024
+What block size are you referring to? 
+Which file(s) should I look at to find what you're talking about?
+I'd be interested in knowing if anyone else succeeds at this and having that issue closed.
+Is it possible to build tensorflow when one installed CUDA via apt-get (and thus does not have one cuda folder)?
+What does the structure of the Cuda binaries look like when you do apt-get?
+Is there any progress with this?
+I wonder if it would be possible to do this automatically?
+Have you tried using a TensorArray? 
+Who is the owner of the tensorflow/examples/skflow directory?
+Would you be able to post your graph protobuf?
+Also, what's the best way to generate a graph protobuf?
+Did you Ctrl-C ?
+Do you happen to have this information to hand?
+Are you currently working on this?
+did anything change or am I missing something?
+Do we have a pip czar?
+Do you mean that I comment out everything related to mobile devices, not just if_mobile and if_android?
+Or are these 2 components sufficient?
+What's used to determine if_mobile etc.?
+Do the is_* macros only work on the inside and should be rewritten?
+What version of CUDA are you using?
+Do you prefer that I open a different issue, for each failing Notebook Example or I create a main Issue and I list all the failing Notebooks inside it ?
+is there any reason why double isn't supported?
+any idea if something changed from float to double?
+Do you want to upgrade?
+Do we have a fix for this? 
+Do I have to re-build tensorflow from source to set --brain_gpu_sync_every_op or there's an easier way?
+I wonder if there are diagnostics we could print (dimensions etc) of buffers vs expected op input
+Do you have a idea for a fix you could send?
+Is CUDA 8.0 the new pip binary dependency or is this a mistake?
+What version are you using?
+Is 0.12 released yet? 
+Is there any distributed version of TensorFlow that could work on multiple machines?
+Any update on timeline?
+I am wondering how can I run Distributed Tensor Flow on Top of Spark
+Any word on this?
+Is there a way around this? 
+Is this a missing feature?
+Would it be possible to visualize the values of scalar summaries (e.g. from a chosen or simply last event) directly on the graph?
+If not, what is the best way to easily inspect the values of the tensors after the most recent run?
+Is there an automatic way to generate the runs in separate folders?
+Does that work for your purposes?
+What are your thoughts about that?
+Does cc36921 solve this issue?
+What would be a minimal code example, and what would be the desired outcome ?
+Is this expected?
+Does anybody have experience about "momentum" and "nesterov momentum"?
+does the "nesterov momentum" perform much better than than "momentum"?
+are there any news on that? 
+Am I missing something or is this functionality that we could add?
+Should we avoid this name in the thread title and documentation to preempt confusion via overloading the linear algebra notion of rank?
+Are you saying your network has a bunch of outputs, and then you combine them into a single scalar that you are trying to optimize?
+Any plans on adding forward mode AD? 
+How can i save GraphDef in python that can be used in C++?
+Would you consider adding such a layer at some point?
+Is there a reason to not change _valid_dtypes on our end?
+For now, how about a return_zeros argument that defaults to False?
+What do you think?
+What do the think about the Zeros solution?
+Should I reassign?
+Are you possibly not using the latest version of the repo? 
+Can one of the admins comment on this?
+Can someone give me a few pointers on where this should end up in the tensorflow source tree?
+How does the merging / syncing process work with external Eigen changes? 
+Do we have to wait for any period of time before using them in TensorFlow?
+I want to know if there is a way i can do this.
+are there examples or docs that explain how to actually use the 1D convolution?
+Should we open a new issue or is this new behavior by design?
+Can you open a new bug for this, explaining what behavior you think is correct?
+Can you explain what currently happens?
+Wondering if there exists a method that do the same?
+Also, could you mention which of these operations should be implemented?
+Could you point me towards some library where I can see what the expected outputs of each of these operations should be?
+Could you provide some example in the TF code where they are used?
+Is there any other way I can build from source?
+Could you provide some hints as to how this might be done? 
+Are there any utilities that can differentiate between a Tensor and a SparseTensor?
+If not, can you tell me how to approach this (since you said that i should be easy in the description)?
+Is there any example of overriding?
+What should the API look like?
+Do you have some feedback on how to handle this so that could be easier to integrate with TF repository with a PR?
+Has anyone gotten this to work properly on Mesos?
+Can it possbile to use other ways?
+Are you using GPU?
+Can you be more specific about the feature you're looking for? 
+Do you want an op that checks whether a file exists?
+Is this something that sounds useful to others as well? 
+Is this feasible?
+Shall we update from the master branch ?
+Does 0.10c release now contains this ?
+Can you let me know if you're seeing that reduction too?
+Has the reduced footprint configuration been added to the main repo?
+Is there a test suite to validate changes?
+What is the standard way to verify that "everything still works"?
+Could you give some more concrete examples of exactly what you'd like to do, and clarify whether it's merely awkward or impossible?
+Is there a way to save and restore a DNNClassifier?
+Any ideas on what's the timing on those?
+If so, could we see an example and/or be pointed to the documentation where this is explained?
+for completeness can you show how this is done?
+Could you please let me know what the value was of $TF_INC as per the following step in the instructions:
+Should there also be an equivalent $TF_LIB path?
+Why is there a difference? 
+How should I adjust for this difference?
+What is the size of the input JPEG-images supposed to be, and is the Inception model rescaling them automatically?
+Does it mean that this Inception model will stop working in the future?
+For that matter, why do inv and div need separate kernels at all?
+Is it all for performance optimization?
+I wonder why the change is not reflected yet on the concerned webpage?
+Do we have a better example illustrating preprocessing steps like data normalization, distorting images, etc?
+does that look like something we'd want to have?
+Are you aware of any other issues that one would face?
+is there a multivariate numerical time series example in tensorflow.
+How can this be done in TF? 
+Also, what version of numpy and cuda (in particular cuFFT if you know) are you using?
+Is there any update on FFT on the CPU?
+could you point me to that thread.
+Is this issue resolved?
+How can I verify/enforce this?
+is that still necessary?
+Can you have a look at TensorEvaluator.h please?
+any suggestions how this could be rewritten in a nvcc compatible manner?
+Has anyone tested this on jetson tx1?
+So wondering if you encountered it.
+Did you also build with latest bazel release or 0.1.4.?
+And how about the tensorflow version - r0.8?
+Anyone knows what farmhash is being used for in tensorflow r0.9? 
+have you found the root cause of segmentation fault issue?
+is there a debian package that I can use to install the latest version of the cuda sdk ?
+Do you build it on your machine (e.g. Mac) or on the device itself (e.g. Pixel C)?
+Does anyone have the already generated files for TX1 or can point me in the right direction? 
+Wondering if there's a concise summary of everything in this issue?
+Did you manage to compile ?
+Do you know of a reason we can't add -lm in all cases? 
+Where is google/protobuf/BUILD? 
+Why is there not a comparable slowdown due to protobuf serialization when talking to a parameter server shard? 
+I just would like to know if high dimensional matmul will be supported in the future?
+Are you using the same versions of CUDA and CUDNN with both releases?
+Please can you provide all of the information requested in the issues reporting template.
+does the addition of the sentence line above solve the issue OP experienced?
+What is the real name of bottle_neck tensor? 
+Why can not find the bottle_name in model definition python file?
+Can I kindly ask if there is any update on this issue ?
+Could you please add dependency to @org_tensorflow//tensorflow/core:protos_all?
+Can you comment based on the "Confirm safe" TODO?
+What feasible alternative approaches are there?
+Are there not significant limitations by using the service approach?
+Has anyone had any success with wrapping the objc ios camera example in a swift project?
+Are you following the instructions here?
+Is there any link related to node-gyp binding for tensor flow API ??
+What resources do you recommend for working with v8 modules?
+Is there any update ??
+What are the results running on GPU?
+Has anybody verified that quantized computations are taking place on their GPU?
+Is there a canonical / repeatable test suite, so language bindings can have a target and level of confidence? 
+Is there a build server? 
+Could there be a build server?
+What aspect of automatic differentiation is not available from other languages?
+Is that just for defining new ops?
+Have you, by any chance, started working on the Swig Interface for Java?
+Are your SWIG wrappers in a separate repository or are you working in the tensorflow repository? 
+Is there a reason why you are using a cc_binary rule to build the shared library rather than cc_library? 
+Is it an acceptable solution for "the team"?
+Are you saying that all the nice auto-differentiation magic that we get from using TensorFlow through python is implemented within python, not within the c++ libs?
+Has anyone got anywhere with embedding the python tensorflow environment in the jvm?
+is there an official github repo for this porting project? 
+how did you come to the conclusion to use the C API?
+Does the API you expose accept TensorFlow's protocol buffer objects? 
+Is the C API interface still on track to be released sometime within November? 
+Is there any interest in this by Intel?
+can you organize it?
+who is responsible for OpenCL support in Tensor flow now?
+Is there a list of CUDA dependency libraries that Tensorflow relying on?
+Are there any plans for supporting complex128 as well in the future?

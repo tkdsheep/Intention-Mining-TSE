@@ -1,0 +1,287 @@
+I will ping you with the details by November 7 as soon as the logs has been uploaded.
+I'm using JFrog Arifactory docker image - web UI of Artifactory reports about 4.14.0 version. 
+As soon as I collect the logs with the Jfrog team will let you know more information about it.
+Support for foreign layers was added in version 2.5 https://github.com/docker/distribution/releases/tag/v2.5.0, and is needed for Windows based images because the base layers are only allowed to be distributed by Microsoft (for legal reasons).
+When pushing an image based on those images, only your layers will be pushed to the registry, but the base layer is not pushed (a reference to the foreign location is included in the image's manifest).
+The image you showed is 289MB, but the official image is only 10MB (compressed, uncompressed +/- 33MB)
+It detects the foreign layers and pulls the blob & image from Microsoft site, it defeats the purpose of registry.
+Unfortunately, the Docker distribution source code does not currently have a way to force-push foreign layers, but we're exploring workarounds.
+yeah, I also tried just modifying the JSON in the image tarball to remove the foreign layer references.
+I have a windows build server building my docker images.
+I then have a production environment of 4 machines which I want to run those images on. 
+In TP5 I was able to push images from the build server to a private repository and start these images in the production environment by pulling from that repository.
+It means that I have to know both the external IPs and ports.
+on the other hand there is a lot of docker daemon already running, with registry container running on localhost.
+Yes I am running registry:2 in my own environment. 
+Here is a scenario: on startup my containers have to register themselves (ip + port) in a service discovery directory.
+The result is a docker image with dependencies pulled via SSH-auth that never had an SSH key in it.
+This is needed when you want to use a Dockerfile to build an operating system image.
+fwiw I tested live-restore with these systemd options and didn't have issues. 
+Many cloud platforms provide a load balancer service separate from the virtual machine service, though.
+For instance, service1 would expose port 30000 and service2 port 30001.
+I have reloaded docker daemon; I have deleted docker0 interface and started docker daemon.
+I have been running docker with OPTIONS="--iptables=false"
+There are many dev environments that provide configurable security in which the security is often disabled for dev environments.
+In between any change, I stopped docker and removed docker0 with sudo ip link del docker0;
+The container is started and assigned an IP address on the 172.17/16 network. 
+The host is running CoreOS alpha on an AWS EC2 VPC instance.
+Installing packages that require change to memory settings and kernel configuration (e.g. Vertica DB, WebSphere MQ) can only be done in privileged mode.
+The docker engine server-side API does not respect the Source parameter provided by the API (which specifies a reader that can be used). 
+not using the docker client but I'm using the 1.12.3 tag and also tried docker/engine-api before finding out it was deprecated.
+When I run the code, it sends zero bytes to Docker forever, which is exactly what I'd expect.
+this is what I see with the same code:
+The use of static ports (e.g. docker run -p 1234:1234 syntax), plus hardcoding the same portmappings into the image, allows the container to know what its port mappings are without dynamic discovery.
+We run internal unsecured docker registries in all CI and production environments.
+I'm trying to build containers for various embedded system development environments, which require access to private repositories.
+At the moment I am using this collectd plugin (https://github.com/lebauce/docker-collectd-plugin) to get the stats out of my server.
+When a container is running as a non-root user, the ownership is always reset back to root after uploading the file.
+The difference between 2 pieces of code is how to start docker exec in golang.
+I've been writing a system to do this without simply letting them 'ssh in'.
+I then create child cgroups of the systemd cgroups and then move the PIDs from the original cgroups to the systemd child cgroups. 
+After that is done I then write the PID of the container to a file.
+Dockerd now just creates its cgroups as a child of the cgroups passed in, if the subsystem exists. 
+Note that by just using ExecStopPost without ExecStop one will not get the termination logs into the journal as systemctl stop will kill the logs command before ExecStopPost stops the container.
+Examples of changing Docker configuration are on the CoreOS website.
+The core team had visibility and vote on the issue.
+This was handled as an embargoed security vulnerability and was not discussed in a public PR. 
+My use case is building an erlang project with rebar. 
+I turned on debugging for the PAM module (by adding debug to the pam_limits.so line in /etc/pam.d/system-auth), installed syslog, tried to su again, and here's what I found in /var/log/secure:
+Currently, we are dynamically generating images by committing running containers. 
+The specific container I'm using is one that gets built to run single commands, so every time it runs, it takes the copy to ensure it's up to date.
+There's 64 cores with 2 threads each, 1.5TB of free RAM and nobody else on the system.
+I copied the data.img to an empty git repo, with a corresponding bare remote on a different computer on the local network. 
+This limitation is partially intentional based on how dockerd works when building containers. 
+I make heavy use of Consul for this purpose. 
+I leave a Consul agent listening on each host that I use. 
+Another use case is using ssh keys at build time for building from private repos without them being stored in the layer, eliminating the need for hacks (though well engineered) such as this one: 
+That agent knows what it's IP address is. 
+A fully functional implementation of pods in terms of Docker containers can be found inside of kubelet.go.
+As a bit of an experiment, I extended my technique into a full-fledged replacement for docker build using a bit of POSIX shell scripting: dockerize.
+We are using hardcoded ports right now. 
+There are some situations where you want the service inside the container to register itself and keep the registration alive (for example, see Consul Time to Live checks).
+A pod (as in a pod of whales or pea pod) models an application-specific "logical host" in a containerized environment.
+For example I need to communicate a rest service with a oauth service and it is only possible throw hostname oauth.example.com (I have a crt with *.example.com within this container).
+Inherently, a Pod represents an atomic unit of an application.
+Update on host-level networking: we are discussing a simplified model in docker/swarmkit#1645. 
+this option already exists as --stop-grace-period
+There are numerous examples of such mult-container atomic units, for example:
+Pods also share a resource hierarchy, though the individual containers within a pod may also have their own specific resource limits, these resource limits are subdivisions of the resources allocated to the entire pod.
+Pods also share a set of data volumes, which the pods can use to share data between different containers.
+I'm having to run apps unclustered because 10 seconds isn't long enough for a clean shutdown.
+The use case is where you're doing a rolling update to a service, and it needs some amount of warm up time before it can handle requests.
+For each image that I use, I always end up having to go to the Dockerfile to see what the ENTRYPOINT/CMD are.
+Consider a scenario where you need run a bunch of containers in the global mode being able to communicate with each other within the worker host. 
+Typically, --entrypoint is used for interactive debugging, which is the domain of running individual containers, not services.
+The reasoning behind that is it makes less sense in the context of services to run arbitrary commands inside of a container.
+The service create and service update commands do not support all options that docker run / docker create supports. 
+To re-enforce the argument that builds are already host dependent and non-reproducible I provide a list of Dockerfile fragments with this property:
+My initial use case was a desire to cache OS package repositories to speed up development iteration. 
+Whenever something registers with that host it's assumed to be running on that host.
+As noted by others, when registering with a service discovery tool, knowing the actual exposed port is critical.
+We have an application that registers itself with another one of our services.
+We are currently using a small script to calculate a port to explicitly map and injecting it as an env variable. 
+This is because when you launch a mesos docker task, docker isn't the one that picks the random port. 
+Instead mesos picks one out of the range of ports that you have set up as available to use.
+Having access to the dynamic port assigned by Docker will allow to register the services without having to run agents like Consul or use other tools such as registrator.
+There is a flag --entrypoint on docker run that allows one to override it. 
+If you build an image without an entrypoint, COMMAND will be used as the effective entrypoint.
+In our case we want to build an image which consists of a pre-configured installation of the concerned product, and the installer is over 2GB. 
+For example, this script will cache and reuse Alpine Linux packages between builds (the VOLUME mounts a home directory to CACHE, which is then used as a symlink for the OS's package repository cache in the install script):
+The current situation forces us to use an external system, even if we don't need it for anything else.
+Another usecase for this is for a local cache of the node_modules directory on a CI server to reduce build-times.
+Pods are a foundational part of the Kubernetes API. 
+This is basically the Ticket Granting Ticket (TGT) that already exists on the system.
+In case --kerbverify is specified and SPN is provided, the following steps will be performed within the CLI client:
+The Kubernetes API spec for a Pod can be found in the v1 API
+Docker CLI didn't have it before, but the API was always there. 
+The shared volumes and netns are already supported. 
+Hey guys, there's a google doc describing the design and UX of our work so far. 
+Once the TGS is validated, and the User Principal Name (UPN) is extracted the authentication process completes.
+Unless cached, obtaining TGS requires contacting the Key Distribution Center (KDC).
+For our use, we have a "login" type of command (separate exe) that will populate the config file with the headers we need, then the user can do normal docker commands w/o needing to do anything special, like add new flags to each command.
+This was specifically added for these types of authentication usecases. 
+Pods make it possible to keep data resident (e.g., in volumes) and to hold onto resources across container restarts and even across full container replacements, such as for image updates.
+Upon receiving the request the server extracts the TGS from the HTTP Authorization header and validates it. 
+We develop a container security suite oriented to the enterprises. 
+The Basic client now assumes that passwords can be reused, so that operations like "run --rm" don't end up prompting for credentials a half dozen times. 
+Right, the authframework branch is just the framework patch, while daemonauth has that and some things that build on top of it.
+The main reason for splitting up the stacks in our case is that we usually don't want or need to redeploy databases, caches, etc. 
+Restarting an application with a new image is usually no big deal, but kill and removing your database container might take a while and prolonges downtime.
+We KNOW that people make containers with multiple apps inside them, even though docker considers that an anti-pattern. 
+Virtually all production services at Google use our internal legacy equivalent of pods. 
+Right now the Docker Clustering (#8859) proposal is missing both a preferred method of replication and any higher level organizational primitives/tools (labels). 
+By having users specify workloads in terms of pods, we have a resource scheduling specification that sites above the individual containers. 
+We use authentication both for auditing but also to provide the ability to create policies that control user access. 
+For example, limit each developer to 5 containers max on the specific server. 
+See below an example screen for configuring such policy.
+Since we're posting utilities, I've built one to build minimal Golang images in two steps based on the scratch image
+I propose a thin framework that will enable adding external modules via Docker HTTP API. 
+The modules are external services that expose HTTP REST API. 
+I managed to get the client loop factored in a way that it only had to be written once, though at the cost of duplicating cookie data when we send it back to the server for non-hijacked connections. 
+We have some progress now, after #13312 , container can see it's own cgroup information by default, which contain lots of information they need.
+The framework will enable registering to system events, so that each module will be able to register for the relevant event groups. 
+However the framework will also enable the modules to control the flow of the system via return codes. 
+This implies that the calls to the modules will be blocking unless (configurable) timeout occurs. 
+In our case we will register for user authenticated event and check against the policies we have whether this specific user is authorized to perform the specific task. 
+When I create the network with the flag --gateway, this configure the IP address of the gateway on the Bridge interface.
+We have pretty classic setup: single repo with many services that share code.
+Without -i it is impossible to use -f for our repo because our build context is 1GB+. 
+Currently, there is no mechanism to authorize the operations of authenticated, remote, users against Docker daemon. 
+There is a client certificate authentication that can be used to differentiate between the uses who can access Docker with full privileges and those that can't access at all.
+We recently merged #14699, which allows custom formatting of docker ps output. 
+Hi brousselle, the ability to assign a specific IP address to a container is already there in 1.10. 
+Also note that PUBLISH /var/build causes the result of the inner build (the busybox image) to be published. 
+Everything else (including the outer Ubuntu-based build environment) is discarded and not included in the image.
+I am working on building Docker images for Apache Cassandra. 
+There is also discussion here about the requirement for pre-start and pre-stop hooks.
+I have a working PoC application wrapper that can automatically configure Cassandra to run inside Docker. 
+The main reason is that it has the least complexity overall while providing well-known semantics to users.
+The first thing I found missing with this app was a way to introspect the allowed amount of memory from inside the container so I can set the JVM heap up correctly.
+The above steps are reproducible even after rebooting the machine.
+When docker generates a new layer, it calculates the difference. 
+I've prototyped this functionality by rewriting the tar stream of the context before the trusted pull rewriting.
+Note that our entire libcontainer team is out this week, and LPC is next week.
+Kernel developers don't want to make any changes to the already messy /proc filesystem.
+I did experiment with a custom "cgroup aware" /proc filesystem though (not FUSE, it's a kernel module + small kernel patch), here: https://github.com/fabiokung/procg/
+I'm deploying a service with a Compose v3 file specifying a custom logging section.
+I should also note that I am also running a lot of containers for one-off commands and then removing them afterwards as each one uses a lot of disk space. 
+Currently, a local context can only be a directory (not a tarball or a Dockerfile).
+When I "docker push" to a private repository hosted on the local network or host, the upload process is entirely bound by the speed of compressing each layer with xz, using a single CPU.
+Also, the profile to remove was docker-engine not docker
+On the docker daemon command there is a --default-gateway option for it. 
+This applies to the default bridge network (the one backed by docker0 bridge).
+Because containers are launched dynamically on-demand its critical if old images are used for one or another container.
+I make a web project and have billions of files.
+I attached the docker-runc file to this comment but if you want to look at the code changes, here is the patch:
+I am using opinionated servers that allow you to specify a port number, then bind both TCP and UDP to it, which docker may separately remap. 
+Outside the container the UDP and TCP is assumed to be on the same port
+I built a docker-based automatically scaling environment, where Amazon ECS controls the docker container placement on the docker hosts dynamically (autoscaling docker containers on auto scaling EC2-Instances). 
+Currently, if the image doesn't exist, it pulls the newest version but from then on it doesn't check or do a pull. 
+After rebuilding, I'd like to send a single docker command to remote hosts to start a container, but currently I have to send two: docker pull and docker run.
+main difference between web/Dockerfile and Dockerfile.web is that on the first one you don't have the ability to add files behind that path.
+I have a service that listens on a port for both tcp and udp. 
+I'd like to run something like docker run -p 8080 -p 8080/udp -i -t image_name and have docker use a same port on the host for tcp and udp.
+I'm spawning these containers ondemand, so i can't hardcode the port number on the host
+I'm going to take a crack at this, I'll let you guys determine if it's compelling enough to include once I'm finished.
+Docker reports which ports are exposed by the container, forwarding ports, etc.
+This is with Docker 0.3.4 from the PPA on Ubuntu 13.04 with kernel 3.8.0-19-generic. 
+Have since redone my process to always build off a single base image.
+Interestingly, if I remove the like "RUN rm -rf /etc/puppet" from the Dockerfile, I no longer see the permission error.
+Since Docker is moving away from AUFS to use DM in the next major release, this bug won't appear anymore.
+The above discussion from several months ago at version 0.7 suggests that DeviceMapper became the recommended backend. 
+Our initial plan was to phase out aufs completely because devmapper appeared to be the best option in 100% of cases. 
+That turned out not to be trye, there are tradeoffs depending on your situation and so we are continuing to maintain both.
+We are consistently seeing this behaviour with our mysql /var/lib/mysql directories under docker 0.11.1 and periodically in 0.9.1
+Okay, I added release notes to the new docs architecture diagram so that it will actually get done!
+I also ended up doing things like that everywhere in my Dockerfiles, but finally I just dropped aufs.
+We now offer dynamically linked binaries through our apt and yum repos (see blog post: https://blog.docker.com/2015/07/new-apt-and-yum-repos/), and those are installed by default by the installation script, and we're updating our install docs (see #16662)
+To check if your system supports the dirperm1 option, check the output of docker info:
+My environment is on a Mac using docker-machine to bring up a VM under virtualbox.
+Hi all, there is a sprint underway to upgrade the networking model of Docker.
+I haven't tried yet, but just use a recompiled docker. 
+For the record, the main place this is currently hard-coded that I can find is https://github.com/docker/libcontainer/blob/14a7d2f468404e25577dced6982248e80ddce79a/nsinit/config.go#L261.
+However, one can also write a wrapper script docker-create.sh that takes a config file with parameters and converts them to the options of docker run.
+I have put out a proposal for docker's hot upgrade and SPoF issue.
+docker run isn't going to change.
+However, 1.3 includes a new docker create command which specifically just creates the container.
+the PR was just merged (#16168) and will be part of the 1.10 release
+Ideally all containers would continue to function with zero downtime and zero behavior change.
+After fiddling around quite some time , I created the docker image manually.
+Hi, I took the experimental release today to test this out today.
+We have had some recent threads about docker networking support and today Jamshid Afshar started another related thread with the same problematic users already have.
+Also, we're going to converge dockerfile commands and regular docker commands.
+I have some automated builds using docker build and a Dockerfile.
+There's a new COPY instruction which can be used to copy local files to the image.
+There is actually a use case not covered by #2733 
+AFAIK these name can only be user specified on container start.
+all, please see #11109 for an implementation that can satisfy this.
+For those following this, theres an open pull request, that's currently being reviewed.
+It won't make it into the 1.9 release, but should be part of docker 1.10
+As a side-note, in my efforts to clean up the registry code of the daemon, I've got a branch working on comparing freshness of an image.
+There are currently two syntaxes for CMD and ENTRYPOINT (ignoring the interactions between the two instructions like passing options from CMD to ENTRYPOINT).
+As a new user to Docker, I have just lost a couple of hours this afternoon because I wasn't aware that the base image was deprecated.
+The behavior you are looking for can be achieved with docker attach -sig-proxy=false ID.
+I will work tomorrow to add instructions for doing an oe-core build in docker.
+To be consistent with every other docker command Ctrl+C terminates the process/container and Ctrl+P+Q detaches.
+I don't see a milestone associated with this, so I can't tell if you guys have it scheduled.
+So basically that functionality allows stopping the daemon, upgrading it, and starting it again after upgrading
+basically, the containerd-shim allows both the docker daemon, and the containerd daemon to be restarted, without killing the container. 
+Upon restart, the daemons can re-connect to the container, by use of the containerd-shim's.
+This is actually how the API already exists today, it's just that the CLI is making multiple API calls for docker run.
+Docker 1.3 also keeps the network info around for restarted containers with #8297
+This could probably be done by updating or replacing a container as suggested in #2733.
+Currently there is no way to do this with a Dockerfile.
+An ambassador container could either provide dynamic routing based on some service discovery like described here: http://coreos.com/blog/docker-dynamic-ambassador-powered-by-etcd/
+We are running Docker version 0.7.6, build bc3b2ec on dell hardware.
+You will not get an error anymore because the image tags are stored in driver specific files.
+Docker will re-create the directory when it starts following reboot.
+My docker installation has the image ubuntu already installed on the devicemapper driver.
+There's currently a proposal for implementing this using command flags. 
+Note that we now have volume management (docker volume create, docker volume ls, etc.), so using data-only containers, and volumes-from has become redundant in most cases.
+For those following this issue; there's a work-in-progress proposal for a completely revised network-model in Docker based on plug-ins. 
+Links will (probably - and if I understand correctly) replaced with a new concept, based on "end points". 
+Currently, it is possible to link a container to an already running container, so if the linked container has to restart — all its dependencies have to restart.
+We are no longer accepting patches to the Dockerfile syntax as you can read about here: 
+One difference is that "run tar" depends on the version of tar available in the image.
+container renaming was introduced in docker 1.5
+My usecase is the following: I build my dockerfiles with a common set of ansible rules and scripts (and files that those ansible scripts needs). 
+I have dozens of Dockerfiles but only one set of ansible rules.
+Container in a group can communicate with each other but cannot talk to other containers in other container groups.
+I'm using multiple docker files to build up an environment (with the aim of a set of environments). 
+This would export files from a specified (optional) revision of a git repository and add them to the target location in the container. 
+This would make it easy to export code into a container without having to inject security credentials and/or scm software.
+There is no need to set the parallel packages and jobs now in local.conf because bitbake now chooses reasonable defaults.
+In Docker 1.2, if a container is restarted through the restart policies feature, it will also keep the same networking info.
+My Dockerfiles are part of the repo of the source code of my application; Mercurial keeps track of the symlinks and I find it a normal part of the development process to ensure that the targets actually exist.
+I also can't mount local directories as volume because I have to use the gcloud utility (for Google managed VMs) to launch Docker and it doesn't provide support for passing command line arguments to Docker.
+As such, we want to include the git repo for the distributed database in the docker-compose folder, so that we can do builds and tests, even of code which hasn't been pushed. 
+we were really hoping to get overlay as the default graph driver in 1.7, but there are several issues around overlay remaining; some of them are caused by bugs in overlay itself so cannot be solved by docker, but need to be fixed in the kernel first.
+I use docker machine in combination with VMware vSphere. 
+We are currently stuck in a situation where no storage backend is able to fulfill our needs, and this is one of the blockers for us for Overlay...
+I can confirm that the CA cert is being read, and added to x509.CertPool, which in tern is passed to tls.Config. 
+We also use upstart to manage the running container in the foreground.
+This is a screenshot of the original command line running with the most recent version:
+I've tested that rootfs in my local docker and I was able to build the image. 
+Note that a couple comments above it was recommended that the syslog driver be used instead of the json log. 
+The only thing that we have (perhaps compared to your systems) is a process that attaches to the docker events stream to watch for events. 
+The default storage driver selection can be checked via sudo docker info.
+I'm currently working on a dockerfile & docker-compose project for testing a distributed database project.
+I have a repo with multiple workers (each in a subdirectory, with a Dockerfile for each), and a set of common configuration files in a subdirectory of the root, symlinked into each worker.
+if you're feeling adventurous, there's a boot2docker 1.10.0-rc1 release candidate as well; 
+I've changed the buildstep plugin so this is no longer reproducible.
+I've also noticed that there is a test to validate this behavior:
+In my case I define a volume in my Dockerfile where the executable jar files search for an application.conf file. 
+I was able to see all the attributes by adding the args. 
+But somehow the values I got for CPU and MEM % are always 0.
+Rest assured that improving overlay is top priority in docker, but getting it resolved before the 1.7 release just wasn't possible.
+A registry running behind a reverse proxy (Apache 2.2). 
+rc7 pushing now will ping on irc when ready and the ML
+I've been debugging this all morning, I've started by pulling out the request code from the registry to isolate the cause.
+The proxy is responsible for terminating SSL on port 443 using TLS. 
+Here's a Docker 1.5 install showing a container for which the image name and tag have moved:
+For more information, read the comments above; #12327 (comment), and #12327 (comment).
+Here's the repro script I used on GCE (fix the project name, log path and run this loop in separate terminals in parallel.
+The SSL certificates in use are self-signed and we authenticate with client certificates.
+While in the top inside the container, I can see my load bash script is consuming a lot of CPU.
+On a brighter note; starting with the 1.7 release, there will be an "experimental" docker release, with a nightly or weekly release (undecided yet). 
+That release will be used to test upcoming features before they end up in the official release. 
+So, once this is fixed, you'll be able to test it in that release.
+and thats true on the package 1.5.0 distributed by red hat as well
+Just an FYI, all the resource related fields were moved to HostConfig in 1.6.
+Here is a short bash example demonstrating the issue.
+Note that I also tried installing babun but it wasn't running properly for me so I removed it. 
+Confirmed, this is because ps is using container.Config.Image instead of container.Image to ensure we get the correct tag name... unfortunately tags can be changed.
+You can't mount an fs in one container and use it another one as each container gets it's own mount namespace.
+Closing this since the version is extremely old and we have no backtrace to analyze. 
+This part of the code has also changed quite a bit since the 1.5 release, so the same panic bugs aren't likely to be present.
+Also just as a FYI, I went ahead and did a dynbinary build of docker using c5ee149 instead of just using the static binary. 
+Inside a common sbt project they are located at some specified folder which I would like to symlink to that (local) volume when running it locally.
+Currently we can't build anything with docker build if i have an identical setup as we run in production since we can't tell the build-process to use "--net=host".
+You can already share the host's pid namespace, which contains all the container PIDs.
+I actually had written a patch about a year ago to sort of record this information indirectly inside of the code base.
+Note that though setting the network at build time is now merged, then it has been possible to access the hosts on networks from the container to the internet (i.e container -> docker host -> osx (when on mac) -> whatever comes next).
+With this setup, only containers in our custom bridge from the IP range 192.168.0.0/24 have access to the internet. 
+During build we can not specify this bridge with --net=mybridge so we have no internet access and the build fails.
+While 172.* networks are not frequently used in the USA, they are the default for internal corporate networks in Australia, so Docker's bridge network conflicted with the conference network, preventing the Dockers I intended to do demos on from reaching the internet.
+As you can see, we have a related PR #13453 , it's closed temporary, I'll ask for reopen when libcontainer support is merged.
+The only reason we have to do the "rm" in the first place is because the following line is really a tar x, and it leaves existing files around, as documented here

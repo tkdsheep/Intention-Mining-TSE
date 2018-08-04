@@ -1,0 +1,128 @@
+Right now, we don't have a flag to customize our output order of ps and image, I hope we can provide a new flag of client such as "--sort-by" to allow user to customize client output.
+When you use service update --image, it would be nice if there were an option for docker to delete the old image once the service has updated. 
+Also, it would help if docker-compose could export relevant settings from a docker-compose.yml file.
+It would also help if it was YAML formatted, as in most cases it would be assembled by the end user.
+It would be nice if "docker images -f" could also filter by images that were not pushed to the repository after its creation whether by commit, build or import / load.
+I think this is a must-have for the stats API surface. 
++1 on SSH agent forwarding on docker build
+It would be nice if in addition to being able to specify command line build args, it was possible to specify global ones using DOCKER_BUILD_ environment variables. 
+It might be nice to consider that some people may want to specify other docker build flags via env vars too - like --rm or -q so if we can either combine them into one or find a pattern that can be reused for others then that would be good.
+I think "docker deploy" command should have this feature. 
++1, just need forwarded ssh-agent with boot2dock
+I think having docker build -privileged (or runp to use -privileged mode only for the commands which really need it) would be useful.
+Perhaps we should add a generic message "nothing to update" if an update action didn't lead to changes in the service definition.
+I think having a verbose (and less confusion) option is much better. 
++1 for ssh forwarding during builds.
+I really need this for registering container services on etcd from inside the container!
+I was thinking of adding another placeholer that you can use in --format.
+I admit that it would be cool to have a simple option to change sort order.
++1, both in and port would be nice to have as environment variables.
+Secondly, I hope we can expand sorting functions to more commands like stats, but stats has stream mode which will keep displaying data dynamically, in such situation sort can do nothing for us, but a new flag can help.
+Ideally, it would be nice to express the image build steps in a Dockerfile.
+I needed this for a project and had to convert half of a Dockerfile to a shell script which invoked the build and continued to build things in privileged mode, so having a "privileged" build would be useful.
++1. Extremely need this feature for distributed testing of different devices, where test framework running in a container should send to tested device port number, where device must answer.
+With docker build -t <tag> I can set a tag for a complete build, but it would be nice if it was possible to add multiple tags, so that one could add tags to commits after a RUN command.
+also using an --insecure flag on the pull and push would be nice so i could use the vagrant box IP if needed.
+Would be great to have first-class support for this, though.
++1 for ssh forwarding during build for the likes of npm install or similar.
+To have these settings as env-vars would be great! 
+I too would like multiple -t flags to be supported.
+registry.go should implement timeout logic on the http request, instead of using a custom Dialer to the net.Conn.
+I think a global switch that monitors the state change within Docker and display only when necessary would be useful.
+I was as well thinking this would be a great feature especially as windows comes out it would keep the commands the same. 
+but it would be nice if there was a quick one pager that pointed out all the relevant steps.
++1 It would be especially useful for "docker in docker" environments
+This feature is a must-have IMHO, a combination of RUNP along with build-privileged would be great.
+Of course we can use entrypoint.sh but it's more useful if we can use -privileged for both build and run.
+It would be nice to be able to forward an ssh key agent into a container during a run or build.
++1 This would be incredibly useful when using docker to run a test environment
+Please, embrace SSH_AUTH_SOCK, it is very useful.
+Adding support for host ssh keys would be great feature. 
++1, though this also needs to support private registries along the lines of: docker pull localhost:5000/<id>.
+This means that we need a way to consistently pull the exact same image every time. 
++1, being able to use SSH_AUTH_SOCK will be super useful!
+So having those images still have a name/repo of "test" but with some docker generated tag would be really useful.
++1 on making snarky comments without reading the thread. 
+Multiple tag support please
+It would still be a great help to have this sort of introspection available from within the container.
+This feature is very much needed to achieve proper service discovery when running containers across a cluster. 
+What I would like in boot2docker, is to have it add more information to the boot2docker init initial payload, which would then do this for you.
+At least let it as an optional parameter for pull/push operations would be sufficient for us ;)
+Would be really great to get an update from the Docker team about the status of this feature. 
++1 would love to see this implemented, it would help to set up containers for development environment
+that made sense for my particular use case, but generalized support (including build-time) for something like agent forwarding would be super helpful.
+It would be very useful to have that handled directly by docker pull, and not have to restart the whole thing and tweak system-level settings when you discover you need to use a local unsecure registry.
+That would be useful to be able to tell Docker to not configure the IP address on the bridge but still manage the IPAM. 
++1 to take the model into docker proper.
+Having the ability to assign an IP to a container is a great feature i think many people were waiting for.
+I would like to be able to use an existing bridge (VLAN) with the default gateway IP configured on an external router. 
++1 Having the ability to inject build/test dependencies and discard them at publishing time would simplify a lot for our docker build/release pipelines.
+As mentioned in the comments, it would also be very useful to allow any registry to be unsecure, not just named ones, as Docker sometimes provides random ports, and some environments have many registries popping in and out of existence.
+From my understanding, it would be very helpful for testing a layer without including artifacts from testing in the final tagged commit.
+Having said that, I would like to have at least the option of having this inside the container. 
+maybe we could add yet another switch to pull like --insecure and tweak that would forcefully make it secure == false ?
+It would be nice to implement a fallback mechanism which uses HTTP if a Docker Registry servers is not accessible via HTTPS.
+I'm also in favor of adding build-time -v flag to speed up builds by sharing a cache directory between them.
+I must say that it would be very usefull to simply enable access to all insecure registries without having to list them out one by one. 
++1 for being able to set net=host for services, that would be very useful for high performance things that don't want the docker network overhead
+As several people have mentioned (@thaJeztah, @duglin) in #9707, it would be great to be able specify the .dockerignore file using -i/--ignore in conjunction with named dockerfiles.
++1 on this, and +1 on adding this to docker-compose where you just like build don't know about external deps.
+docker run should have an --pull or --update option to pull down the most up to date version of an image tag, then run. 
+For simplicity, it really would be nice to be able to explicitly blacklist specific subnets from being used.
+please add an option to change default subnets (+1)
+there should be a docker command to get info about the image being pulled, specifically the total size of the download.
+I'd like to be able to demux logs to multiple log drivers. 
++1 for an aggregate diver delegating to multiple log drivers. 
+It would be cool if we could docker replace a running container with a new container running a different image, which replaces the running container and usurps its port and virtual interface, so that the app won't even be able to tell its database was replaced, and the most downtime users would see would be one or two misc.
+there should be option to download just the dockerfile which built the image and rebuild it locally
+I hope for the function that the shm memory of a size that is bigger than 64MB can be set.
+It would be helpful to be able to configure it per instnace, e.g some Databasesdo not install without enough shared memory.
+Bidirectional communication is a much needed feature, otherwise you're forced to run all your applications in one container, ruining one of the major selling points of docker.
+In a Dockerfile, I would like to be able to ADD a temporary file, say a .deb package, to install and then delete, so that the file itself does not increase the "virtual size" of my final image:
+Docker needs a way to upgrade itself graciously, with minimum interruption of service. 
+I propose to add an additional option (in the form of -invlink, -allow, or similar) which takes a container ID/name and sets up a child-parent relationship.
+It would be cool if "docker inspect" or "docker port --verbose" (or both) gave info about how the iptables were set up for a particular container.
++1 for static container IPs
+It would be useful if one could name/alias these exposed port+proto pairs to enable some useful link env variables (coupled with #2431 ):
+I would be very grateful if this were to be implemented. 
+What I'm trying to say is that we need some way to determine port ranges in DEFINITE way. 
+It would be great to be able specify this port range as a configuration option in a file or as command argument.
+In such cases, it would be great if I could make container configuration changes whilst the container is running, or after I've stopped the container manually.
+Having a deprecation notice when docker was pulling the image would have helped a lot.
+There should be a way to let users know an image has been deprecated.
+I'd like to be able to make configuration changes to a container (running or stopped). 
+There should be a way to interlink existing containers.
+beside this, it would be nice if there was an option to run that will verify before running.
+for this i would like to have some kind of "verify" or "update" command to get in sync.
+Maybe add some system to check which containers are built from an outdated base-image.
+It would be useful if Dockerfiles had a DESCRIPTION instruction
+It would be nice if Dockerfile supported syntax similar to the following:
+I would like to be able to collapse a set of actions into a single commit.
+I'd really like to be able to alias ports, this would allow application configuration to reference static environment variables to grab service details from linked containers. 
+It would be nice to have a new flag to allow adding a file (not mounting) inside the container before running it.
+Some of the things I needed most is to re-import the --env-file and --link to a newly run container without having to restart.
+Even changing ports binding without need to create intermediate image and start new container would be great.
+With discussions with Solomon, a proposal arose to support a new developer centric function focused on fast iteration.
+Being able to docker build --link=otherContainer and/or docker build --net=host would make that a lot easier.
+I need docker build --net=host too.
++1 for support for symlinks.
+i hope you could add support for socks5 proxy , i knew you have HTTP_PROXY support,
+I think it'd be really useful to have docker send its output to syslog, with an option.
+It would be great if docker supports network connectivity between groups of containers.
+Developers need to be able to control their build environments, and symlinks are a useful structural tool that, in most cases, should be opaque to the build tools.
++1 for a switch to enable symlinks
+I would also like to see symlinks support for ADD.
+I'm going to give another use-case where we need this feature.
+I would also love a feature to symlink my config files.
+I understand the reasons for using MinGW for a "regular" windows users but having a Cygwin based build would be really cool for those tech savvy users that already relay on Cygwin :)
+This is a feature request to add the --add-host=[] (currently availble for docker run) to docker build also. 
+It would be great to have this functionality, just like it is available in Docker run.
+So at a minimum, it'd be nice to be able to add the current host IP of the DB server to the build container's /etc/hosts — but better still would be to be able to establish the link at build time.
+So big +1 for adding the --net option to build.
+I would like support for docker build net=none to be sure that a build was not using the internet.
+So yeah, a huge +1 to having --net= as an option...
+It would be nice if the Dockerfile could be included in the image itself.
+I also think it would be cool to share say a strace container with just another container and not the whole host :) +1
+This could be implemented as a new flag to docker build which would optionally allow you to include the file.
+I just wanted to say that I strongly wish all the containers that were last running would restart on the next boot by default.
+It would be nice if --net=container:foo would not require the foo running. Rather docker can create foo's network namespace and allow other containers to join it. 
