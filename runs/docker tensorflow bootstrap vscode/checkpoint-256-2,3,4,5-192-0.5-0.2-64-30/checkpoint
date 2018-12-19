@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/qiaohuang/research/sentence classification/cnn-sentence/runs/docker tensorflow bootstrap vscode/checkpoint-256-2,3,4,5-192-0.5-0.2-64-30/model"
+all_model_checkpoint_paths: "/home/qiaohuang/research/sentence classification/cnn-sentence/runs/docker tensorflow bootstrap vscode/checkpoint-256-2,3,4,5-192-0.5-0.2-64-30/model"
