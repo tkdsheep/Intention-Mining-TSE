@@ -1,0 +1,187 @@
+I would like to use a model class to hold a list of item (or C++ QObject ) with custom methods / slot functions
+ I would like to use a model class to hold a list of item  (or C++ QObject ) with custom methods / slot functions.
+ What I hope to set out here are some ideas of how this can be made easier by considering a set of modular capabilities that backends could offer
+This would mean that new backends could offer a subset of the full API but would still be compatible with both each other and with the current OpenSSL backend.
+In order to handle user exceptions, we need a way to signal the errors support for SSL in Qt
+This means that QSslError would be required.
+ Instead, we could offer a simplified API that all backends must offer.
+We could also have a flag for perfect forward secrecy since that is independent of the strength
+It would also be possible to have a setting like FIPS for people who care about that.
+If we did this then a backend could simply have stubs for the current accessors (or we could define a minimal subset they should provide).
+Proposed Capabilities ===================== * SSL Client A backend offering this capability must offer the basic client-side QSslSocket API.
+* SSL Server A backend offering this capability must offer the basic server-side QSslSocket API.
+Instead, we could  offer a simplified API that all backends must offer
+We could also have a flag for perfect  forward secrecy since that is independent of the strength
+It would  also be possible to have a setting like FIPS for people who care about  that.
+I'd say that we should either provide no choice in choosing the ciphers, or at most provide certain implementation details like allowing or disallowing ciphers without perfect forward secrecy and a choice of ciphers that are FIPS- certified.
+We need to get this integrated to be able to release Qt5.3 RC soon;  change set contains fix for last open issue  in blocker list (https://bugreports.qt-project.org/browse/QTBUG-37065) 
+ In order to handle user exceptions, we need a way to signal the  errors
+This means that QSslError would be required
+BUT: please do not remove the QSslError API!! 
+It would also be quite helpful to get the issuer cert somehow for scenarios that care more about the CA than the cert itself.
+ Instead, we could  offer a simplified API that all backends must offer
+We could also have a flag for perfect  forward secrecy since that is independent of the strength
+It would  also be possible to have a setting like FIPS for people who care about  that.
+ If we did this then a backend could simply have stubs for  the current accessors (or we could define a minimal subset they should  provide).
+A way to ask the backend (from app code) what features it supports and whether it even was able to find its libraries or OS features.
+  I would like to use a model class to hold a list of item (or C++  QObject ) with custom methods / slot functions
+Instead, we could   offer a simplified API that all backends must offer
+ We could also have a flag for perfect   forward secrecy since that is independent of the strength. 
+It would   also be possible to have a setting like FIPS for people who care about   that.
+ I'd say that we should either provide no choice in choosing the ciphers,  or at  most provide certain implementation details like allowing or disallowing  ciphers without perfect forward secrecy and a choice of ciphers that are  FIPS-  certified.
+Yes, I think there are plenty of good reasons why people might do that, and I'm not saying I think we should be aiming to have less capable backends.
+So please if you update a qmltypes file check the history and if you see something "weird" add Fazwi or me as a reviewer. Kind Regards, Thomas Hartmann 
+ In order to handle user exceptions, we need a way to signal the  errors
+This means that QSslError would be required
+Instead, we could  offer a simplified API that all backends must offer
+We could also have a flag for perfect  forward secrecy since that is independent of the strength
+ It would  also be possible to have a setting like FIPS for people who care about  that.
+ In order to handle user exceptions, we need a way to signal the  errors
+This means that QSslError would be required
+Instead, we could  offer a simplified API that all backends must offer
+We could also have a flag for perfect  forward secrecy since that is independent of the strength
+ It would  also be possible to have a setting like FIPS for people who care about  that.
+I wonder whether the use case is that important; it would be beneficial to have a way to display a certificate to a user, but apart from browsers I usually don't see many apps using this feature (i.e. most apps just correctly abort and display "SSL error", and some just proceed anyway, which is bad security-wise).
+Instead, we could  offer a simplified API that all backends must offer
+We could also have a flag for perfect  forward secrecy since that is independent of the strength
+ It would  also be possible to have a setting like FIPS for people who care about  that.
+Proposed Capabilities  =====================   * SSL Client   A backend offering this capability must offer the basic client-side  QSslSocket API.
+ Can I ask that we create a "GUI: Basic Input Method (keyboard, mouse,  touch)" component? 
+It would be nice if this was included out-of-the-box.
+It would be nice if this was included out-of-the-box.
+Could we just fix the warnings in Qt headers instead?
+It would be nice if this was included out-of-the-box.
+It would be nice if this was included out-of-the-box.
+It would be nice if this was included out-of-the-box.
+ It is a very good idea to have the Qt files treated as system files.
+This requires that compiler treat Qt headers included in my code as system headers  and not warn me about constructs used in them.
+ It is a very good idea to have the Qt files treated as system files
+It would be nice if this was included out-of-the-box.
+ It is a very good idea to have the Qt files treated as system files
+It would be nice if this was included out-of-the-box. qmake also uses -isystem nowadays, but only if you install Qt to what your compiler considers a system path
+ Beyond that, there are some things that need to be defined: 1. What level of support for Semantic Versioning 2.0.0 ( http://www.semver.org) should be supported?
+And special strings (alpha, rc, ..) should not be treated special.
+ And special strings (alpha, rc, ..) should not be treated special.
+ And special strings (alpha, rc, ..) should not be treated special.
+At the absolute least we should have some means to use a custom suffix  comparison (compare() overload that takes a function as a parameter?).
+ At the absolute least we should have some means to use a custom suffix  comparison (compare() overload that takes a function as a parameter?).
+It looks like the suffix needs to be labeled as pre-release or release for each version.
+ At the absolute least we should have some means to use a custom suffix  comparison (compare() overload that takes a function as a parameter?).
+Four of the five of those require parsing input that other people create.
+ I think that to come up with our own list, we need to identify the tree different types of suffixes that we are talking about: pre-release, null, and release.
+The null suffix is obvious, "1.0.0", but we should define what the pre-release and release ones look like
+Also, we should not support the abbreviated forms since the abbreviated forms collide with single letter release suffix.
+1. Numerical groupings should be compared integers instead of characters in order to properly allow for "alpha2" < "alpha11".
+2. Delimiters should only be used to denote groups of content but be skipped during the compare. "alpha" == "-alpha" == "~alpha" == ".alpha" 1. Can be restricted to the first character if this is too broad.
+ (1) adding QMAKE_RPATHPREFIX variable specyfying list of path prefixes that will be replaced by @rpath when linking OSX library, by default this will contain Qt SDK lib/ dir
+ (2) adding @rpath replacement in UnixMakefileGenerator::init2() before:
+No replacement needs to be done
+ All we need to do is build all Qt dylibs with install_name = @rpath/pathrelative_to_lib_folder/some.dylib and make sure qmake adds following linker flags to all apps linking to Qt:
+ No replacement needs to be done. ()
+I don't think you should add these by default since Qt doesn't need them, so unlikely your app need them.
+ All we need to do is build all Qt dylibs with install_name = @rpath/pathrelative_to_lib_folder/some.dylib and make sure qmake adds following linker flags to all apps linking to Qt:
+This is closer to how the native tools do things anyways, but DYLD_LIBRARY_PATH should still be set by Creator/qbs regardless of whether  that is added.
+ No replacement needs to be done. ()
+ I don't think you should add these by default since Qt doesn't need them, so unlikely your app need them.
+Only Qmake and macdeploy need to be changed.
+It is not so simple, first of all as you shown it works only from console, but if you launch it via GUI you need this variable to be set in launchd
+ I don't think you should add these by default since Qt doesn't need them, so unlikely your app need them.
+Ossi also requested that we state a preference for which licence combination the project prefers
+So I believe we should consider this an accepted decision of the Qt Project.
+Ossi also requested that we state a preference for which licence combination the project prefers.
+So I believe we should consider this an accepted decision of the Qt Project.
+In terms of preference I think we should state that the license has to include LGPLv3/commercial.
+It should include GPLv2 if this doesnt conflict with some other license used (ie. Apache 2.0). Cheers, Lars
+On Monday 01 September 2014 06:38:16 Knoll Lars wrote:  In terms of preference I think we should state that the license has to  include LGPLv3/commercial.
+It should include GPLv2 if this doesnt  conflict with some other license used (ie. Apache 2.0).
+I believe we should not state a preference
+On 01/09/14 08:55, "Thiago Macieira" <thiago.macieira at intel.com wrote: On Monday 01 September 2014 06:38:16 Knoll Lars wrote:  In terms of preference I think we should state that the license has to  include LGPLv3/commercial.
+It should include GPLv2 if this doesnt  conflict with some other license used (ie. Apache 2.0).
+I believe we should not state a preference
+The current way of using separate translation files should be kept as a fallback mechanism though, so that people in countries which were neglected by the development team can still do their own translations
+I think it's a worthwhile goal that at least commercial Linux binaries ought to be self-contained and portable, so that there is no installation process beyond putting the binary in some directory which is in your path
+The strings could be packaged as compressed resources, so the total space consumed is less
+And perhaps resources which are not needed for the current language could even be expunged from memory (at the cost that you then cannot switch languages dynamically).
+The current way of using separate translation files should be kept as a fallback mechanism though, so that people in countries which were neglected by the development team can still do their own translations.
+ I think it's a worthwhile goal that at least commercial Linux binaries ought to be self-contained and portable, so that there is no installation process beyond putting the binary in some directory which is in your path. 
+The strings could be packaged as compressed resources, so the total space consumed is less
+ And perhaps resources which are not needed for the current language could even be expunged from memory (at the cost that you then cannot switch languages dynamically).
+If the english (or whatever default language) text changes, that might very well be a hint that all other translations should be adapted too.
+ The current way of using separate translation files should be kept as a fallback mechanism though, so that people in countries which were neglected by the development team can still do their own translations.
+ I think it's a worthwhile goal that at least commercial Linux binaries ought to be self-contained and portable, so that there is no installation process beyond putting the binary in some directory which is in your path.
+The strings could be packaged as compressed resources, so the total space consumed is less
+ And perhaps resources which are not needed for the current language could even be expunged from memory (at the cost that you then cannot switch languages dynamically).
+If the english (or whatever default language) text changes, that might very well be a hint that all other translations should be adapted too.
+We should assume that the "engineering english" ideally needs a english translation (but for convenience it can be omitted)
+I think it should be supported and you should be able to choose which implementation you want at runtime.
+ I would like to have more opinions on the guidelines at  http://qt-project.org/wiki/ReportingBugsInQt
+Regards,Martin travik <ravikiran.tallapalli at wipro.com , 7/9/2014 3:45 PM: Hi, I would like to have equivalent of compile time polymorphism in in Qml. 
+I also want to have some default implementations of the baseclass to be available and invoked, in case the derived class does not provide its own implementation.
+Hi, I would like to have equivalent of compile time polymorphism in in Qml. a.k.a function overriding.
+I also want to have some default implementations of the baseclass to be available and invoked, in case the derived class does not provide its own implementation. 
+that means that all pending changes should be reviewed, and the approved ones actually staged (hand-hold your drive-by contributors a bit).
+ I think it would be great if qmake had an cli argument or a template to  generate  clean makefile without this dependency.
+I think it would be great if qmake had an cli argument or a template to generate clean makefile without this dependency.
+So, IMHO the fact that exited signal is not emitted when a state machine is stopped is a bug and should be fixed.
+So a suggestion: Qt patch level releases = good, but I think we need to think of them not as a completely new dog or installation, but as an *upgrade* to the existing installation (like if you buy a new collar for your dog).
+We need some other name, one way is to mimic what Microsoft does with Visual Studio, like with VS2012, when I install it from scratch, it says .. 
+(You could even add a cookie to always take the user to the last version they looked at, regardless of what link they followed.)
+ qt-project.org should not have external dependencies.
+We also should integrate all Qt modules into that repository for simplicity and consistency
+In the end we realized that both models are too complicated, and we should rather have only one branch.
+but they should be only submitted when the next version is being created
+I can't see any issue for this - the closest are: https://bugreports.qt-project.org/browse/QTBUG-32819 Comment QNetworkAccessManager doesn't have the features for a full FTP client but no suggestion of when this might be improved.
+We might include Mono in HoaryHedgehog, so early testing of these against WartyWarthog would be great.
+In fact, maybe only a computer icon is required which would launch a nautilus window that showed home/file system/network/trash as a start point. 
+Hey, A french user just pointed tonight on IRC than he (and a big part of french guys with an adsl connexion in fact) needs the eagle-usb package to get an internet connexion
+ In fact, maybe only a computer icon is required which would launch a  nautilus window that showed home/file system/network/trash as a start  point. 
+It ends up being really handy, and in the future, we'd like to see more delete operations throughout the interface working with the trash applet.
+We might include  Mono in HoaryHedgehog, so early testing of these against WartyWarthog would  be great. :-)
+My only concern would be that, because these are separate source packages, they must be kept in sync (or dropped) when a new firefox is released.
+ It'd be nice to have bluefish, which works fine off the universe source, included.
+That'd also be very sweet indeed.
+So, if english is the main language there isn't so many problems (numbers and letters are on the right keys, "just" the simbols are mixed) but if I choose the Italian one everything is screwed up :) I think that adding the possibility to choose a keyboard layout during the automatic install process would be a good thing.
+would be nice to see VLC here, has not so many feature like mplayer but comes with a "all in one" package, so you do not need any codecs.
+I think that adding the possibility to choose a keyboard layout during the  automatic install process would be a good thing.
+I don't think useful things should  be stripped out simply because you assume they won't be. 
+ It is useful if  someone start esd and need to hear what plays on totem.
+ Maybe there should be an Advanced Properties submenu in the Desktop  properties for all the capplets that are considered advanced and rarely  used.
+Either way the feature is questionable on any linux system since it very likely wants to update files that should only be touched by the OS package manager
+hi, Am Sonntag, den 03.10.2004, 14:50 +0200 schrieb Emil Oppeln-Bronikowski:   it could be fine to get the first timers impressions at its freshest.
+ Maybe we should configure XChat/IRCClient package to autoconnect with #ubuntu?
+Squashfs is intended for general read-only filesystem use, for archival use (i.e. in cases where a .tar.gz file may be used), and in constrained block device/memory systems (e.g. embedded systems) where low overhead is needed
+We need documentation how to set up, and what are the requirements for, an rsync-mirror
+People willing to mirror should be encouraged, so this might be important greets, AP
+But it should be filled carefully; once crossing the border to use 2 CDs this will mean a large shift in the Ubuntu track from being the small distro that contain everything you need to just another one of these distros out there, again IMHO.
+I think the userguide(which is still at 2.6) could be made more Ubuntuish
+I really would like to see xchat 2.4.0 included in this release.
+Kristof Vansant [2004-10-06 1:51 +0200]:  I really would like to see xchat 2.4.0 included in this release. 
+I was wondering if it would be possibly for crafty and crafty-book packages to make their way into universal.
+The packages could include the nessesarym dependenties and a Script that download the Software from the Internet and bild a deb from it, install this deb
+This requires patching the kernel, which isn't a proble.
+On Wed, Nov 03, 2004 at 10:30:31AM -0800, Joe Crawford wrote:  With the nvidia driver, it needs the kernel header files to compile  the kernel interface, but that could just be listed as a dependancy.
+ I've made a script on my system that recompiles the header whener it  starts (the script could be improved by recompiling only if the kernel  changes), so that if I upgrade my system to a new kernel, the driver  still works.
+ Can someone kickstart this package so we can apt-get it?
+ Many existing  dependencies require sbcl and/or cmucl.
+I think firefox should stay on top
+Since ubuntu is pushing python, a good python IDE should be available. I was thinking eclipse 3.x with pydev. Or if anyone knows a better one tell me :)
+The issue now is that the "computer menu" patch was using the vfolder system and need to be rewritten
+In the same time some GNOME 2.9.2 modules require the new gnome-vfs2 2.9.1 and are holded (pushing the new gnome-vfs2 = removing the vfolder code = pushing a new panel ...)
+BTW If we want to make changes to the gnome-panel layout for hoary (ie: adding a "places" menu) that's probably the right moment
+Unsupported packages desperately need at least some form of unofficial support, and a mechanism for reporting bugs in them needs to be set up
+There are some bugs in popular universe packages that desperately need to be sorted out, like 1) No sound in Flash on Hoary (this is a big one) 2) Issues configuring k3b 3) Broken mplayer package
+ I believe that free and non free software and  technologies can coexist and one should not replace the other
+I think Gnome-ppp should be installed by default and included n the "Internet" menu
+I agree, gnome-ppp should be included, and possible some form of message to user if winmodem is detected and where to possibly get information for that: either scanmodem.gz from linmodems.org or linuxant driver page.
+Lance On Thu, 2004-12-02 at 01:10 -0500, zenwhen wrote:  I think Gnome-ppp should be installed by default and included n the  "Internet" menu.
+However, it would be nice if someone could look into this as this looks like it probably would be a trivial fix and because this may be a major problem for easily confused newbies.
+If this bug is fixed soon (before Hoary release) - I feel a new Warty refresh ISO should be released w/all security updates and this fix included - as it may qualify as a "critical bug" as it happens frequently - on any install which uses local time, in fact.
+It'll be cool to support at least one previous menu system at each release and i don't think that it's too hard to code, maybe you don't want to maintain it…
+It can be a option under "System", if clicked changes to "Use Hoary (a better name?) Menu Hierarchy" and vice-versa, after clicked a window can inform the user that the changes will take effect in the next login and when the user choose the "warty" option below this message something explaining that this current menu scheme will be removed in the next release.
+It would perhaps be very useful to create -dbg packages for the common large Gnome applications: such as Evolution, Nautilus, Gnome-Panel, etc.
+I think this would be nice as well because you could have a special install-to-GUI mode to get up while still installing. 
+Once this is done, the LiveCD could have a copy of the user account created in the LiveCD /etc/passwd
+Optionally, all installation tasks could be completed from the LiveCD so that a reboot wouldn't require 10 minutes of waiting.
+There is a bug open about this: http://bugzilla.ubuntu.com/show_bug.cgi?id=3159 You should add your comments in this bug so we can track the remaining issues :) Cheers, Sebastien Bacher
+  It would be great if it would do a copy do disk also (create iso)?
+I think a safe bet would be a GTK+ version of pppoeconf; it wouldn't be much difficult and could hopefully be integrated in whatever tool get choosen later

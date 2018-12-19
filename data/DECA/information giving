@@ -1,0 +1,167 @@
+ the original idea was to get rid of the need to write Java Script to change  a state (state = "newState") and find a declarative way to change states. 
+Christian Kamm AFAIR planned a long time ago to add the grammar  to the documentation, but I think that never was finished.
+I recommend you do this if your module has QML types. 
+. We will check if it is possible to add those as well in the future Br, Jani 
+ Plan is to put RC out this Friday 2.5.2014 so please inform us immediately if you find something which is really blocking the RC! 
+We will check if it is possible to add those  as well in the future
+Make it something like: listModel.append({"item": testItem}); var obj = listModel.get(0); compare(obj.item, testItem);
+Qt provides a fairly powerful SSL API with support for a wide range of uses - SSL clients and servers can both be created
+It provides extensive APIs for accessing information in SSL certificates, information about ciphers etc. In addition to the basics, it also includes built in support for more advanced features such as client certificates, server name indication etc.
+Recently, there have been some efforts to provide non-OpenSSL based support for SSL in Qt
+I'm not planning to write any new backends
+My aim here is purely to allow people who are doing so to do it without fragmenting the Qt platform, and in a way that ensures that things are interoperable.
+The solution works
+The reason for the failure  integration is: https://codereview.qt-project.org/84376 And the fix for it is available in https://codereview.qt-project.org/84543 
+I have therefore written some code to parse just enough ASN.1 to extract the certificate details:
+ I have therefore written some code to parse just enough ASN.1 to extract the certificate  details
+I'll also create a JIRA task to rename "Core: Event System" to "Core: Event  loop", hoping that fewer people report bugs related to creating events and  consuming them against Core
+The Maps C++ API was removed from the public API during the initial porting to Qt5
+Hi all, We have new Qt5.3 RC candidate packages available in http://download.qt-project.org/snapshots/qt/5.3/5.3.0-RC/2014-05-07_85/
+Src packages are available as well at this time.
+Plan is to put RC out tomorrow.
+Hi all, We have Qt5.3 RC candidate packages available in http://download.qt-project.org/snapshots/qt/5.3/5.3.0-RC/2014-04-29_79/
+Plan is to put RC out this Friday 2.5.2014 so please inform us immediately  if you find something which is really blocking the RC!
+For those I have submitted a patch that should appear in Qt 5.3.1.
+Personally I would not force version 2.8.12 as AFAIK that version is not available out-of-the-box on Debian for instance.
+ For those I have submitted a patch that should appear in Qt 5.3.1.
+ Personally I would not force version 2.8.12 as AFAIK that version is not available out-of-the-box on Debian  for instance.
+ For those I have submitted a patch that should appear in Qt 5.3.1.
+ Personally I would not force version 2.8.12 as AFAIK that version is not available out-of-the-box on Debian  for instance.
+ For those I have submitted a patch that should appear in Qt 5.3.1.
+ Personally I would not force version 2.8.12 as AFAIK that version is not available out-of-the-box on Debian  for instance.
+ For those I have submitted a patch that should appear in Qt 5.3.1.
+ Personally I would not force version 2.8.12 as AFAIK that version is not available out-of-the-box on Debian  for instance
+A number of developers, including myself, are already looking to remove  warnings from the public facing API of Qt
+ For those I have submitted a patch that should appear in Qt 5.3.1.
+ Personally I would not force version 2.8.12 as AFAIK that version is not available out-of-the-box on Debian  for instance.
+ We have new Qt5.3 RC candidate packages available in http://download.qt-project.org/snapshots/qt/5.3/5.3.0-RC/2014-05-07_85/   MSVC2012 package is missing but it will be available later today
+Src packages are available as well at this time.
+The bugreport can be found here: https://bugreports.qt-project.org/browse/QTBUG-38841
+  Here is the trace:
+Side note: this has been fixed in Qt 5
+See https://codereview.qt-project.org/45533
+See the Call for papers on the Akademy site for more information: http://akademy.kde.org/2014/cfp 
+ The Maps C++ API was removed from the public API during the initial  porting to  Qt5
+If there is anything on our work that can help, i am happy to help.
+The Qt5.3 is RC now released, see http://blog.qt.digia.com/blog/2014/05/08/qt-5-3-release-candidate-available/ Big thanks for everyone who made this possible!
+ Hi,   The Qt5.3 is RC now released, see  http://blog.qt.digia.com/blog/2014/05/08/qt-5-3-release-candidate-available/   Big thanks for everyone who made this possible!
+here is the full log for `make docs` on Ubuntu 14.04.
+ Hi,   The Qt5.3 is RC now released, see http://blog.qt.digia.com/blog/2014/05/08/qt-5-3-release-candidate-available/
+I have been working on adding a class to QtCore (QVersion) to support storing version numbers, convert to/from QString, and having comparison operators
+ You can see the progress for this patch at https://codereview.qt-project.org/82170.
+The current implementation supports 0 to N numerical segments and a QString suffix
+Please look at the version comparison rules that for example dpkg uses.
+ Please look at the version comparison rules that for example dpkg uses.
+ Please look at the version comparison rules that for example dpkg uses.
+Please note requirements from the original post:  - Plugin loading where there are multiple versions on the same system.
+I am willing to help but this has to be changed in several projects qtsdk, installer-framework, qtbase (Qmake) in order to make it work. 
+Here is proposal for change in Qmake
+This is why we have DYLD_LIBRARY_PATH (see below).
+ I am willing to help but this has to be changed in several projects qtsdk, installer-framework, qtbase (Qmake) in order to make it work.
+ Here is proposal for change in Qmake:
+This is why we have DYLD_LIBRARY_PATH (see below).
+Please note that if we gonna deploy Qt frameworks via macdeployqt we need to resign application anyway because app bundle gonna be changed
+Please don't add more file I/O to Qt Creator's build effort, at least not until Apple switches to BTRFS, since HFS+ can be a real dog sometimes (compared to Ext4 or NTFS).
+This is why we have DYLD_LIBRARY_PATH (see below).
+Please note that if we gonna deploy Qt frameworks via macdeployqt we need to resign application anyway because app bundle gonna be changed.
+ Please don't add more file I/O to Qt Creator's build effort, at least  not until Apple switches to BTRFS, since HFS+ can be a real dog  sometimes (compared to Ext4 or NTFS).
+Moreover the Qt's lib/ absolute path will be there only during development, in deployed binary absolute path will be removed via install_name_tool -delete_rpath.
+See above.
+   The DISTRO_FEATURES_remove = "x11 wayland" is removed from the local.conf
+ but in reality, as long as there is no competing free product that permits  digia to satisfy its (l)gpl-averse customers as well, the qt project will  welcome such an effort, even if i personally wouldn't recommend  duplicating the work.
+ There are many embedded use-cases where Qt is used but udisks makes no sense at all and is not available.
+Id expect any translation tool to do that tracking ;). 
+Id expect any translation tool to do that tracking ;). 
+Actually, some of the i18n features of Qt _requires_ you to provide an English translation
+Then do a `perf report` and take a look at the results
+Hi, I was looking at trying to get some libraries and applications to compile in Ubuntu for armhf (which supports only OpenGL ES for performance reasons)
+ I was looking at trying to get some libraries and applications to compile in Ubuntu for armhf (which supports only OpenGL ES for performance reasons)
+There is nothing in stock ES that supports double precision floats without the use of extensions, so I suspect it was done to make the initial port easier…
+The CppCon 2014 Program is now available with talk titles, abstracts, and speakers: http://cppcon.org/conference-program/ The program contains over 100 one-hour sessions by over 70 speakers including plenary sessions by Scott Meyers and Herb Sutter, as well as the keynotes by C++ creator Bjarne Stroustrup on Keeping Simple Things Simple and Mark Maimone on using C++ on Mars: Incorporating C++ into Mars Rover Flight Software
+I have created a mexFunction that allows to open QT dialogs etc in Matlab
+I posted details on the forum: (http://qt-project.org/forums/viewthread/44802/) Warm regards, Mike
+I have updated  http://qt-project.org/wiki/ReportingBugsInQt a bit
+i'll disable the stage button on friday evening, and we'll do a last merge to 5.3 somewhat later
+We are happy to announce the Qt Creator 3.2 beta: Blog: http://blog.qt.digia.com/blog/2014/07/08/qt-creator-3-2-beta-released Opensource download: https://download.qt-project.org/development_releases/qtcreator/3.2/3.2.0-beta1/ Enterprise download: https://login.qt.digia.com/
+ Please revert this "feature
+I have written some code to try to do this, the overall aim is to cleanup all the calls into egl, call eglTerminate and then reinit. 
+I can hack that if you think this patch could be integrated (if you think the code is clean enough, of course) If you don't see when it could be usefull, here is my context: I'm working on some small C++ project for an embedded device, without qt and running only on linux.
+ Hi,   I'm in the process of trying to add an integration for the Bullet physics  engine to Qt3D and have made a patch that introduces a config test for  bullet and as a result conditionally compiles the qt3dbulletphysics library  that provides the integration.
+I don't want to provide source code, object files, etc.
+You do NOT need to provide source code with LGPL and static linking
+You only need to provide the ability to re-link (i.e. object files) with a different copy of said LGPL licensed code (Qt).
+Copyright laws provide all the protection you need
+Please contact a qualified legal professional for more information if necessary
+I don't want to provide source code, object files, etc.
+Since Jocelyn on behalf of the QtWebEngine community urged me to not use private headers for this purpose as well, I have now made the QML API of QWebChannel public
+ New snapshot build from Qt 4.8.6 available: http://download.qt-project.org/snapshots/qt/4.8/2014-03-17_517/
+If blocker issues for Qt 4.8.6 release are found please report those to bugreports.qt-project.org and raise issue also on releasing at qt-project.org.
+If you have critical patch pending on codereview please act according to that schedule in mind
+(not yet in codereview, expected to be available on this Wednesday) will be part of Qt 4.8.6 release
+Hi, I wanted to contribute a small fix and put it already here: https://codereview.qt-project.org/#change,81261 but it's ignored, so I probably missed a step.
+FYI added backport to Gerrit at: https://codereview.qt-project.org/82643
+To request an invitation to the event, please use the following form: https://www.webropolsurveys.com/S/7CB14527039843C9.par You can find more information on the event wiki: http://qt-project.org/groups/qt-contributors-summit-2014/wiki Best regards, Tero Kojo Qt Online Community Manager, Digia QtCS 2014 event coordinator
+  - We plan to do a fast-forward merge from 'stable' into 'release' branch   on April 10th.
+  Please whatever you do, do not break this anymore, the current state is   already messed up.
+But I think the idea was to change it one last time and then  never change it again, and the docs that google finds should be always the  latest rather than a particular version. 
+Moving around is fine, but please make sure old links redirect to the new places
+ We plan to deploy the redirects next week to avoid the Easter break; hopefully, Monday.
+ So, here is what we will do:  - create one branch named 'qt' out of current stable  - block any other branches in gerrit  - move on with this branch, and announce the current status of it (open for  features, feature freeze, hardening...) on the mailing list 
+ If there are no fundamental objections I'd like to see this into action as early  as possible, to not risk the 5.3.0 release (i.e. next week Thursday, when we  originally planned to merge to release branch).
+There is already code available for parsing comma-separated values.
+ If there are no fundamental objections I'd like to see this into action as early as possible, to not risk the 5.3.0 release (i.e. next week Thursday, when we originally planned to merge to release branch).
+Benefits of this approach: - even less ambiguity about where to put patches - no need to fork branches - no need to merge branches - we encourage focus on the next release - less variants to be tested in CI So, here is what we will do: - create one branch named 'qt' out of current stable - block any other branches in gerrit - move on with this branch, and announce the current status of it (open for features, feature freeze, hardening...)
+If there are no fundamental objections I'd like to see this into action as early as possible, to not risk the 5.3.0 release (i.e. next week Thursday, when we originally planned to merge to release branch).
+We're intending to migrate to Qt5 later this year but since QFtp is deprecated in Qt5 this functionality isn't possible
+ Full documentation on their setup (which, btw, tests each and every commit separately) is available at http://ci.openstack.org/ .
+The idea is that you can
+Hi all, We're hoping to include Edd Dumbill's gnome-bluetooth tools in Hoary, so I've packaged them up for preliminary testing in Warty
+Here's the resulting packages  for mono, muine, and blam, hopefully someone finds this useful.
+We wanted to put the trash on an area of the user interface that is always available, thus the panel applet.
+Here's the resulting packages   for mono, muine, and blam, hopefully someone finds this useful.
+We've disabled the advanced submenu, because we'd like the preferences menus to be simple and one-level.
+Update is detailed here: http://www.mozilla.org/press/mozilla-2004-10-01-02.html This does bring up an interesting issue though.
+I am of course running on the assumptin that Firefox wants to update it's executable files (correct me if I'm wrong).
+ I'm apparently going to be getting a Pegasos reasonably soon.
+I can offer my help if it would be needed
+I would be willing to work on something like this is it is something that was wanted
+Both vim and emacs are traditional Linux editors, and while they are not suitable for a front-line position in the desktop (being rather idiosyncratic), they are made available for those who are accustomed to using them.
+We are in deep freeze, and our Release Candidate will go out in a week
+hi, Am Dienstag, den 05.10.2004, 21:30 -0700 schrieb Matt Zimmerman:  Both vim and emacs are traditional Linux editors, and while they are not  suitable for a front-line position in the desktop (being rather  idiosyncratic), they are made available for those who are accustomed to  using them.
+ The OSS drivers have been blacklisted in hotplug for all of Ubuntu's  existence, and there have been various problems caused by them being  unintentionally loaded (e.g., by discover, or by a user following some  outdated documentation).
+Please note that we (Debian alsa maintainers) are working on getting OSS drivers onto discover's blacklist as well as hotplug's
+discover1 now reads configuration from /etc/discover.d/* and we have added an /etc/discover.d/alsa-base file to alsa-base.
+Canonical is pleased to announce that it will be organizing a two week-long conference and hack-session for Ubuntu in December
+Here are the essential details: Where: Matar, Spain (Near Barcelona) When: December 5 through December 18 Who: Anyone interested or involved in Ubuntu The conference will be held at the Telecampus Matar
+Information on the space is here: http://www.tecnocampus.com/eng/presentacio.htm If you intend to come for the full conference, plan to arrive into Barcelona on December 5 and out again on December 18th. 
+Please keep tuned as I'll be posting additional details about the conference, options for accommodations and about how to let us know if you're planning on coming.
+If you have any questions, please contact me personally.
+Please provide me with som hints on how I should proceede.
+Hi all As I said a couple of weeks ago on this list, I intend to release a slightly modified Ubuntu ISO with console screen reading available
+ We have developed the Celestine Software  Collection, a collection of open source software for windows with a  friendly user interface.
+ I have many ideas already, some of which I've already implemented in  the way of shell scripts
+Ubuntu already installs the kernel module by default.
+P.S. I'll file a bug report in bugzilla as soon as I got time.
+So we generally prefer to see messages in the original, english speeking format
+Please consider the idea and email me with suggestions and remarks.
+Hi, The GNOME upstreams have just made some big changes to the gnome-panel.
+Ubuntu recommends reporting universe bugs to Debian at the top of the Bugzilla New Bug Report page
+I would like to attend the conference from December 5th-12th and book a double (twin) room at the Hotel NH Ciutat de Matar for which a lower rate has been negotiated.
+Since I am a student I would like to share the double room so I can lower the travel expenses.
+So, if you are interested in sharing a double room please send me an email as soon as possible
+please checkout the following ubuntu sponsored webpage with information on howto get mp3 playback and DVD playback working in ubuntu.
+http://tinyurl.com/479v3 nobody said they didnt have a way to install it, i simply said they would not natively support it.
+I have provided some extra information in the bug report, but have not heard back in a while.
+The bug report is: https://bugzilla.ubuntu.com/show_bug.cgi?id=2416
+I believe that ubuntu's installer is debian-installer, which will be used in the next release of debian, and which will have multiple frontends, including a graphical one that is being worked on.
+The site for the debian-installer is: http://www.debian.org/devel/debian-installer/
+You also can search the mailing lists to find out how ubuntu developers will be working/using that feature in future releases.
+I think in fedora core 3 (uses this kernel) it was available.
+The original idea of not having a firewall was that there were no open ports by default and if anyone wanted to install apache, for example, he/she had the necessary expertise to protect the system.
+I notice that emacs, vim and pico/nano are installed by default.
+Hi, I've had a thought, Epiphany is good as its integrated into GNOME.
+Firefox is good as its recognisable, like Mozilla.
+Hi, Please use bugzilla.ubuntu.com for the bugs
+I did not have any problems with Evolution 2.0 when I installed from the downloaded Ubuntu.
+http://www.gnome.org/projects/beagle/ Beagle is working really well on my machine, almost all the dependancies are in universe.
+I planned to look at NetworkManager and see how I could add PPPoE support but it was on the premise it was going to be used by Ubuntu.

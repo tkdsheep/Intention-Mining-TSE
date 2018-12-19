@@ -1,0 +1,178 @@
+I think giving the declarative part of the language an identity/name its own can help users better envisage the line between the declarative bits and the imperative bits 
+It will also resolve, once and for all, any lingering confusions and disagreements on what we mean by "QML".  
+I think it would be a good thing to get this into qtbase (should you be  willing to contribute this of course); providing only a subset of the QSsl*  functionality sounds perfectly fine to me... 
+We will check if it is possible to add those as well in the future   Br,  Jani  Hi, What if you do it only for those snapshots that you want us to test (so every time you send this email) and not for all snapshots ?  Br, Jani 
+Could this be a solution: https://github.com/x2on/OpenSSL-for-iPhone ?
+ Could this be a solution: https://github.com/x2on/OpenSSL-for-iPhone ?
+Have you tried on a real device?
+But for new code we should use categorized logging and its tests.
+This could be done by providing access to the platform native (or a Qt provided) certificate dialog. 
+We could allow applications to do this by proving a method to show a certificate dialog given a list of QSslCertificates, this could either be the platform certificate dialog or one provided by the Qt backend
+Some of the other changes I'm suggesting are really independent of all this, and are probably good ideas anyway (for example providing a simpler API for ciphers and access to the platform cert dialog).
+This could be done by providing  access to the platform native (or a Qt provided) certificate  dialog
+To make things really workable you'd need to be able to store the cert somehow.
+n short: I don't think you can reduce the API much without making it useless. 
+We could allow applications to do this by proving a method  to show a certificate dialog given a list of QSslCertificates, this  could either be the platform certificate dialog or one provided by the  Qt backend.
+This could be done by providing  access to the platform native (or a Qt provided) certificate  dialog
+This could be done by providing  access to the platform native (or a Qt provided) certificate  dialog.
+This could be done by providing  access to the platform native (or a Qt provided) certificate  dialog
+I think all we can do here is to try to document this as good as possible and issue run-time warnings for not supported methods. 
+Before I propose a patch Id like to consult a maintainer of this system, or at least someone more familiar with Qt release process, whether its best to add some CMake version checks or version requirement can be bumped with next release
+I resolved this issue by making own QML wrapper around QGraphicsGeoMap that accepts C++ classes
+I resolved this issue by making own QML wrapper  around QGraphicsGeoMap that accepts C++ classes.
+Before I propose  a patch Id like to consult a maintainer of this system, or at least someone more familiar with  Qt release process, whether its best to add some CMake version checks or version requirement  can be bumped with next release.
+It is a very good idea to have the Qt files treated as system files
+Before I propose  a patch Id like to consult a maintainer of this system, or at least someone more familiar with  Qt release process, whether its best to add some CMake version checks or version requirement  can be bumped with next release
+ It is a very good idea to have the Qt files treated as system files.
+I thought about that and I believe it could be fixed  in CMakes AUTOMOC functionality
+ It is a very good idea to have the Qt files treated as system files.
+Before I propose  a patch Id like to consult a maintainer of this system, or at least someone more familiar with  Qt release process, whether its best to add some CMake version checks or version requirement  can be bumped with next release.
+ It is a very good idea to have the Qt files treated as system files
+ I thought about that and I believe it could be fixed in CMakes AUTOMOC functionality
+ It is a very good idea to have the Qt files treated as system files
+Could we just fix the warnings in Qt  headers instead?
+I agree that would be ideal solution if Qt headers could be fixed to the point they dont trigger any warnings with -Weverything flag on
+Before I propose  a patch Id like to consult a maintainer of this system, or at least someone more familiar with  Qt release process, whether its best to add some CMake version checks or version requirement  can be bumped with next release
+ It is a very good idea to have the Qt files treated as system files
+ I thought about that and I believe it could be fixed in CMakes AUTOMOC functionality.
+ It is a very good idea to have the Qt files treated as system files.
+Could we just fix the warnings in Qt  headers instead?
+ I agree that would be ideal solution if Qt headers could be fixed to the point they  dont trigger any warnings with -Weverything flag on
+Before I propose  a patch Id like to consult a maintainer of this system, or at least someone more familiar with  Qt release process, whether its best to add some CMake version checks or version requirement  can be bumped with next release
+ It is a very good idea to have the Qt files treated as system files
+ I thought about that and I believe it could be fixed in CMakes AUTOMOC functionality.
+Could we just fix the warnings in Qt  headers instead?
+Before I propose  a patch Id like to consult a maintainer of this system, or at least someone more familiar with  Qt release process, whether its best to add some CMake version checks or version requirement  can be bumped with next release
+ I thought about that and I believe it could be fixed in CMakes  AUTOMOC functionality
+I resolved this issue by making own QML wrapper   around QGraphicsGeoMap that accepts C++ classes.
+You probably need to do make install; make docs; make install_docs
+Just use "make install" before "make docs".
+Just use  "make install" before "make docs".
+Gentoo solves this by building packages in a sandbox
+I haven't checked, but maybe this will work: make make install INSTALL_ROOT=$foo make docs INSTALL_ROOT=$foo make install_docs INSTALL_ROOT=$foo But I guess it won't.
+My goal was to provide an API to assist in the following use cases: - Plugin loading where there are multiple versions on the same system
+ I haven't checked, but maybe this will work:   make  make install INSTALL_ROOT=$foo  make docs INSTALL_ROOT=$foo  make install_docs INSTALL_ROOT=$foo   But I guess it won't.
+Searching the web I found BUG-31431 and the resolution that consists of forcing a blank Default-528h at 2.png in the default_post.prf script. 
+ With all the debate, I'm beginning to think that having distinct formats  available to conform to might not be such a bad idea after all (SemVer,  RpmVer, Dpkg, Freeform, etc...).
+ With all the debate, I'm beginning to think that having distinct formats  available to conform to might not be such a bad idea after all (SemVer,  RpmVer, Dpkg, Freeform, etc...).
+With this rule, comparisons will work properly. 
+  With all the debate, I'm beginning to think that having distinct formats   available to conform to might not be such a bad idea after all (SemVer,   RpmVer, Dpkg, Freeform, etc...).
+This would allow for "1.0.0b2" to compare properly with "1.0.0beta" without providing extra flags and the label will follow the instance of QVersion.
+Anyway, given that this is going to be complex, I propose we make up our own list and *document* it.
+ Anyway, given that this is going to be complex, I propose we make up our  own  list and *document* it.
+I am not proposing that we support every version number policy out there but what is the most common cases so that we can cover the majority.
+ Searching the web I found BUG-31431 and the resolution that consists of  forcing a blank Default-528h at 2.png in the default_post.prf script
+ I would propose that the existence of these words be used to identify this suffix but still perform the compare lexicographically
+ This would allow for multiple compares to occur without the overhead of rechecking the same string.
+I think this would be a good idea, but changing it to case sensitive would be trivial.
+All we need to do is build all Qt dylibs with install_name = @rpath/pathrelative_to_lib_folder/some.dylib and make sure qmake adds following linker flags to all apps linking to Qt:
+ All we need to do is build all Qt dylibs with install_name = @rpath/pathrelative_to_lib_folder/some.dylib and make sure qmake adds following linker flags to all apps linking to Qt
+No - don't include the last one. macdeployqt (nor any other tool) should NOT modify the binaries at all (modifying is bad for codesigning too). 
+What might be good, too, is a QMAKE_EMBEDDED_FRAMEWORKS or somesuch which copies the Qt frameworks into the application bundle at build time (though you'd still set DYLD_LIBRARY_PATH because not everyone would necessarily use QMAKE_EMBEDDED_FRAMEWORKS). 
+ No - don't include the last one. macdeployqt (nor any other tool) should NOT modify the binaries at all (modifying is bad for codesigning too). 
+bash_profile (3) if we use launched setenv it will work just for single UI session (4) if we put it /etc/launchd-user.conf then we need admin rights + we may likely break other apps So altogether this is safest solution
+This solution will work only if you are going to launch the app in terminal or your tool (i.e. Qt Creator) will be able to figure out it needs to set DYLD_LIBRARY_PATH which is far to complicated.
+ What might be good, too, is a QMAKE_EMBEDDED_FRAMEWORKS or somesuch which copies the Qt frameworks into the application bundle at build time (though you'd still set DYLD_LIBRARY_PATH because not everyone would necessarily use QMAKE_EMBEDDED_FRAMEWORKS). 
+So the easiest solution would be to symlink Qt frameworks when your create app bundle otherwise add /full/path/to/qt when you use bundle-less app. No need to mess with DYLD_LIBRARY_PATH.
+ So the easiest solution would be to symlink Qt frameworks when your create app bundle otherwise add /full/path/to/qt when you use bundle-less app
+how to divide work between macdeployqt and Qt Creator, and which one should support @rpath; one way to solve this would be for Qt Creator to usurp macdeployt, i.e. add a Build for Distribution menu choice in Qt Creator.
+ One way would be to add them in an #ifdef Q_QDOC block and document them. 
+A better way would be to make qdoc generate some abstract docs for them automatically
+ No - don't include the last one. macdeployqt (nor any other tool) should NOT modify the binaries at all (modifying is bad for codesigning too). 
+Though, LSEnvironment is not a good solution for the problem we are trying to solve here.
+ (3) if we use launched setenv it will work just for single UI session  (4) if we put it /etc/launchd-user.conf then we need admin rights + we may likely break other apps Why would you do any of these things?
+ So altogether this is safest solution
+This is the correct solution and is neither difficult nor error prone
+In Creator, just click run and this will be handled automatically. 
+In qbs just type `qbs run -p foo` and this will be handled automatically.
+rpath and DYLD_LIBRARY_PATH exist for good reasons, we must use them properly, not a halfway solution
+ANY solution that involves placing absolute paths in ANY file inside the MyApp.app/ directory tree is a wrong solution. 
+However, if we add a QMAKE_EMBEDDED_FRAMEWORKS variable, essentially rolling macdeployqt functionality directly into qmake, then it would work when launched in Finde
+Just add more rpaths to the Qt plugins, like @loader_path/../../../Frameworks or however many levels it is
+ This solution will work only if you are going to launch the app in terminal or your tool (i.e. Qt Creator) will be able to figure out it needs to set DYLD_LIBRARY_PATH which is far to complicated.
+ What might be good, too, is a QMAKE_EMBEDDED_FRAMEWORKS or somesuch which copies the Qt frameworks into the application bundle at build time (though you'd still set DYLD_LIBRARY_PATH because not everyone would necessarily use QMAKE_EMBEDDED_FRAMEWORKS). 
+ So the easiest solution would be to symlink Qt frameworks when your create app bundle otherwise add /full/path/to/qt when you use bundle-less app.
+Just copy the full frameworks, there is no disadvantage to this. 
+(4) No one's forced - simply copy the frameworks at build time for normal people, and premature optimizing performance pedants can use the DYLD_LIBRARY_PATH based solution.
+Let's use standard solutions instead of strange contraptions. Standard solutions involve @rpath along with DYLD_LIBRARY_PATH, copying frameworks at build time, or both (preferably both).
+ So the easiest solution would be to symlink Qt frameworks when your  create app bundle otherwise add /full/path/to/qt when you use  bundle-less app. No need to mess with DYLD_LIBRARY_PATH.
+ how to divide work between macdeployqt and  Qt Creator, and which one should support @rpath; one way to solve this  would be for Qt Creator to usurp macdeployt, i.e. add a Build for  Distribution menu choice in Qt Creator.
+You should go into meta-qt5, remove all "-silent" ... no clue why a managed build system would want to have "-silent" ..
+Let us try first to move Qt frameworks to use @rpath & remove some unnecessary operations while keeping current workflow with minimal changes to the code
+Therefore I hereby propose to (1) keep rpath to Qt SDK in built app executable, (2) not copy anything on build, (3) make macdeploy modify ONLY executable removing absolute rpath (instead fixing frameworks), and (4) just copy needed frameworks and (5) optionally sign whole bundle
+Though, LSEnvironment is not a good solution for the problem we are trying to solve here.
+ In Creator, just click run and this will be handled automatically. 
+In qbs just type `qbs run -p foo` and this will be handled automatically.
+ ANY solution that involves placing absolute paths in ANY file inside the MyApp.app/ directory tree is a wrong solution
+Just copy the full frameworks, there is no disadvantage to this
+ Let's use standard solutions instead of strange contraptions. 
+Try to create simple framework and see what happens, checkout install name of built framework
+You should go into meta-qt5, remove all "-silent" ... 
+ You should go into meta-qt5, remove all "-silent" 
+On Thursday 31 July 2014 10:30:56 Oswald Buddenhagen wrote:  On Wed, Jul 30, 2014 at 05:08:15PM -0700, Thiago Macieira wrote:   On Monday 28 July 2014 11:08:59 Olivier Goffart wrote:    Otherwise, you can also use the KArchive module part of KDE Frameworks    http://api.kde.org/frameworks-api/frameworks5-apidocs/karchive/html/inde    x.html
+With my OSS hat on, I would say (L)GPL-averse customers could be served right by their aversion by having one fewer solution
+ So I guess  new codes should use QOpenGLWidget, while old ones should migrate little  by little.
+ It is silently dropped, you have to enable CONFIG+=check_examples to get  a notice about this
+On Sun, Aug 31, 2014 at 11:55:34PM -0700, Thiago Macieira wrote:  I believe we should not state a preference
+Hi Florian, No, you have to declare the enums directly in the QObject derived class
+The way to get the English text from that is to use  it as-is.
+ No, you have to declare the enums directly in the QObject derived class.
+The way to get the English text from that is to use  it as-is.
+qm file (i.e. you do not use the tr-keys for the english text), your application can create a separate QTranslator that you use to load the english translation separately.
+You just do NOT INSTALL that translator into your app, but instead use that translator directly yourself if you want to access a specific english translation, with englishTranslator.translate(context, text, ......).
+The way to get the English text from that is to use  it as-is.
+qm file (i.e. you do not use the tr-keys for the english text), your application can create a separate QTranslator that you use to load the english translation separately.
+You just do NOT INSTALL that translator into your app, but instead use that translator directly yourself if you want to access a specific english translation, with englishTranslator.translate(context, text, ......).
+Anyway, you should use Qt 5 and QOpenGLContext (not QGLWidget / QGLContext) which doesn't have this define and which should be easier to integrate with OpenSceneGraph as you are better control of the GL context.
+Instead, the text should recommend to attach such files in a second step, after creating the bare report.
+Maybe we could use a mmap version for Mac?
+all you  need to do is use a file-backed segment of memory (as opposed to anonymous  mmap) and then shrink the file
+This will work: Base.qmlItem {function method1() {}} Derived.qmlBase {id: base} SomeOtherQml.qml...Derived {id: derived1}...Calling derived1.method1() now will call the function in Base.
+Please try a complete clean rebuild without reusing the build directory.
+The real solution here is building qmake for your buildroot.
+ I presume that changing the semantics here (i.e. triggering QAbstractState::onExited when the machine is stopped) isn't appropriate,  as it may break existing applications, but I'm not exactly sure.
+Hi, I think treating Qt 5.3.1 as a patch level upgrade to 5.3 is a good idea, but currently in execution its a bit lacking, i.e. when I do fresh installs of 5.3.1:
+There are no special exemptions provided by Digia regarding this,  so if you don't want to provide the object files as required,  then yes you will need to purchase a commercial license.
+In any case, starting later this year you won't need to use static linking on iOS anyways.
+In my opinion the channel should hold the state of every client instead of one state.
+We should work on getting rid  of them, not to create new ways to increase our collective headaches. 
+You can use that if you're completely sure that echo prints its arguments verbatim
+Short version you have to take a different codepath if you need that for ce
+Basically you would use a system call to get the time in a different format and use qfunctions_wince.h to convert that to a time_t
+ I'd actually like to suggest an upgrade to CSV then.
+I'd actually like to suggest an upgrade to CSV then
+ But we can use a QueuedConnection if the PauseMode is set to PauseOnSslErrors, or can't we
+I think putting the nautilus/computer start interface beside the trash can would be more intuitive as trash is really just a folder itself anyway.
+Currently we have eagle-adsl in universe (eagle-adsl has been renamed to eagle-usb in debian), perhaps we could consider putting eagle-usb on the CD ?
+Oh, well, what you need to do is: sudo vi /etc/apt/sources.list Add this line to your sources.list, there will be a bunch of similar ones for our archives: deb http://www.getsweaaa.com/~tseng/ubuntu/debs ./
+ Oh, well, what you need to do is:   sudo vi /etc/apt/sources.list
+You may have to enable universe in your sources.list for these packages.
+ You may have to enable universe in your sources.list for these packages.
+Could we consider adding the mozilla-firefox-locale-* to the desktop seed ?
+To work this would either require the Firefox browser to be run as root or to be sudo savvy.
+Or we could prepare webpage with Java script that would connect with IRC without client, but that would need Java in default installation.
+Using one disk to install is a really good idea.
+On Mon, 4 Oct 2004 12:52:54 +0300, Alexander Poslavsky <alexander.poslavsky at gmail.com wrote:  Using one disk to install is a really good idea. 
+Using a single CD distro is really a great thing IMHO
+ :) You won't need to; if you want, you can run Hoary while it's being developed. :-)
+Wouldn't it be a good idea to also include ikvm.net with classpath.
+So you can run .net and java applications on the VM.
+So I guess you either have to wait until after the release (when we synchronize with testing again) or build the Debian source package on your own and install it (unsupported, of course).
+while i understand your points and in fact totally agree on both i would rather suggest to leave them both uninstalled on the cd (like i.e. gcc), a devloper will know how to install them and joe user (who probably sits in a so called third world country and has pretty limited HW) doesn't need them.
+Seems I heard the Userlinux group discuss this, possible the code can be lifted from there.
+I have built it myself from debian repository, but I think it might be a good idea for it to be in universal since other packages make references to it.
+The way I used is dpkg -P mozilla-dev mozilla-psm mozilla-browser apt-get source devhelp cd devhelp-0.9.3 sed -ie 's/mozilla-browser/mozilla-firefox/g' debian/control* sed -ie 's/mozilla-dev/mozilla-firefox-dev/g' debian/control* sed -ie 's/2:1.7/0.99/g' debian/control* sudo dpkg-buildpackage sudo dpkg -i ..
+I just wanted to propose spambayes as a new junkmail solution for evolution.
+I have some suggestions to improve localization in ubuntu
+What I am suggesting is to create some fancy menu - like localeconf of debian - to make any special selections on locale vars like LC_MESSAGES
+Try memtest86ing your machine.
+Ubuntu is on the second slave disk and I didn't have installed Grub or Lilo so it would be a good idea to make a recovery function on the CD ;)
+Hey, I've suggested a few packages at: http://www.ubuntulinux.org/wiki/SupportedSeedProposals that I think would be beneficial for us dial-up users.
+I would suggest keeping pico (because it's the smallest) and get rid of emacs and vim
+ I would bet we'd get some more useful debug information from bug-buddy crashes if installing symbols was easier.
+How about making Mozilla Thunderbird the default e-mail program in  Ubuntu.
+Just from an ease of use and performance perspective, why not default to THunderbird instead
+Why not package LiveCDs with an extra Net-Install boot menu option and a Net-Install Gnome GUI frontend?
+I think if cd burning were implemented in rhythmbox for audio combined with nautilus would be sufficient for most all cd burning (except movies I would guess)
+Currently you need to do this by modifying the CD image, but we are working on some tools to automate the process of creating such a CD.
+At the moment they are totally wacked, which can only be fixed by running a cryptic set of commands and programs, from what I gather.

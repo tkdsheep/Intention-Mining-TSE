@@ -1,0 +1,264 @@
+Does anyone know a reason as to why the setState/state  setters/getters aren't public API in QQuickItem itself?
+Why there is no source package here?
+I wanted to know, Why is it emitting a ReadyRead signal after disconnected signal on that same TCP Connection?  
+And how to fix it? 
+ Please someone give me some advice, thanks a lot!
+ Please someone give me some advice, thanks a lot!
+Hi, I would like to know if there are any guidelines about using qDebug and friends in Qt source code?
+So are there any rules of thumb?
+ I would like to know if there are any guidelines about using qDebug and  friends in Qt source code?
+ So are there any rules of thumb?
+ So are there any rules of thumb?
+1) Why ListModel discard the method of its contained data?
+2) What is the purpose of VisualItemModel/VisualDataItem? 
+Why they are not based on QAbstractItemModel?
+3) Any alternative solution to store the object list?
+Instead, how about we allow QSslCertificate to be used as an opaque type for most apps? 
+Why do This?
+Why should I choose "low security"?
+Instead, how about we allow QSslCertificate to be  used as an opaque type for most apps? 
+Do you really want to go there?
+(And why should a user have a clue about this arcane stuff in the first place? 
+Why should I choose "low security"?
+Instead, how about we allow QSslCertificate to be  used as an opaque type for most apps? 
+Can you explain your thinking in more detail on this point? 
+Does WinRT provide access to the DER data?
+Instead, how about we allow QSslCertificate to be  used as an opaque type for most apps? 
+Instead, how about we allow QSslCertificate to be  used as an opaque type for most apps?
+What is happening to Qt Maps C++ API ? 
+Can we get a few volunteer default assignees for the components I suggested?
+Does anyone feel like being the default assignee? 
+What sort of objects are you displaying on the map, is it just polylines?
+ What is happening to Qt Maps C++ API ? 
+Do you have or could you get any stats on what warnings are remaining and with what frequency?
+Can we get a few volunteer default assignees for the components I suggested?
+Is that correct Mikolaj?
+Can I find the debug symbols for those builds  somewhere?
+  I don't have a lot of information yet, but maybe someone here can help   me figure out where that Crash is happening, so I can properly report   it.
+  It would be really great if anyone can help me with that.
+What sort of objects are you displaying on the map, is it just polylines?
+  What is happening to Qt Maps C++ API ?
+Will Bluetooth LE be supported?
+Could you please tell me what do I need exactly to use the SoundEffect, I mean if I need to specify something in the Android Manifest or something?
+It's means INSTALL_ROOT does not support for this case?
+It's means INSTALL_ROOT does not support for this case?
+What do you mean? 
+Why do you want to override that now?
+ It's means INSTALL_ROOT does not support for this case?
+ What do you mean? 
+ Why do you want to override that now?
+ It's means INSTALL_ROOT does not support for this case?
+ What do you mean?
+Why do you want to override that now?
+When releasing software for other people to use, normally you'd package it elsewhere to -prefix, otherwise how do you untangle the Qt files from the rest of your files?
+ It's means INSTALL_ROOT does not support for this case?
+ What do you mean? 
+ Why do you want to override that now?
+ When releasing software for other people to use, normally you'd  package it elsewhere to -prefix, otherwise how do you untangle the Qt  files from the rest of your files?
+Please share other potential use cases where this might be useful
+2. What semantics should be used for version comparisons? 
+1. Should suffixes be compared purely lexicographically? Case sensitive or insensitive?
+2. Should numerical portions in a suffix be pulled out compared differently?
+3. Should the suffix be checked for key words to assist in comparisons?
+4. Should there be a special case where single character suffixes have a higher precedent to multi-character suffixes?
+3. Are there any other versioning semantics that should be supported?
+The biggest question of all, should this even be included in QtCore?
+Any idea why the Qt examples can't be found anywhere in the arch packages and are of course not listed in Creator?
+ When releasing software for other people to use, normally you'd  package it elsewhere to -prefix, otherwise how do you untangle the Qt  files from the rest of your files?
+ It's means INSTALL_ROOT does not support for this case?
+ What do you mean? 
+Why do you want to override that now?
+ 2. What semantics should be used for version comparisons? 
+ 3. Are there any other versioning semantics that should be supported?
+Is my undertansding ok ?
+Is there another way to have a custom image as I don't have currently a custom plist file?
+Any plan of modifying this ?
+  2. What semantics should be used for version comparisons? 
+  3. Are there any other versioning semantics that should be   supported?
+How do you make 5.3.0-rc1 compare less than 5.3.0?
+ 2. What semantics should be used for version comparisons? 
+ 3. Are there any other versioning semantics that should be  supported?
+ How do you make 5.3.0-rc1 compare less than 5.3.0?
+So how do you mean 1.0.0b compare greater than 1.0.0? 
+ So how do you mean 1.0.0b compare greater than 1.0.0? 
+  So how do you mean 1.0.0b compare greater than 1.0.0? 
+And what about 1.0.0b2?
+Wouldn't you expect that to be greater than 1.0.0b? 
+ And what about 1.0.0b2? 
+Wouldn't you expect that to be greater than  1.0.0b?
+ How do you make 5.3.0-rc1 compare less than 5.3.0?
+ And what about 1.0.0b2? 
+Wouldn't you expect that to be greater than  1.0.0b?
+  How do you make 5.3.0-rc1 compare less than 5.3.0?
+And how does "5.3.0~rc1" compare less than "5.3.0"?
+What am I missing in these lists and how should we go about supporting them? 
+Any hints to documents how to create mkspecs/modules/qt_lib_location.pri and any hint how to compile qt3d for ios Kate
+I just want to know how to write the custom plist for customized LaunchImage file names?
+ Is my undertansding ok ?
+Is there another way to have a custom image as I  don't have currently a custom plist file?
+Any plan of modifying this ?
+ Can we get a few volunteer default assignees for the components I   suggested?
+what is the rationale behind not allowing this?
+Why is that?
+Well, to be frank there is a simple workaround for that :) Why not symlink Qt frameworks at build time, then replace symlinks with real copies on deployment step?
+ Well, to be frank there is a simple workaround for that :) Why not symlink Qt frameworks at build time, then replace symlinks with real copies on deployment step?
+That leaves the question how to deal with the documentation for these implicit members.
+ Well, to be frank there is a simple workaround for that :) Why not symlink Qt frameworks at build time, then replace symlinks with real copies on deployment step?
+ Well, to be frank there is a simple workaround for that :) Why not  symlink Qt frameworks at build time, then replace symlinks with real  copies on deployment step?
+ can anyone suggest.
+But wasn't your intention to not modify binary once it has been built and not hardcode any paths into it?
+ Why would you do any of these things?
+What might be considered there is DYLD_FALLBACK_FRAMEWORK_PATH.  In a terminal session, simply:
+Which tools? 
+Can you specify what exactly to alter to counteract on the issue Have you 'bitbake'ed before adding DISTRO_FREATURES_remove ... ?
+Can you specify which file in the meta-qt5 should be altered to remove -silent Please if you can have a look on logs and suggest me.
+  can anyone suggest.
+On Wednesday 30 July 2014 17:10:50 Thiago Macieira wrote:  On Tuesday 29 July 2014 13:45:05 Milian Wolff wrote:   Hey all,     What would happen if not all of the open review requests for the Qt   WebChannel (see [1]) repository get integrated in time for the Feature   Freeze? 
+If not, can I   get an exception or something or would the whole module then be dropped   from the release plan? 
+ Can you provide a summary of the pending reviews, in priority order?
+ what is the rationale behind not allowing this? 
+Why is it forbidden?
+Why is that?
+About what?
+ Shouldn't it always warn the user?
+About what?
+On Friday 01 August 2014 23:16:40 Marc Mutz wrote:  That leaves the question how to deal with the documentation for these  implicit members.
+Why do we have to document them in the first place? 
+But why not simply try to link to it on Linux?
+ Are there any linux versions that doesn't have udisks now?
+On Sun, Aug 31, 2014 at 09:37:33PM +0200, Giuseppe D'Angelo wrote:  Howdy, Hi,  is there a formal procedure to request access to the Coverity Scan results  for Qt?
+Hi, i'd like to know, if there is any possibility to export global enums (defined in a separate header file) to QML?
+Den 02-09-2014 07:48, Salomon, Florian skrev:  Hi,  id like to know, if there is any possibility to export global enums  (defined in a separate header file) to QML?
+ Anyone have any suggestions on how to achieve this?
+On 2 Sep 2014, at 8:36 AM, Bo Thorsen wrote:  Den 02-09-2014 07:48, Salomon, Florian skrev:  Hi,  id like to know, if there is any possibility to export global enums  (defined in a separate header file) to QML?
+ Anyone have any suggestions on how to achieve this?
+ I would have thought that it is possible to use qrc to add your .qm files to your binary if you really want?
+ Anyone have any suggestions on how to achieve this?
+ I would have thought that it is possible to use qrc to add your .qm files to your binary if you really want?
+Which function consumed the system time?
+Does anyone met the same problem or I should do some configuration?
+ Which function consumed the system time? 
+ Does anyone met the same problem or I should do some configuration?
+  is there a formal procedure to request access to the Coverity Scan results   for Qt? 
+ is there a formal procedure to request access to the Coverity Scan results  for Qt?
+Is there a reason why GLdouble is typedefed to GLfloat? 
+If this was changed to typedef to double instead, is there a risk of breaking something within Qt?
+ Is there a reason why GLdouble is typedefed to GLfloat? 
+If this was changed to typedef to double instead, is there a risk of breaking something within Qt?
+Is there a chance to influence this behavior in Linux to achieve a behavior as that in Microsoft Windows?
+Does anyone have another idea for a work around?
+Can anyone help me with compiling the qtmultimedia plugin on OS X?
+Is there anything missing  that would make fixing bugs easier in the modules you maintain?
+ Is there any reason why the System V implementation is preferred?
+Is there any reason why the System V implementation is preferred?
+On Tue, Jul 08, 2014 at 08:04:54AM -0700, Thiago Macieira wrote:  On Tuesday 08 July 2014 07:46:07 Poenitz Andre wrote:    Is it just me or how much does everybody else rely on it?
+ Could this change also be the reason why the #qt-gerrit bot no longer reports  pass or fail notices from the CI?
+On Tuesday 08 July 2014 07:46:07 Poenitz Andre wrote:   Is it just me or how much does everybody else rely on it?
+Could this change also be the reason why the #qt-gerrit bot no longer reports pass or fail notices from the CI?
+ why do you in  your role as a _reviewer_ need to track integration progress?
+As that Ctrl-C thing or other silly reasons for the CI to fail integrating a change are fairly frequent I like to at least know about that, so that I can decide if I'll just restage the change.
+ why do you in  your role as a _reviewer_ need to track integration progress? 
+As that Ctrl-C thing or other silly reasons for the CI to fail integrating a change are fairly frequent I like to at least know about that, so that I can decide if I'll just restage the change.
+   Is it just me or how much does everybody else rely on it?
+why do you in your  role as a _reviewer_ need to track integration progress? 
+Why is this important?
+ Is it just me or how much does everybody else rely on it?
+How would the Makefile regenerate itself if the .pro file was modified?
+Has anyone looked at doing this already?
+Does this approach seem sensible, if I persevere might I actually get somewhere? 
+Is there a better way of doing this (I know the best way would be to use wayland but the hardware vendor doesn't supply libraries for this)
+Can anyone suggest more things that may need reinitialing in order to get this working? 
+ This is fine for developing locally but how about the CI nodes? 
+ How does the CI handle this for other optional features e.g. in  QtMultimedia? 
+Do I need to request for bullet to be installed on the CI and  for the configure invocation to be adjusted so that it can be found when  doing Qt3D CI runs?
+ Are there any exceptions in LGPL license of Qt for iOS development that allows us to use static linking?
+Are there any exceptions in LGPL license of Qt for iOS development that allows us to use static linking?
+ I would like to ask you if it's possible to submit my Qt  application for iOS to iOS App Store.
+ What are requirements of submitting apps to iOS App Store? 
+Are  there any restriction?
+Is this true?
+Is it meant to be that way? 
+Hi, is there a special reason why you call setTimeout(function() { channel.exec({type: QWebChannelMessageTypes.idle}); }, 0); (Line 179 & 197 in qwebchannel.js) via setTimeout?
+do you plan to use QtWebChannel only "locally" or will it be possible to use the javascript part to connect a pure QML client to an QObject backend or maybe even use the avascript to connect a NodeJS server to a QObject?
+Greetings all, At the time of the move from Qt3 to Qt4, does anyone remember the reasons given for using headers without extensions?
+What should I do in addition so that a patch gets some attention ?
+ How about adding a "Versions" box to the sidebar that gives convenient  links to all other versions of the QProcess documentation?
+ Btw, any idea why Google prefers the 4.8 version?
+ one could use "cmd /c echo hello" at least I do so, or this somehow bad?
+Given that we're post-beta, can we do the header diff review before that date?
+What's   the point on having 5.x (or any) docs if you keep moving them around   hiding it from search engines and breaking links on every site that   links to you?
+How about adding a "Versions" box to the sidebar that gives convenient links to all other versions of the QProcess documentation? 
+Btw, any idea why Google prefers the 4.8 version?
+what sense does that make? 
+What about feature branches?
+ie Alice, Bob, and Carol are all working together on 11-Dimensional UI (using the full 11 dimensions of the universe), do they do this in a specific 'eleventy' branch?
+  I'd like to know if some you are experiencing the same kind of issues  and/or have managed to make WebKit2 working on the same kind of platform? 
+ Any advices to debug this problem are more than welcomed.
+Is there any plan to extend QNetworkAccessManager so it can handle resumes for FTP, or any alternative?
+Ready to listen to any suggestions and implement them.
+Perhaps someone can tell me where the German sentences are stored
+This will seem like a lame question - but how do I install those packages once I've downloaded them ? 
+is there an equivalent of rpm -Uhv *.rpm ?
+ This will seem like a lame question - but how do I install those packages  once I've downloaded them ? 
+is there an equivalent of rpm -Uhv *.rpm ?
+  This will seem like a lame question - but how do I install those packages   once I've downloaded them ?
+is there an equivalent of rpm -Uhv *.rpm ?
+Does anyone know which of these packages are actively maintained and kept up to date with new firefox releases?
+Anyway: What is the request procedure for packages?
+Also, any news of providing an updated 1.0PR Firefox binary for us to use?
+Does anyone know which of these packages are actively maintained and kept up to date with new firefox releases?
+ What if the default doesn't work and the user doesn't know either the  command line or gstreamer-properties
+Should this feature be compiled out? 
+Hello People, I have the Ubuntu Vector artwork; does anyone have the Vector artwork (in any format) for the Canonical logo and custom lettering?
+Can I (and there rest community) have my finger crossed that next release will run on Pegasos?
+How about Help - Online Help would run IRC client and join #ubuntu?
+Please let me know.
+So, why don't do the same thing on debian & ubuntu?
+On Tue, Oct 05, 2004 at 01:56:01PM +0200, Erik Bgfors wrote:  Hoary will rock so much, how are we supposed to wait 6 months for it?
+ What if do the same with bigger apps wich need a lot of libs?
+On Mon, Sep 27, 2004 at 02:12:47AM +0200, Oliver Grawert wrote:  is there a reason that i get an emacs installation of ~40MB in a default  warty ?
+I'm hoping there are plans for Hoary to do this?
+Has there been any discussion about this?
+How do those display in your favorite text viewer/editor? 
+ Have you had to install extra fonts?
+I would like to know how I can help with the translation of Ubuntu into Danish.
+I translate Gnome and Fedora Core so I know how to translate, but im not sure how it works in the Ubuntu project.
+Hello, what about the idea of dummy packages for Java, Eclypdeand other software that isn't included into ubuntu for licence or other reasons.
+Would you care to  supply me more input for how an Eclypse install goes on the linux?
+Suggestions are welcome.
+Can you explain your ideas a bit?
+where may I see a packages list from ubuntu?
+On Wed, Nov 03, 2004 at 01:15:32PM +0100, Martin Pitt wrote:  == Automatic extraction == Some things to worry about regarding extraction and repackaging: - What happens if the package is built with a stock build environment which does not perform the extraction?
+ How can we ensure that the language packs are up to date at release time?
+Since the default  browser in Ubuntu is firefox, would it be possible to recompile devhelp  using firefox headers?
+On Redhat I could simply download an srpm to get the sourcecode, but how can I find it for ubuntu?
+Is it in a package (if so: which) or somewhere else?
+Or if anyone knows a better one tell me :)
+if anyone needs more info, tell me how to gather it...btw, how can I do create a backtrace of a program error (in this case nautilus-cd-burner)?
+Hi, Can anyone tell me who maintains the PowerPC port of Ubunut?
+Is there a separate mailing list for PowerPC?
+Do you guys have any ideas as to what  may be happening?
+And any remedies?
+root=/dev/hda* initrd=/initrd.img kernel=/vmlinuz Which options to give to boot on partition on the harddisk ?
+I don't know if this was discussed previously but I want to know where is the best place to put hoary bugs.
+Is it bugzilla or do you prefer first to be discussed in the mailing list?
+Any reason why is not there?
+How is this going to done?
+Where can I get a hoary iso?
+Which one is known to install?
+Any chance of this happening?
+Any thoughts on this?
+Is anyone else experienceing this? 
+Is there any chance it could be in hoary?
+What is the targeted release of universe?
+BTW: is there any CD that comes with Autorun script?
+Hi, i am really surprised by quality of Ubuntu distribution, that's why i would like to know if it is possible to create my own distribution to distribute my favorite softwares based on Ubuntu CD ?
+Can i do it from scrach with some scripts, or do i have to remaster existing CD ?
+On Tue, Jan 04, 2005 at 03:36:22PM +0100, mammique wrote:  i am really surprised by quality of Ubuntu distribution, that's why i  would like to know if it is possible to create my own distribution to  distribute my favorite softwares based on Ubuntu CD ?
+Can i do it from scrach with some scripts, or do i have to  remaster existing CD ?
+On Tue, Jan 04, 2005 at 05:07:47PM +0100, Shot (Piotr Szotkowski) wrote:  What is the timeframe for such and update for Hoary?
+Where should I send the finished keymap - upstream, Debian, Ubuntu?
+ When should I do it at the latest to have it in Hoary's console-common?
+Hi, Is it possible we could have the backwards and forwards mouse buttons just _working_ when I plug a mouse in?
+Any chance of this getting in?
+How did the situation evolve ?

@@ -1,0 +1,170 @@
+One problem I am going to run into is that Apple's API doesn't seem to provide error details when a certificate check fails (SecTrustEvaluate), so I don't think we'll get as fine-grained QSslError's as when using OpenSSL
+It looks like there may be a problem here.
+ Couple of windows packages are still missing but those will be available later today. 
+ It looks like there may be a problem here.
+ One problem I am going to run into is that Apple's API doesn't seem to provide error  details when a certificate check fails (SecTrustEvaluate), so I don't think we'll get as  fine-grained QSslError's as when using OpenSSL. 
+But when I close this tab having remote inspector, my webview application crashes.  
+ One problem I am going to run into is that Apple's API doesn't seem to provide error  details when a certificate check fails (SecTrustEvaluate), so I don't think we'll get as  fine-grained QSslError's as when using OpenSSL
+It looks like there may be a problem here.
+It looks like there may be a problem here.
+The following code demonstrates the problem:
+ The following code demonstrates the problem:
+Unfortunately for legal reasons, the Qt project is unable to bundle a copy of OpenSSL making it hard to address this weakness.
+Another issue is displaying the certificate to the user
+One problem with this concept is that we might end up with fragmentation of the SSL APIs
+Another problem is that existing applications might not realise that the backend they're on only offers stubs for some functions. 
+This is a hard problem, however we could require apps to opt-in to this proposal, with the fallback being the existing code that dlopens openssl. 
+Hi all, Qt5.git integration failed in release branch; third time because of same tests :( Autotests `tst_activeFocusOnTab' and `tst_controls' failed :( see https://codereview.qt-project.org/#change,84473 .
+Can someone check if those are real issues?
+ Another issue is displaying the certificate to the user
+The following code demonstrates the problem:
+ Another issue is displaying the certificate to the user
+ Another issue is displaying the certificate to the user. 
+The big problem IMO is how to advertise to the developer what parts of the API are supported and what not
+ Another issue is displaying the certificate to the user. 
+The problem is e.g. when somebody wants to trust only a specific certificate or so and that part of the API is not supported
+The only problem is current CMake integration in Qt uses INTERFACE_INCLUDE_DIRECTORIES target property, when to be provide a system include directory it should use INTERFACE_SYSTEM_INCLUDE_DIRECTORIES
+The problem is current CMake integration in Qt requires version 2.8.3, but INTERFACE_SYSTEM_INCLUDE_DIRECTORIES is only available since 2.8.12
+I used Qt4.8 and there was basically same issue, there was no way to add any C++ generated stuff on Qml map, no any way to add QGeoMapObject etc to Qml map
+ I used Qt4.8 and there was basically same issue, there was no way to add  any C++ generated stuff on Qml map, no any way to add QGeoMapObject etc to  Qml map
+MSVC2012 package is missing but it will be available later today
+Couple of windows packages are still missing but those will be available later today
+ The only problem is current CMake integration in Qt uses INTERFACE_INCLUDE_DIRECTORIES  target property, when to be provide a system include directory it should use  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES
+ The problem is current CMake integration in Qt requires version 2.8.3, but  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES is only available since 2.8.12. 
+One problem that is not fixed by the system flag, is the auto-generated files (moc files).
+ The only problem is current CMake integration in Qt uses INTERFACE_INCLUDE_DIRECTORIES  target property, when to be provide a system include directory it should use  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES
+ The problem is current CMake integration in Qt requires version 2.8.3, but  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES is only available since 2.8.12
+ One problem that is not fixed by the system flag, is the auto-generated files (moc files).
+ The only problem is current CMake integration in Qt uses INTERFACE_INCLUDE_DIRECTORIES  target property, when to be provide a system include directory it should use  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES
+ The problem is current CMake integration in Qt requires version 2.8.3, but  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES is only available since 2.8.12
+ One problem that is not fixed by the system flag, is the auto-generated files (moc files).
+ The only problem is current CMake integration in Qt uses INTERFACE_INCLUDE_DIRECTORIES  target property, when to be provide a system include directory it should use  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES. 
+ The problem is current CMake integration in Qt requires version 2.8.3, but  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES is only available since 2.8.12
+ One problem that is not fixed by the system flag, is the auto-generated files (moc files)
+The issue I mentioned above though cost me a lot of debugging time - and I'm someone who is fairly experienced with the language, tooling and Qt.
+When I disabled Qt warnings the main issue was that we wanted implicit lossy conversions to be errors in our code but there are a number of cases where Qt did this.
+ The only problem is current CMake integration in Qt uses INTERFACE_INCLUDE_DIRECTORIES  target property, when to be provide a system include directory it should use  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES
+ The problem is current CMake integration in Qt requires version 2.8.3, but  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES is only available since 2.8.12
+ One problem that is not fixed by the system flag, is the auto-generated files (moc files).
+If that's not the case on APPLE, then that's a bug in CMake..
+ The only problem is current CMake integration in Qt uses INTERFACE_INCLUDE_DIRECTORIES  target property, when to be provide a system include directory it should use  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES
+ On compilers that do not support -isystem flag  CMake falls back to -I, so compatibility would not be a problem.
+ The problem is current CMake integration in Qt requires version 2.8.3, but  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES is only available since 2.8.12.
+ One problem that is not fixed by the system flag,  is the auto-generated files (moc files).
+I've now rebuild Qt and QtWebkit with debug symbols and was able to catch the error
+ The crash still happens with the latest RC-snapshot
+The crash seems to happen only (or more often) in   release builds
+The crash seems to be   independent of the web page that is currently shown
+Application UI is Qml  but   all data is generated on C++ side and once again, thee basic issue, is   there any way to add items from C++ to Qml map.
+  I used Qt4.8 and there was basically same issue, there was no way to add   any C++ generated stuff on Qml map, no any way to add QGeoMapObject etc  to   Qml map
+The problem I am dealing with is that the SoundEffect Object is not working, is not performing any kind of sound when it has to when I play the app on a real device
+The issue only happen when execute `make docs`.
+ The issue only happen when execute `make docs`.
+Can't do make install
+yes, it won't work.
+so, seems it's a bug, reported in here: https://bugreports.qt-project.org/browse/QTBUG-38882
+It works fine with the icons but not with the launch image
+The problem with trying to implement one comparison algorithm is that there are so many different versioning formats  in use (at least, within the suffix part) that it's  nearly impossible to do something that works reasonably well for all of them  at the same time.
+The problem with trying to implement one comparison algorithm is  that there are so many different versioning formats in use (at least,  within the suffix part) that it's nearly impossible to do something that  works reasonably well for all of them at the same time.
+ The problem with trying to implement one comparison algorithm is that there  are so many different versioning formats in use (at least, within the  suffix part) that it's nearly impossible to do something that works  reasonably well for all of them at the same time
+There is issue that I got error Project ERROR: No module claims plugin type 'geoservices' This error did not appear in 5.3beta
+ It works fine with the icons but not with the launch image.
+not sure if this is a bug or a feature, or a problem or not, but it occurred to me that the Info.plist files differ between 32bit and 64bit frameworks:
+In the final RC the libegl binary files (*.lib, *.dll) are missing.
+In the final RC the libegl binary files (*.lib, *.dll) are missing.
+My guess is that your code doesn't do one of the above two steps.
+ERROR: Function failed: do_compile (log file is located at /home/minda/bin/fsl-community-bsp/build/tmp/work/cortexa9hf-vfp-neon-mx6-poky-linux-gnueabi/qtbase/5.2.1-r0/temp/log.do_compile.28369)
+ERROR: Logfile of failure stored in: /home/minda/bin/fsl-community-bsp/build/tmp/work/cortexa9hf-vfp-neon-mx6-poky-linux-gnueabi/qtbase/5.2.1-r0/temp/log.do_compile.28369
+ERROR: Task 655 (/home/minda/bin/fsl-community-bsp/sources/meta-qt5/recipes-qt/qt5/ qtbase_5.2.1.bb, do_compile) failed with exit code '1' can anyone suggest.
+The problem with DYLD_LIBRARY_PATH is that you need to inject it somehow to process launching the app: (1) if we put it into Info.plist it won't work for bundle less apps (i.e. for simple testing) (2) if we put it into user's 
+.bash_profile then it won't work in apps launched via Finder, as launchd does not run/respect .
+The problem with DYLD_LIBRARY_PATH is that you need to inject it somehow to process launching the app
+ (1) if we put it into Info.plist it won't work for bundle less apps (i.e. for simple testing) Actually you CAN add Info.plist to bundle-less apps using the linker arguments: `-sectcreate __TEXT __info_plist Info.plist` which will embed it in the binary.
+ (2) if we put it into user's .bash_profile then it won't work in apps launched via Finder, as launchd does not run/respect .bash_profile
+Launching directly in Explorer doesn't work, and launching directly from Finder doesn't need to work either.
+ The DISTRO_FEATURES_remove = "x11 wayland" is removed from the local.conf
+ ERROR: Function failed: do_compile (log file is located at  /home/minda/bin/fsl-community-bsp/build/tmp/work/cortexa9hf-vfp-neon-mx6-pok  y-linux-gnueabi/qtbase/5.2.1-r0/temp/log.do_compile.28369) ERROR: Logfile of  failure stored in:  /home/minda/bin/fsl-community-bsp/build/tmp/work/cortexa9hf-vfp-neon-mx6-pok  y-linux-gnueabi/qtbase/5.2.1-r0/temp/log.do_compile.28369
+ ERROR: Task 655  (/home/minda/bin/fsl-community-bsp/sources/meta-qt5/recipes-qt/qt5/  qtbase_5.2.1.bb, do_compile) failed with exit code '1'
+As ~/.launchd.conf doesn't work anymore since Lion only permanent solution is to use /etc/launchd-user.conf which require admin to create/modify
+This won't work for apps launched directly via Finder/Dock
+Launching directly in Explorer doesn't work, and launching directly from Finder doesn't need to work either.
+Yes I tried both the ways of bitbake , adding DISTRO_FREATURES_remove DISTRO_FREATURES_remove while present in the local.conf it fails at the last stage of do_rootfs
+  ERROR: Function failed: do_compile (log file is located at    /home/minda/bin/fsl-community-bsp/build/tmp/work/cortexa9hf-vfp-neon-mx6-pok   y-linux-gnueabi/qtbase/5.2.1-r0/temp/log.do_compile.28369) ERROR:  Logfile of   failure stored in:    /home/minda/bin/fsl-community-bsp/build/tmp/work/cortexa9hf-vfp-neon-mx6-pok   y-linux-gnueabi/qtbase/5.2.1-r0/temp/log.do_compile.28369 
+  ERROR: Task 655   (/home/minda/bin/fsl-community-bsp/sources/meta-qt5/recipes-qt/qt5/   qtbase_5.2.1.bb, do_compile) failed with exit code '1'
+I think only the QtWebKit integration https://codereview.qt-project.org/#/c/89086/ and the addition of QtWebChannel as a Qt submodule https://codereview.qt-project.org/#/c/90399/ are missing right now.
+The generated moc code won't work if you don't.
+ The generated moc code won't work if you don't.
+The problem is obviously related to extra padding added to boxes on OSX where on other platforms there is no padding.
+This principle works very well in Windows /Visual Studio but it does no longer work in Linux : Matlab 2014 comes along with the QT 4.8.xx libraries
+If I load the mexFunction by calling the entry function, Matlab crashes
+In that case, Matlab crashes right after boot showing that it is the other way around: Matlab calls a QT4 function which finally ends up in libQt5Core.so.
+Im getting objective-c related errors and Im stumped
+And then there's a logic problem: The text demands to attach files with a name containing the bug's number while creating the report
+We have the same problem here in Designer.
+Never accept shared  memory segments from untrusted applications, since they can crash you
+My main problems are on Mac systems, the default shared memory settings there are very restrictive
+Hi, the problem is that your Derived.qml isn't actually derived from Base.qml, since you're using 'Item'instead of 'Base' as a root item.
+if it's related, it must be a bug in gerrit (the permission talks explicitly about emails, not the event stream).
+ in the directory qt-everywhere-opensource-src-5.3.1/qtbase does not work:  During the compilation of e.g. src/network, I see the following compiler  error: [...]
+I think it would be far less risk of breaking existing applications to simply set active = false on all active states when the machine is stopped
+Hi, inspecting the QtWebChannel code I found that a QMetaObjectPublisher object is not able to distinquish between different clients
+Because of that reason the feature that property updates are only send if the client is idling is not working correctly
+But the setTimeout function is not defined when including qwebchannel.js into a qml application
+On Thursday 03 July 2014 15:13:17 Sune Vuorela wrote:  On 2014-07-03, Milian Wolff <milian.wolff at kdab.com wrote:   I imagine, it could work by create just a normal library but not install   and public headers, only private ones
+And yes, the fact that Google finds old versions is a problem. 
+ "Darn! I forgot to clone qtjsondb".
+ Now, I'm trying to get WebKit2 running: the MiniBrowser example runs on  the device, but only the navigation bar on top is functional, the webview  area stays white and empty
+The same issue occurs with the Flickrview  example: only the thumbnails are shown…
+(added dev as this seems to be a general problem on imx6 with webkit2 and Qt5.2.1)
+Hi,  I'm trying to push this patch: https://codereview.qt-project.org/#change,79826 but CI doesn't like me
+A QWidget-project works out-of-the-box, but the QtQuick-project doesn't work.
+It seems like the QML file cannot be found under the specified path
+There are some mistakes in the German translation.
+The Xserver couldn't start and so I saw some messages afterwards
+I've tried dpkg -i and various incantations of apt-get but one doesn't calculate the dependencies and the other wants to download things.
+I've tried dpkg -i and various incantations of  apt-get but one doesn't calculate the dependencies and the other wants to  download things.
+I'm still getting some dependency issues - libicu etc but I'm on the right track
+I tried dpkg -i *.deb previously but misread the error message and assumed it wasn't calculating dependencies.
+I've tried dpkg -i and various incantations of   apt-get but one doesn't calculate the dependencies and the other wants to   download things
+I'm still getting some dependency issues - libicu etc but  I'm on the right track.
+I'm still getting some dependency issues - libicu etc but   I'm on the right track.
+I found a problem during the installation on new ppc: the keyboard is set up when language is choosen, problem is that on the power book and some other models (ibook, i think) we do not have a macintosh keyboard, but a PC-104 one.
+n Sat, Sep 18, 2004 at 10:34:50AM +0200, Marco Bonetti wrote:  I found a problem during the installation on new ppc: the keyboard is set up  when language is choosen, problem is that on the power book and some other  models (ibook, i think) we do not have a macintosh keyboard, but a PC-104  one.
+ So, if english is the main language there isn't so many problems (numbers and  letters are on the right keys, "just" the simbols are mixed) but if I choose  the Italian one everything is screwed up :) Yep, bug #1171. 
+Firefox isn't able to install its own updates on Ubuntu or on most any linux system when a user is running Firefox I would imagine.
+The fact that vim-gnome currently adds an item to the menu is a bug (#1771).
+ The fact that vim-gnome currently adds an item to the menu is a bug (#1771).
+The Problem is that i never hat installed Eclipse myself
+This makes firefox non-working in a very ungraceful way
+ This problem may sound too much but believe me it's really a problem.
+Other similar problems may arise with other languages
+On Tue, 2004-11-30 at 23:10 -0500, Ben Kuang wrote:  Thinking that the DVD rom prolly caused the  problem when installing gstreamer 0.8-dvd, i removed the dvd rom, this  time, the installed halted at libgsm1 (1.0-10-12)... 
+Hi, I try to boot with special options with the Live CD but I didn't succeed :-k It seems it always reads kernel from CD.
+I can't make a boot disk because I can't boot to the / with mkboot,
+This seems like a problem, as Ubuntu is not Debian - and the bugs may or may not occur on Debian.
+Also, modem lights from gnome applets appears not to be working, I can connect but the applet doesn't actually change or show any information.
+And connecting via Computer-System Configuration-Networking did eventually work but was very non responsive
+There is a bug in the Ubuntu install that I found back before Warty's release, but is still not fixed in Hoary
+This bug (#2416). results in an incorrect hardware clock whenever the clock is set to local time in the install. It can be worked around by executing /etc/init.d/hwclock start after the install to synchronize the clock.
+I would work on a fix for this bug, however I don't have much programming knowledge surrently and am thus unable to provide a fi
+Winmodems are going to be a blocking issue for Windows to Linux migration on the desktop for a lot of users for at least another couple years.
+I want to install hoary because I think my install has too many weird problems because of a weird warty install.
+I tend to have these guys crash out on me fairly regularly, but every time I do, I had forgotten to rebuild my "nostrip" version, so I can never catch where
+The on/off line button has the red X through it, and when I try to make it connect, it crashes
+ If it's been running a while, it will crash also
+The crashes have been happening for a while, it's just recently that it won't get the mail anymore.
+ The on/off line button has the red X  through it, and when I try to make it connect, it crashes
+If it's been  running a while, it will crash also
+The crashes have been happening  for a while, it's just recently that it won't get the mail anymore
+Evolution is very resouce intensive (frequently just sits there "Formating message") and, at least for me, crashes often
+Now that I have used the Warty Install CD that was shipped out to me, Evolution can no longer send SMTP mail
+I believe the problem is either that broken link or the evolution that ships on the Ubuntu Install CD.
+I tried to compile beagle 0.0.4 yesterday and I wasn't able to find many dependencies in universe
+I found a lot of information about installing beagle on the wikipage http://ubuntulinux.org/wiki/BeagleInstallHowto located there, but there are a few things I am unable to find.
+First off, I'm missing libxss-dev, which is referenced to in the apt-get portion of the wikipage before installing anything else
+The problem I have is that I don't have pryexc, and I don't know how to acquire i
+ I realize that I'm also missing libxss-dev, but I don't know from where to glean that either.
+I'm using a wireless intellimouse explorer 2.0 (got it free as a warranty replacement) and it doesn't work by default
+I have also got intellimouse explorer (wired) which broke, but still has working mouse buttons (apart from mouse1, which double clicks all the time)
+I've the same problem with a DELL C840 256Mo + 20Go HD Looks like a disk access problem
+It's a pity because everything is recognized, but it's unusable
